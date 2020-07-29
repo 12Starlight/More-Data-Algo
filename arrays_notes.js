@@ -66,4 +66,21 @@ Static Arrays:
     So the start address, which is three plus two times eight which is 16 equals
     19. That is where our third element or element at index two is located. 
 
+
+    * When we want to overwrite an element at a given index. 
+
+      array[2] = 3; => O(1)
+
+    When we are trying to overwrite an element at that index. Well here it is
+    very similar to getting an element. We know exactly where index 2 is bc we 
+    can do the same computation where we get the starting address and we 
+    multiply the index by the number of memory slots or bytes that each element
+    takes up, so we can immediately find the memory slot at index two which is 19
+    in this case. 
+    
+    And all that we do is we overwrite the next eight blocks, 
+    which are a fixed number of walks. We are basically just swapping new binary
+    numbers with old binary numbers. So setting or overwritting an element in an
+    array is also going to be constant. 
+
 */
