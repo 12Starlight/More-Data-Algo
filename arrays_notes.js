@@ -190,3 +190,95 @@ Static Arrays:
     found a new group of memory slots, the Space Complexity is constant. 
 
 */
+
+/*
+Dynamic Arrays:
+  As the name implies, it is an Array that can change in size. More specifically,
+  how it works under the hood, and by the way in Java and C++, Dynamic Arrays
+  are respectively ArrayLists and Vectors. In Python and JavaScript and a few
+  other modern languages, Standard Arrays under the hood are Dynamic Arrays. 
+
+  Okay, back to the topic at hand. Well, a Dynamic Array is an Array that under
+  the hood will allow you to have faster insertions at the end of the Array. So,
+  what would happen is, your operaating system would actually allocate twice as
+  much memory as what you are asking for (roughly). 
+  
+  Depending on the operating system or languange, perhaps it is not double the 
+  length that you specified. It might be the smallest power of two that is
+  greater than the length that you specified, for instance. So, if we had a 
+  Dynamic Array of length 3. We would end up with three empty slots or 24
+  memory slots, if we are dealing with 64 bit integers.
+
+    [1, 2, 3, _, _, _]
+
+  The operating system has said, hey, you can use those memory slots like I am
+  allocating them to you. They are empty right now, but I have allocated them to
+  you, so you can freely append this stuff to the end of this Array and we will
+  be able to add them here bc you know that these memory slots are empty. So, 
+  you can just append the number to the end of the array.
+
+    [1, 2, 3, 4, 5, 6] ?
+
+  So, you might be thinking what now? Like now we are back to the same problem
+  of a Static Array. This is where the term dynamic comes into play. Basically
+  a Dynamic Array will allocate double the space that you need, so that up until
+  you reach that space, you have very fast insertions at the end of your Array.
+
+  And once you exhaust the amount of space that you had been allocated, only
+  then does the Array copy itself or does the insertion rather cause a copy and
+  the copy will give you another double the amount of space that you need. 
+
+    [1, 2, 3, 4, 5, 6, O(N), O(1), O(1), O(1), O(1), O(1)]
+                        ^
+                        7     8     9     10    11    12
+
+  So, 7 took O(N) time to add bc you had to copy 1-6, then you had to append 7.
+  However, 8-12 only took constant time! Okay, so at this point you may be
+  wondering, what is the true Time Complexity ramifications of this insertion? We
+  know that the Space Complexity is still O(1) bc like we said, even though you
+  do the copying, you are still wiping out the previous memory when you insert.
+
+  But, what is the Time Complexity? Well, let us think about it. Spoiler alert,
+  it is going to be O(1) time. But, why is this the case? There are two ways to
+  think about it conceptually. The first way is mathematically actually, not
+  conceptually. You can think that every time we are doubling the amount of
+  memory that we have. 
+  
+  So, how many times do we double the memory? Well, we double the memory, let us
+  say for instance, where we keep doubling it until we have reached N. At the
+  N-nth time that we have doubled an Array, these operation have taken:
+
+    O(1) + O(2) + O(4) + ... O(N)
+
+  Another way of writing it is:
+  
+    N + N/2 + N/4 + N/8 ... 1
+
+  This series converges to 2N. So, in total for our insertions we are O(2N) to
+  copy which is O(N) bc we drop the 2. So, that was sort of the mathematical way
+  to prove that insertion in a Dynamic Array ends up being O(N). 
+  
+  Conceptually speaking, you can just think of it as, whenever you have to copy
+  the Array since you are doubling the space or since you are doubling the space
+  that you are allocated, you are giving yourself sort of like two times as many
+  constant space operations or constant time operations, constant time 
+  insertions in the future. 
+
+  And you can think of all these constant time operations as sort of canceling
+  out those copies that you are going to have to keep doing, right? So you have
+  so many constant time insertions that those few linear time insertions kind of
+  get canceled out. This is known as what is called 'Amortized Analysis'.
+
+  So, amortized analysis is sort of the version of complexity analysis where you
+  are really taking into account sort of the edge cases where things take a lot
+  of time, as well as the easy cases when they do not take a lot of time. And so
+  from an amortized analysis point of view, we say that inserting an element at
+  the end of an Array, a Dynamic Array takes O(1) time or constant time. This is
+  the one exception of when we SHOULD NOT take the worst case in complexity
+  analysis. 
+
+  NOTE: If you want to insert an element in a Dynamic Array in the middle of the
+  array or anywhere else except the end of the Array, then it will stil be O(N) 
+  time bc you are going to have to shift every element by one.
+
+*/
