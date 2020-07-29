@@ -140,5 +140,53 @@ Static Arrays:
     entire Array and find a new 24 blocks of memory slots that are free back to 
     back. So do keep in mind that copying an Array is O(N) Space/Time 
     Complexity.
-    
+
+
+    * Now we get to the most important operation, inserting a value into an
+    Array, but not setting.
+
+      [1, 2, 3] 
+            ^   => O(N) T   => O(1) S
+            5
+
+    Insert is actually going to be a pretty bad operation. Why? Well, let us
+    think about what happens behind the scenes. If you have this Array that we
+    just declared here that takes up 24 memory slots and we want to insert a
+    value at memory slot 19, what will happen?
+
+    Well, we can clearly see that if we want to put something here right before
+    the 3 or at memory address 19, we are going to have to somehow shift all of
+    these blocks, right? All of the eight memory blocks that had been allocated
+    to the three are going to have to be shifted to the right. Otherwise we are
+    not going to be able to put something in there. 
+
+    But, the problem is after memory block 26, we have not allocated more 
+    memory. Remember that we said that this was a Static Array, meaning that we
+    specified the length, we told the operating system, hey, this is how much
+    memory we need. And the operating system can not guarantee that there would
+    not be something stored at 27, for instance. 
+
+    So, not only do we have to shift all of these eight blocks, we do not know
+    if we can shift them to the right. And so, if we wanted to maybe insert the
+    five at the end of the Array, maybe we did not want to put it in middle, we
+    wanted to append it at the very end, we would be facing the same problem
+    where we would not be able to put it here bc it is possible that 27 would be
+    taken up. 
+
+    And this is even more applicable, if we wanted to put the five at the 
+    beginning of the Array. If we wanted to put the five at the beginning of the
+    Array, that would be right before memory block three, so we would have to 
+    shift the entire Array, eight blocks or eight memory slots to the right. And
+    again, we can not guarantee the 27 or all the blocks thereafter are free. 
+
+    So, what does that leave us with? What option do we have? Well, we can copy
+    the entire Array, say to the operating system, hey, we have this Array that
+    we just copied. We need you to find another place in memory where there are
+    enough memory slots for this Array, plus a fourth element or plus, an N plus
+    one-nth element. 
+
+    So, when you insert, you have to actually copy an Array under the hood. Now
+    bc the operating system errased the other space after it copied and then
+    found a new group of memory slots, the Space Complexity is constant. 
+
 */
