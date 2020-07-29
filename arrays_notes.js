@@ -96,4 +96,21 @@ Static Arrays:
     So, our operating system went and found N multiplied by eight memory slots
     that are free and that are back to back. 
 
+
+    * When we are traversing through an Array.
+
+      for (let i = 0; i < n; i++) {}; => O(N) T
+      for (let i = 0; i < n; i++) {}; => O(1) S (bc you are not using extra S)
+
+    When you do for loop through an Array, you are traversing through every
+    element in the Array. So, here you can imagine, under the hood, the
+    operating system is going to traverse every memory slot. How many memory
+    slots are there? Well eight multiplied by N. 
+
+    This applies to map(), filter(), reduce(), which all use traversing. And the
+    space complexity is going to depend on whether or not you are doing this in
+    place in the Array or not. So, if you are mapping an Array to a new Array
+    and you are creating a brand new Array of the same length, well that would
+    be O(N) space. 
+
 */
