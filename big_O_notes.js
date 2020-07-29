@@ -26,3 +26,16 @@ Big O Notation:
   as n tends toward infinity. 
 
 */
+
+/*
+Different Asmyptotic Analysis:
+  O(1)
+  O(log(n))
+  O(n)
+  O(nlog(n))
+  O(n^2), O(n^2), O(n^4)
+  O(2^n) -> 2*2*2....2
+  O(n!) -> n * (n-1) * (n-2) ...
+
+
+*/
