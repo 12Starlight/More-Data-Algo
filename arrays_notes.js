@@ -34,7 +34,7 @@ Static Arrays:
   Common Operations:
     * To read a value at a given index in an Array. 
       
-      array[2] => O(1)
+      array[2] => O(1) ST
 
     Accessing an arraay at a given index is a very basic operation that is
     performed almost instantly. Well, what does instantly really mean? This is
@@ -69,7 +69,7 @@ Static Arrays:
 
     * When we want to overwrite an element at a given index. 
 
-      array[2] = 3; => O(1)
+      array[2] = 3; => O(1) ST
 
     When we are trying to overwrite an element at that index. Well here it is
     very similar to getting an element. We know exactly where index 2 is bc we 
@@ -82,5 +82,18 @@ Static Arrays:
     which are a fixed number of walks. We are basically just swapping new binary
     numbers with old binary numbers. So setting or overwritting an element in an
     array is also going to be constant. 
+
+
+    * When we actually initialize an Array
+
+      [] or let array = new Array(); => O(N) ST
+
+    When we created this Array and first stored it in memory, we asked the 
+    operating system to set asside a fixed amount of slots. However, the length
+    is an arbitrary number based on what we decided it to be which in this case
+    was 3. So, we specified a length N. 
+
+    So, our operating system went and found N multiplied by eight memory slots
+    that are free and that are back to back. 
 
 */
