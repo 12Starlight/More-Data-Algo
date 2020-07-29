@@ -113,4 +113,32 @@ Static Arrays:
     and you are creating a brand new Array of the same length, well that would
     be O(N) space. 
 
+
+    * You often copy Arrays.
+
+      let array = [1, 2, 3];
+      let copy = array; => O(N) ST 
+
+    When you are copying, you are traversing the entire Array and then you are
+    saying to the operating system, hey, I just traversed through an entire
+    Array of length 3 or of 24 memory slots and I need you to find a new 24 slots
+    that are back to back and free in memory, and I need you to copy all of 
+    these values over there. 
+
+    And the Space/Time Complexity implications of copying are very important.
+    The fact that copying is a relatively intensive operation, is very 
+    important. You often see people who are fairly new to algorithms and data
+    structures do this mistake, where they will just very casually copy an 
+    Array, using .slice() etc., and they will copy Arrays left and right. 
+
+    What is even worse, they will do this in a for loop. So, they will be 
+    iterating through an Array of N elements, and at every element they will
+    make a copy of the Array for whatever reasonbc it is very simple. It is just
+    one line. But that is an O(N) operation that you are doing every time. 
+
+    Every time you are asking the operating system, hey, I need you to copy this
+    entire Array and find a new 24 blocks of memory slots that are free back to 
+    back. So do keep in mind that copying an Array is O(N) Space/Time 
+    Complexity.
+    
 */
