@@ -281,4 +281,31 @@ Dynamic Arrays:
   array or anywhere else except the end of the Array, then it will stil be O(N) 
   time bc you are going to have to shift every element by one.
 
+
+  * When you remove a value at the end of an Array.
+
+    array.pop(); => O(1) ST
+
+  All you do is remove the last element in an Array, so you free up the last
+  memory slot or at least remove the values in it. But, similarly, if you want
+  to 'pop' or shift() in JavaScript a value out of the beginning or anywhere 
+  else in the array you end up with O(N) time bc you still have to shift all the 
+  values to the right. 
+
+
+  Last Thoughts: 
+  
+  Whenever you are performing an operation that is going to effect half an array 
+  or a quarter of an array, those are still O(N) operations. As an example you 
+  might have wondered, well if we insert an element in the middle of a Dynamic 
+  Array, we only have to shift half of the values to the right. If we insert the 
+  value at three fourths of the Array, we only have to shift one fourth of the 
+  Array. But all of these things still end up being O(N) operations. Why? When
+  you write it in detail, it looks like O(.25N), which is still O(N) ;)
+
+  So, that is something to keep in mind, even if you are doing something on half
+  the array, or on a fraction of the Array. If the Array is of length one 
+  trillion or one quintillion, that is still a lot, and in terms of complexity
+  analysis, we still treat it as, O(N). 
+
 */
