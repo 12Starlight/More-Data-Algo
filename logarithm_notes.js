@@ -74,3 +74,100 @@ Logarithm:
   by one asa we double the size of the input. So, it roughly maps to log of N.
 
 */
+
+/*
+  Another classic example of log of N run time algorithm is one where, instead
+  of dealing with an array that you are cutting in half every time, you are
+  dealing with a Binary Tree that you are cutting in half every time. Now here
+  I am jumping the gun a little bit with respect to Binary Trees bc they will
+  be covered in a different section. 
+
+  But, very quickly you can imagine this structure called a Binary Tree, that
+  looks like a tree, where every element in the structure has two children
+  elements, that kind of look like a tree, if you write them out like this. 
+
+                        O
+                   /         \
+                  o           o
+                /   \       /   \
+              o      o     o     o
+             / \    / \   / \   / \
+            o   o  o   o o   o o   o
+
+
+  You can see here we kind of have two children elements whenever we go down one
+  level, and here if we had an algorithm that worked to eliminate half of the
+  tree every time. Let us say we start up here. Let us say this is almost like a
+  maze where maybe at the beginning of the maze we have to pick a path every
+  time. 
+  
+  We start at the top, if we pick to go down this path, we are affectively
+  eliminating this entire path here. So, now we are here.
+
+                  |      //
+                  V      /////
+                  o      //////
+                /   \    ////////   
+              o      o   /////////   
+             / \    / \  ///////////
+            o   o  o   o ////////////
+
+
+  If we pick to go down this path now, we are effectively eliminating this
+  entire left path. 
+
+                        ////
+                     /////////
+                   ////////////
+                 ////////////////
+               ////  o   /////////
+             /////  / \  ///////////
+            /////  o   o ////////////
+
+
+  Then if we pick to go down this path, we are efftively eliminating this entire
+  path here. 
+
+                        ////
+                     /////////
+                   ////////////
+                 ////////////////
+               ////////////////////
+             ///////////////////////
+            ////// o ////////////////
+
+
+  And so you can see how with this structure, every node has two children, you
+  have to assume that. That is what is called a Balanced Binary Tree. Then going
+  down this tree where you eliminate half of the nodes at every level, would be
+  an algorithm that runs in log of N time. 
+
+  And so you can really think of algorithms that have a Time Complexity, and by
+  the way the same is true for Space Complexity, but that have a Time Complexity
+  of log of N, you can really think of them intuitively either by asking 
+  yourself am I eliminating half of the input at every step of my function? 
+
+  Am I bsically cutting down the size of my input in half every step of the way?
+  If YES, then I am basically dealing with the log N Time Complexity. Assuming I
+  am not performing auxiliary operations at every step, bc that might increase
+  my Time Complexity. 
+
+  And similarly you can also ask yourself, if I double the size of my input am I
+  only going to be performing one extra operation? So, if the tree here, it
+  turns out that one of the properties of trees is that at the very bottom level
+  of a tree, you actually have roughly half of the nodes in the ENTIRE tree at
+  the very BOTTOM, if you are deaaling agian, with a perfect tree that has the
+  same amount of nodes at every node, the same amount of children nodes. 
+
+  And so you can imagine, that if you were to double the size of this tree, you
+  would be adding basically an entire new level down here, right? You would be
+  doubling the nodes down here. But, all that you would be doing here, would be
+  performing one extra operation, bc again, you would start at the top here, you
+  would still eliminate the entire right half of the tree. Let us say you were
+  eliminating the right. 
+
+  And eventually you find yourself down at the bottom node again. And you do one
+  more operation where you eliminate half, probably you eliminate this right
+  half, and you end at the bottom most left node (or so). 
+
+*/              
