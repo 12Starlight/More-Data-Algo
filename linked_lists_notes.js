@@ -274,3 +274,44 @@ Space & Time Complexity:
 
 */
 
+/*
+    We covered what is known as a Singly Linked List. This is really the most
+    basic form of Linked Lists, and it works. It is really useful, it has got
+    nice use cases. Where you have one link between two values, right. 
+
+      3 -> 1 -> 4 -> 2
+
+    So, here we go from 3 to 1, and from 1 to 4, and from 4 to 2. Another common
+    type of Linked List is what is known as a Doubly Linked List, where every
+    node has two pointers, a pointer to the next node and to the previous node. 
+    So, you would have a pointer that goes from 1 to 3, and from 4 to 1, and 
+    from 2 to 4. 
+
+             3 -> 1 -> 4 -> 2 -> null
+      null <-  <-   <-   <-
+
+    The 3 would also point to the null value, and two would also point to the
+    null value. So Doubly Linked Lists are very similar to Singly Linked List.
+    The difference is that Doubly Linked Lists just have two pointers. So, you
+    can imagine in memory, that they would just take up three memory slots
+    instead of two. There would be a memory slot for the value, for the one
+    pointer for the next node, and another pointer for the previous node. 
+
+    In Singly Linked List we call the pointer that points from one node to
+    another, the next pointer. So typically in code, we literally call it a
+    property called next on the node class. With Doubly Linked Lists, we
+    typically call the pointers next and prev or previous. And in the case of
+    Doubly Linked Lists, you almost always have a reference to the tail bc the
+    tail is really useful. 
+
+    In this example the tail is 2. From 2, you can go back to the beginning of
+    the Linked List. With Singly Linked Lists, you can not really go back from
+    the tail, bc you only have one type of pointer, you can only go in one
+    direction. But with a Doubly Linked List, you certainly can go back. 
+
+    NOTE: You can really mutate your linked list in all kinds of ways. You can
+    add a third pointer per node. You can make the Linked List circular, where
+    the tail points to the head or the head points to the tail. You can kind of
+    do whatever you want, depending on your use case. 
+
+*/
