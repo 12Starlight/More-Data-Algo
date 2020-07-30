@@ -175,5 +175,102 @@ Space & Time Complexity:
     This is going to be the same as Arrays bc yo still going to need to traverse
     the entire Linked List. So, copy is going to be O(N) Space/Time complexity. 
 
+
+  * When you want to insert a value into a Linked List.
+    This is probably the most interesting operation in a Linked List. Recall
+    that for Arrays, even Dynamic Arrays, inserting an element at the beginning
+    of the array, or in the middle of the Array, not overwritting an element, 
+    not setting an element at an index, but inserting an element or deleting an
+    element was an O(N) operation. 
+    
+    We had to shift all of the elements either to the right to make room for a 
+    new element, or to the left if we were deleting an element. And then, if we
+    were appending an element at the end of an Array, in the case of a Dynamic
+    Array, yes, it was an amortised constant time operation. But there was 
+    always that edge case, when we filled up the buffer, the extra memory that
+    we had been allocated, where we had to copy the Array and essentially double
+    the amount of memory that we were allocating to it. 
+
+    With Linked Lists, all of these operations, with a few caveats, which we are
+    going to cover in a second, can be done in constant time. So, let us look at
+    why that is. If we are trying to insert an element at the beginning of the
+    Linked List, at the end of the Linked List, or in the middle of the Linked
+    List, what is going to happend under the hood?
+
+    Well let us use the example above. It starts at 3, it goes to 1, it goes to
+    4, then it ends at 2. 
+
+      3 -> 1 -> 4 -> 2
+
+    What we drawn out here is basically what happens in memory except we have
+    made it a bit simpler to read. The nodes go from left to right, and the 
+    arrows are small. But, if you really look at it, conceptually it is the same
+    thing. We have got an arrow that points from the memory slot right after the
+    3, which points to the memory slot 5, that is holding the 1 and so on and so
+    forth. 
+
+    So, we want to insert a node at the very beginning of a Linked List. Well,
+    we have this node which we called the 'head'. We will create a new head node
+    and we will assign it the value 5. Let us say that 5 gets stored at memory
+    slot 19. The next memory slot 20, will then point to memory slot 21 where
+    the value 3 is stored (in binary form). And just as we had foodHead which
+    was equal to the node at memory slot 21, now we will just have foodHead be
+    equal to the node at 19!
+
+    So, basically what we did was have 'head' which was pointing to the 3 at
+    memory slot 21, now point to the 5 at memory slot 19. Then we used the next
+    memory slot at 20, point to the 3 at memory slot 21. 5 is a new node that we
+    just created and have it have a pointer that points to 3. And boom! We have
+    inserted a node at the beginning in the Linked List in constant time. 
+    
+    Why constant time, bc all we did was create one new node of two memory 
+    slots, and we just shifted a couple of pointers. We overwrote like one
+    memory address. Now similarly, let us say that we want to insert another 
+    node right in between the 1 and the 4. We want to insert the node with a 
+    value 7. 
+
+    This is going to be very similar with a small caveat. The caveat is thta we
+    have to, unfortunately, first traverse all the way through the Linked List
+    until we get to the node 4. So that is important to note. So, there is
+    actually an extra time computation which is O(i) time, where i is the index
+    of the node. 
+    
+    But once you have that position, or let us assume that maybe you had stored
+    elsewhere in memory references to this position. Maybe you hae some other
+    data structure that pointed to this position. Well then, you just create a
+    new node for the 7. Maybe let us put the 7 at memory slot 9 and 10. 
+    
+    So, we would make memory slot 10 point to 4 which is at memory slot 2. The 
+    previous node 1 should now point to 7 at memory slot 9. So, essentially all
+    we really do is change the pointers. These are constant time operations. It
+    is very cheap and easy and fast to create these new pointers. Whereas in an
+    Array, we can not just create these new pointers, we have to shift every
+    element. 
+
+    And it is the exact same thing with the end of the Linked List. With the
+    end of the Linked List, you would be able to add an element at the very end
+    of the Linked List by just making this element 2 which is stored at memory
+    slot 16 have the next memory slot 17, point from null to the new node. Then
+    the new node would be stored at memory slot 24 and memory slot 25 would now
+    point to null.
+
+    So the actual act of inserting the node is constant time and constant space. 
+    To find the place where you want to insert it, depends on your
+    implementation. If it is the head of the Linked List, it will be constant
+    time. It is the end of the Linked List, which is called the 'tail' of the
+    Linked List, some Linked List implementations will actually have a reference
+    to the tail. That all depends on you. 
+
+    Let us say you create a class for a Linked List. You could, you wanted to,
+    have a variable thta points to the tail of the Linked List. So that you 
+    would have both the head and the tail. If you had the tail, then it would be
+    constant time to set a new tail, bc you would just grab the tail directly, 
+    and you would have this new pointer and create this new node. 
+
+    If you do not have the tail, then it is going to be O(N) time bc you have to
+    traverse the Linked List. Same thing for inserting a value in the middle. 
+    So, that is how a Linked List works. Now the cool thing about Linked Lists
+    is that there are actually a lot of variations of Linked Lists. 
+
 */
 
