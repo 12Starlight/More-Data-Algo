@@ -155,6 +155,20 @@ Space & Time Complexity:
     indicies. You do not really think of it as setting a value at i in a Linked
     List. This is why when you implement a Linked List, you typically do not
     even have the concept of indicies. It is not like Arrays where you do have,
-    a value at index 0, 1, 2, 3, etc.
+    a value at index 0, 1, 2, 3, etc.   
+
+
+  * When you initialize a Linked List.
+    This is going to be O(N) Space/Time. And why? You are doing the same thing 
+    as you are doing for an Array. You have a got a total of N memory slots that
+    are allocated for your N elements. You actually, have 2N memory slots, if
+    you remmeber, each node has both a value for the memory slot, and a pointer. 
+
+    Keep in mind, if you are dealing with 64 bit integers, you actually have
+    eight memory slots for the value, and eight for the pointer. However, this
+    is a constant factor, so you can forget about that. Let us just go with the
+    simplified example of two memory slots. So, even thought it is 2N, again you
+    can drop the 2 bc it is also a constant factor, which leaves you with O(N).
 
 */
+
