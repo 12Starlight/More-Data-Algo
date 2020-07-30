@@ -142,4 +142,19 @@ Space & Time Complexity:
     Space complexity is not really going to be affected bc you are not storing
     anytihng in memory. 
 
+
+  * When you want to set a value at the ith index.
+    It is sort of the same thing. It is going to be O(i) time, and then O(1)
+    Space. This is bc before you set, you have to traverse up that node, then
+    switch out the values.
+
+    NOTE: If you find the value or rather the node at index i, then you can set 
+    in O(1) time bc it is just as simple as switching out a value instantly. 
+
+    So, when it comes to setting in a Linked List. There are not really
+    indicies. You do not really think of it as setting a value at i in a Linked
+    List. This is why when you implement a Linked List, you typically do not
+    even have the concept of indicies. It is not like Arrays where you do have,
+    a value at index 0, 1, 2, 3, etc.
+
 */
