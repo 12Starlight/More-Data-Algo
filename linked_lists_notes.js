@@ -107,7 +107,7 @@ Linked Lists:
 /*
 Space & Time Complexity:
 
-  * When you want to traverse a Linked List.  
+  * When you want to traverse a Linked List or getting a value.  
     Imagine we have a Linked List which is connected by different memory slots 
     that could be anywhere. So, we have our Linked List, just like our Array it 
     should be easy to find a value, right?
@@ -169,6 +169,11 @@ Space & Time Complexity:
     is a constant factor, so you can forget about that. Let us just go with the
     simplified example of two memory slots. So, even thought it is 2N, again you
     can drop the 2 bc it is also a constant factor, which leaves you with O(N).
+
+
+  * When you want to copy a Linked List.
+    This is going to be the same as Arrays bc yo still going to need to traverse
+    the entire Linked List. So, copy is going to be O(N) Space/Time complexity. 
 
 */
 
