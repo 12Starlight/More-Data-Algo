@@ -103,3 +103,23 @@ Stacks & Queues:
   stuff when you need it. 
 
 */
+
+/*
+  Stacks and Queues are very basic structures, but you can actually make them a
+  lot more complicated, and you can make them a lot more powerful. For instance,
+  you can transform a Stack into what is called a 'MaxStack' or a 'MinStack', 
+  meaning a Stack that also keeps track of the largest element in it, or the
+  smallest element in it.
+
+  For Queues, you can turn them into what is called a 'Priority Queue', which
+  keeps track of an element with high priority. And this has really cool
+  implications in coding interview problems. Then you can make these structures
+  even more complicated. You can kind of add onto them as you please. 
+
+  LAST THING: Both structures typically support a 'Peek' method, which also runs
+  in constant space time. It is basically the equivalent of pop and dequeue,
+  except you do not actually remove the element. You just look at the next
+  element that you would remove. So, is is kind of you peek at the top element
+  of the Stack, you peek at the next element in the Queue.
+
+*/
