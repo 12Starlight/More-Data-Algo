@@ -160,10 +160,69 @@ Hash Tables:
   which one is related to 'abr'. And this where we need to store even more
   information. 
 
-  We actually need every node in the Linked List to point bacck to the original
+  We actually need every node in the Linked List to point back to the original
   key. So for instance, the 1 would point back to 'abr', the 2 would point back
   to 'bar', and the 3 would point back to 'baz'. And this is very important bc
   otherwise we would not be able to know which of these two values here was
   related to 'bar' and which of them was related to 'abr'. 
+
+            [ , , ]
+             V V V
+    'baz' <- 3   1 -> 'abr'
+                 V
+                 2 -> 'bar'
+
+*/
+
+/*
+  So, you might be wondering, well if we can have values or keys rather that
+  collide with one another and that are stored in one Linked List in this Array,
+  then in theory, in the worst case, we could have every single key that 
+  collides, so we have this one huge Linked List and the other two Linked Lists
+  have nothing. 
+  
+            [ , , ]
+             V V V
+                 1 -> 'abr'
+                 V
+                 2 -> 'bar'
+                 V
+        'baz' <- 3
+
+  And we have one Linked List of length N, where N is the number of keys in the
+  Hash Table. So, does that not mean that insertion, searching, and deleting
+  are all O(N) operations? And the answer is YES, in the worst case. Hash 
+  Tables, support constant time insertion, searching and deletion on AVERAGE.
+  But in the worst case, you can end up with a scenario like the above, where
+  you have one giant Linked List or even it does not have to be one giant Linked
+  List.  
+
+  Maybe you have 10 values, where 8 collide and 2 of them are separate. And so
+  that Linked List of length eight, would basically be a Linked List of length
+  N. So, the point is that, admittedly, in the worst case these three 
+  operations, inserting, deleting, and searching, where you look up a key given
+  a value, will take O of N time.  
+
+    -> insertion O(1) T Avg, O(N) T worst case
+    -> deletion O(1) T Avg, O(N) T worst case
+    -> searching O(1) T Avg, O(N) T worst case
+
+  NOTE: In the context of coding interviews, unless it is specifically addressed,
+  where the interviewer wants you to have O(1) T in the WORST case, this point
+  is ignored. In part, this is bc some very smart people have come up with 
+  very smart hashing functions that can be used to minimize the number of
+  collisions. So, while it is possible in the worst case to have O(N) time, it
+  mostly never happens. 
+
+  Typically in coding interviews, the industry gives so much power to these 
+  hashing functions, that they are treated as a constant time operations and 
+  your Hash Table would actually in practice, almost always look like this, 
+  where the three values are separated in their own Linked List. 
+
+            [ , , ]
+             V V V
+    'baz' <- 3   1 -> 'abr'
+               V
+               2 -> 'bar'
 
 */
