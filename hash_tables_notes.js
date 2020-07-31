@@ -292,3 +292,21 @@ Hash Tables:
   deletions, and searches. 
 
 */
+
+/*
+  Initializing a Hash Table, when you are dumping N elements, it is going to
+  take O(N) time. As far as space complexity is concerned, it is really going to
+  depend on the values that you are storing, the key are not really going to be
+  relevant bc typicallyy you can have the nodes in your Linked Lists point to
+  to the existing keys. They are not going to be storing new versions of the
+  keys. They are just going to be pointing to them in memory. But the values you 
+  will liekly be storing. So, we say that the space complexity is O(N) space for 
+  storing n key-value pairs in the Hash Table. 
+
+  ALSO: In theory you do not need your keys in your Hash Table to be strings.
+  All you need is for keys to be values that can be passed to a hashing 
+  function and turned into integers. And this is why in some programming
+  languages, built-in Hash Tables actually support other types of data 
+  structures as keys, not just strings. 
+
+*/
