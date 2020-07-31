@@ -89,3 +89,17 @@ Stacks & Queues:
     the next element thata we would 'dequeue from the Queue. 
 
 */
+
+/*
+    search => O(N) T,  O(1) S
+    initializing => O(N) S 
+
+  For initializing, keep in mind whenever you aare inserting elements, so for
+  instance, pushing an element or enqueueing an element, these two operations
+  individually are constant time operations. So, unless you are initializing a
+  Stack of length, N at once, you are not actually taking O(N) time to 
+  initialize the Stack. Typically, a Stack or a Queue is going to be initialized
+  as an empty Stack or an empty Queue. And you are going to one by one, add 
+  stuff when you need it. 
+
+*/
