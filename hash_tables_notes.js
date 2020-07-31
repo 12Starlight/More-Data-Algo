@@ -226,3 +226,69 @@ Hash Tables:
                2 -> 'bar'
 
 */
+
+/*
+  What happens when we run out of space in our underlying Array? Here we have 
+  three keys, so they all fit in our Array of length three. And we assume that we
+  had a perfect hashing function with no collisions. But, now what would happen
+  if we had 300 keys? 
+
+  That means that we would probably have 100 keys being mapped to index zero, a
+  100 keys being mapped to index one, and 100 keys being mapped to index two. 
+  So, you would probably have three Linked Lists of length a 100. So you would
+  have these very long Linked Lists that mapped to the final values or final 
+  key-value pairs that you stored in your Hash Table. But now we run into that 
+  same problem of not having enough space in our underlying Array. 
+
+  So, you are going to get these giant Linked Lists, which is going to lead to
+  O of N insertion, deletion and searching. And so this where we have to
+  introduce the concept of resizing. Basically in order to handle the case where
+  your underlying Array just does not have enough space. Basically you have to
+  many key-value pairs to fit into your underlying Array. You can implement a 
+  Hash Table that resizes itself. 
+
+  Now I am not going to go too much into detail in how this is implemented under
+  the hood, there are various ways to implement resizing for Hash Tables. There
+  are pretty complicated ways to do so. One pretty simple example would be as
+  follows. 
+  
+  You could imagine that you initialized a Hash Table, at first the underlying 
+  Array is an Array of, let us say length 10, and as you insert key-value pairs 
+  in this Hash Table, you hash the keys, you dump them into this underlying 
+  Array and maybe when your underlying Array gets filled up, let us say to two
+  thirds or three-fourths, so maybe if you have seven indices in this underlying
+  Array that get taken up or eight indicies, your Hash Table is going to be
+  smart enough to know that it needs to resize itself. 
+
+  And so one way that it might do that is it might create a copy of the 
+  underlying Array, and double it in size, sort of like a Dynamic Array would do
+  when you append an element at the end of it. And then the other thing it would
+  do is it would take all the keys that had already been hashed and dumped into
+  the underlying Array, it would pass them all through aa new hashing function.
+
+  It would be a hashing function where you eventually mod the number by the new
+  length of the new underlying Array. It would re-dump all the key-value pairs 
+  into this new underlying Array. But the key part here is that bc it would have 
+  used a new hashing function relevant to the size of this new Array, the 
+  key-value pairs would now be placed potentially at DIFFERENT positions in this
+  new Array and that is that. 
+
+  And you could imagine that the same thing would happen, if you have a Hash
+  Table that is very big and then you start deleting key-value pairs from it,
+  the Hash Table might resize itself, past a certain threshold to make itself
+  smaller bc you do not need to have a gigantic underlying Array, if you only
+  have a few key-value pairs. 
+
+  So, this resizing is what a Hash Table is going to have to do, if you want to
+  avoid the inevitable collisions that happen when you have an Array that is 
+  just not big enough to store a certain amount of keys. And here we can apply
+  the exact same logic that we applied in the section on Arrays, where we
+  explained why the amortized time complexity of appending a value to the end of
+  a Dynamic Array was O(1) constant time. Here it is the exact same thing.
+
+  You can imagine that this resizing will occur very infrequently and you can
+  prove mathematically that on average from an amoritized analysis point of
+  view, we are still going to be able to retain these constant time insertions,
+  deletions, and searches. 
+
+*/
