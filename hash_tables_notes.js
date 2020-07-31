@@ -123,8 +123,47 @@ Hash Tables:
 */
 
 /*
+  For instance, imagine 'foo' instead was 'abr' which would have the same value
+  as 'bar'. So now, both of these string would have mapped to the index value of
+  2. So, now what would we have done? Well, this is where it turns out that
+  under the hood, a hash table is not just an Array. It is actually an Array
+  where each index maps to a Linked List of potential values. 
 
+  This is precisely to take care of instances where we have two keys that get
+  hashed into the same index and they therefore collide. And this is known as a
+  collision in a Hash Table. So, basically we should rearrange our Array and
+  make it look more like an Array that points to three Linked Lists. 
 
+    'abr' => 1
+        602 -> 2
+    'bar' => 2
+        602 -> 2
+    'baz' => 3
+         90 -> 0
 
+  So, we would have 'baz' which pointed to 3, which is still stored at index
+  zero. But, then the other two, 'bar' and 'abr', though this could have still
+  been 'foo'. It is possible that 'foo' would have mapped to the same number as
+  'bar'. But, 'abr' is just very obvious. Both of these map to 2, and so we are
+  now going to make them a Linked List. So we are going to have 1, and then this
+  points to the next value in the Linked List, which is going to be 2. 
+
+    [ , , ]
+     V V V
+     3   1
+         V
+         2        
+
+  Okay, so this complicates a few things. When we look up the value for the key
+  'bar', how do we know which of these two values in the Linked List or imagine
+  there were maybe even more, how do we know which one is related to 'bar' and
+  which one is related to 'abr'. And this where we need to store even more
+  information. 
+
+  We actually need every node in the Linked List to point bacck to the original
+  key. So for instance, the 1 would point back to 'abr', the 2 would point back
+  to 'bar', and the 3 would point back to 'baz'. And this is very important bc
+  otherwise we would not be able to know which of these two values here was
+  related to 'bar' and which of them was related to 'abr'. 
 
 */
