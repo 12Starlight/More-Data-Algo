@@ -18,3 +18,14 @@ Graphs:
     -> edges (connections that connect the nodes to one another)
 
 */
+
+/*
+  An important concept in Graphs, is whether or not a Graph is 'connected'. And
+  we say that a Graph is connected, basically if you can reach any other Node in
+  the Graph, from another Node or rather, if there is some path between any two
+  Nodes in the Graph. 
+
+  When you have Nodes that can not reach the other Nodes in the Graph, we say
+  that the Graph is NOT a connected Graph. 
+
+*/
