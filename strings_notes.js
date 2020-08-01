@@ -65,3 +65,17 @@ Strings:
 
 */
 
+/*
+  When you are dealing with immutable Strings, any method that would mutate the
+  String, is actually making a copy of that String, which is going to be an O(N)
+  operation with the new character at the end, or with whatever mutation you had
+  in it. 
+  
+  And by the way, when you are dealing with immutable Strings, there is no set
+  at index method. You can not set a character at a given index when you are 
+  dealing with an immutable String. You literally cannot alter that Strinig. The
+  closest thing that you can do to altering a String that is immutable is this
+  plus equal thing, but again, that is an O(N) operation bc it make a copy of 
+  the string with value added. 
+
+*/
