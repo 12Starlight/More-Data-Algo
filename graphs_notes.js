@@ -151,3 +151,18 @@ Graphs:
   the Nodes that you are connected to. 
 
 */
+
+/*
+  As far as Space Complexity is concerned, when you are creating a Graph, when
+  you are representing a Graph in code, you are going to be storing 'V' 
+  vertices, or 'V' nodes, where 'V' is the number of vertices, the number of
+  Nodes in the Graph, bc in our example we have 11 Nodes, so you are going to be
+  sotring all 11 of these Nodes.
+
+  And then for all of the Nodes, you are going to store their edges. So, you are
+  going to store a total of 'E' edges, where 'E' is the number of edges. So, we
+  say that the Space Complexity of storing a Graph, takes O(V + E) space.
+
+    storing => O(V + E) S
+
+*/
