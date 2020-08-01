@@ -93,3 +93,44 @@ Graphs:
   important concepts in Graphs. 
 
 */
+
+/*
+  Graphs pop a lot, from flights, friendships, to products on an e-commerce 
+  website that have relations you can probably represent them as a Graph. And 
+  Even in simpler examples that you might not realize can be translated into
+  Graph problems. For instance, let us say you are dealing with a 
+  two-dimensional Array, like a grid. 
+
+  A lot of coding interview problems give you two-dimensional Arrays. And
+  sometimes when you are dealing with a two-dimensional Array, and you are at a
+  given Node, let us say the Node in the middle of the grid, you care about the
+  neighboring Nodes. So for instance, you care about the Node above, or the 
+  element above, the element below, the element to the right and to the left. 
+
+    edges ->[ ][ ][ ]
+            [ ][X][ ]
+            [ ][ ][ ]
+                ^
+         connected Nodes
+
+  This is actually a Graph structure, where every element in the Array is a Node
+  and the neighboring Nodes in this case, the four elements above, below, to the
+  right and to the left, are the Nodes that the element is connected to. 
+
+  Similarly, let us say you are dealing with a problem, where you have Strings
+  and you are swapping letters in the Strings. As an example, and this is 
+  totally arbitrary, imagine you have got the string 'abc' and you want to
+  replace every letter in the String with the letter 'x' and see what the 
+  resulting Strings are.  
+
+  This would point to basically 'xbc', it would point to 'axc' and it would 
+  point to 'abx'. This might lead to a Graph structure, where again the Nodes in
+  the Graphs would be Strings, and the edges in the Graph would be these
+  transformations, where you have swapped certain characters in the String, with
+  another character, in this case 'x'. 
+
+  The point is that Graphs pop a lot in coding interviews, and it is important
+  for you to be able to recognize when you can actually transform a certain 
+  input or certain problem into a Graph or into a Graph problem. 
+
+*/
