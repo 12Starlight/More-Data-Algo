@@ -134,3 +134,20 @@ Graphs:
   input or certain problem into a Graph or into a Graph problem. 
 
 */
+
+/*
+  In terms of representing a Graph in code, we typically represent a Graph as 
+  what is known as an 'adjacency list'. It basically is a Hash Table that stores
+  a list of the nodes in the Graph. Where every key in the Hash Table is the
+  value of each Node, and every key points to the relevant Node. 
+  
+  Then every Node stores a list of it's edges, or rather a list of it's
+  adjacencies, hence the word adjacency list. So for instance, the Node 1, would
+  store a list of Node 2, the Node 8, the Node 4 and the Node 9. That list is
+  typically represented in code as an Array. 
+
+  And again going back to the section on Linked Lists, you can imagine that
+  these edges are basically pointers under the hood. You are just pointing to
+  the Nodes that you are connected to. 
+
+*/
