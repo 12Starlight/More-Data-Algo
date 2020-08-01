@@ -166,3 +166,40 @@ Graphs:
     storing => O(V + E) S
 
 */
+
+/*
+  Perhaps the most common operation that you will be peforming on a Graph, is
+  going to be traversing it. Here, there are really two main traversal methods
+  for Graphs. One of them is called depth first search. The other is called
+  breadth first search. 
+
+    DFS => Depth First Search (deep first, then wide)
+    BFS => Breadth First Search (wide first, then deep)
+
+  If you are performing a Depth First Search, the idea is that you are 
+  traversing the Graph deeper first, meaning let us say that you start at Node
+  number 1, you are going to go through all of the children Nodes, or all of the
+  connections of 1, all the edges, so 2, 8, 4, 9, but you are going to go 
+  through them deep first. 
+
+  Meaning, let us say you start with 2, instead of saying I am going to go to 2,
+  and then immediately to 8, you are going to say I am going to go to 2, and
+  then I am going to go deep, and I am going to explore all of 2's edges. So you
+  would go from 1 to 2, and then from 2, you would say I am going to go deep, so
+  I am going to go to 7.
+  
+  Then before going to the next edge that 2 has, which would be 5, you are going
+  to say, wait, I am going to go deep and I am going to explore all of 7's 
+  edges, bc we went to 7 first. Now in this case, 7 actually goes back to 2, and
+  you have to take care of that, but that is the idea behind Depth First Search.
+
+  With Breadth First Search, you actually go wider before you go deep. So you
+  start at 1, for instance, and here do go from 2 to 8 to 4 to 9, before going
+  to 7, to 5 and so on and so forth. And the time complexity to traverse a 
+  Graph, whether you are using DFS or BFS, is going to be O(V + E), bc you can
+  imagine conceptually, that you will be traversing every single vertex and for
+  every single vertex, you will be traversing through all of the edges. 
+
+    traversing => O(V + E) T
+
+*/
