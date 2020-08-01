@@ -62,3 +62,34 @@ Graphs:
   friendship is a mutual connection.
 
 */
+
+/*
+  The third and final concept that is very important in Graphs, is the concept of
+  cycles. A Graph can have what are called cycles in it, and if a Graph has a
+  cycle, then we call it a 'cyclic graph'. If it does not have any cycles, we
+  call it an 'acyclic graph'. 
+
+  Now the definition of a cycle can be very complex, if you look online and look
+  at the math. The far simpler way to think about what a cycle, is just imagine
+  if at any point in the Graph, at any area in the Graph, you have three or more
+  Nodes or vertices that kind of go in an infinate loop. Then you have a cycle.
+  
+  So for instance, you might have Node 2 point to Node 5, that points to Node 7,
+  which points to Node 2. In this case, you can keep going in an infinate loop. 
+  Another way to think about it, if you are traversing through your Graph and 
+  you find yourself revisiting a connection that you previously visited, just by
+  following a path of three edges, then that means there is a cycle in the 
+  Graph.
+
+  If you are dealing with a cyclic Graph, you want to make sure that you do not
+  find yourself writing an algorithm that is going to end up in an infinite loop
+  like this one we just described. So you can avoid that by using certain
+  techniques, like maybe marking Nodes that you already visted as visited, in
+  this case, marking Node number 2 as a Node that we have already visited, and
+  then skipping it, if you revisit it.  
+
+  The point is that cyclic Graphs are something that you have to look out for in
+  coding interviews. So connectivity, direction, and cycles are three very
+  important concepts in Graphs. 
+
+*/
