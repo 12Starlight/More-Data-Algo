@@ -203,3 +203,11 @@ Graphs:
     traversing => O(V + E) T
 
 */
+
+/*
+  And of course there are a few other operations that you can perform on Graphs,
+  like maybe adding edges, adding vertices, removing edges, removing vertices, 
+  but typically those operations are going to be very specific to the problem at
+  hand, so here we are not really going to cover them. 
+
+*/
