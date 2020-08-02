@@ -75,4 +75,11 @@ Trees:
     traversing through entire Tree, O(N) Nodes => O(N) T
     path traversing => O(log(n)) T (going down one path, instead of all paths)
 
+    NOTE: If your tree was very skewed and not balanced, then you would not be
+    eliminating half the Nodes at every step bc the tree would be imbalanced. 
+    And so this is another concept that is very important for Trees, the concept
+    of balance. We say that a Tree is balanced, if it maintains roughly a
+    O(log(n)) time complexity for this type of traversal, where you go down one
+    path in the Tree. 
+
 */
