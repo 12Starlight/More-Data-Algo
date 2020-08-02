@@ -73,6 +73,6 @@ Trees:
 
     storing => O(N) S
     traversing through entire Tree, O(N) Nodes => O(N) T
-    path traversing => O(log(n)) T 
+    path traversing => O(log(n)) T (going down one path, instead of all paths)
 
 */
