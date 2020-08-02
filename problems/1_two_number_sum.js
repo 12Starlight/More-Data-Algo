@@ -16,5 +16,15 @@ Two Number Sum:
 */
 
 const twoNumberSum = (array, targetSum) => {
+  let sumArr = [];
 
+  for (let start = 0; start < array.length - 1; start++) {
+    for (let end = array.length - 1; end > start; end--) {
+      if ((array[start] + array[end]) === targetSum) {
+        sumArr.push(array[start], array[end])
+      }
+    }
+  }
+
+  return sumArr;
 }
