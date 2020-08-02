@@ -44,5 +44,22 @@ Trees:
   on the right. But together, these would not form a Tree. They would form a
   Graph like we said, a disconnected Graph in the Graphs section. 
 
+*/
 
+/*
+  Different Types Of Trees:
+    * Binary (2 child Nodes)
+    * Ternnary (3 child Nodes)
+    * K - ary (k child Nodes)
+
+  Special Cases:
+    -> Binary Search (complete)
+    -> Max Heap (parent largest Node value)
+    -> Min Heap (parent smallest Node value)
+    -> Tries (stores characters)
+
+  Advanced
+    * Red Black
+    * AVL
+  
 */
