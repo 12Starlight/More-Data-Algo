@@ -67,3 +67,12 @@ Trees:
   Nodes to their parent Nodes. But you can have them, if you want. 
   
 */
+
+/*
+  Space & Time Complexity:
+
+    storing => O(N) S
+    traversing => O(N) T
+    path traversing => O(log(n)) T 
+
+*/
