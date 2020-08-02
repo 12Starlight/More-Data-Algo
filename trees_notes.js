@@ -62,4 +62,6 @@ Trees:
     * Red Black
     * AVL
   
+  Some Trees are going to have every Node point to it's parent Node.
+  
 */
