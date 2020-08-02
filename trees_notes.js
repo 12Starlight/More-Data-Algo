@@ -72,8 +72,9 @@ Trees:
   Space & Time Complexity:
 
     storing => O(N) S
-    traversing through entire Tree, O(N) Nodes => O(N) T
+    traversing through entire Tree, O(N) Nodes => O(N) T 
     path traversing => O(log(n)) T (going down one path, instead of all paths)
+    worst case path traversing => O(N) T
 
     NOTE: If your tree was very skewed and not balanced, then you would not be
     eliminating half the Nodes at every step bc the tree would be imbalanced. 
