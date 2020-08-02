@@ -58,7 +58,7 @@ Trees:
     -> Min Heap (parent smallest Node value)
     -> Tries (stores characters)
 
-  Advanced
+  Advanced (rebalance themselves to maintain O(log(n))) complexity)
     * Red Black
     * AVL
   
