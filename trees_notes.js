@@ -84,3 +84,29 @@ Trees:
     path in the Tree. 
 
 */
+
+/*
+  Vocabulary:
+    We say that any path in a Tree that start at the root Node and ends at one
+    of the bottom Nodes in the Tree is a 'Branch'. 
+
+    Then these bottom nodes, we call them 'Leaf Nodes'. 
+
+    We say that every level in a tree is a 'Level'. 
+
+    We say that a Tree is 'Complete', if every single level in the Tree is filled
+    up, except the final level which may or may not be filled up. But, if the final
+    level has Nodes, they should be filled up from left to right.  
+
+    Then we say that a Tree is 'Full', if every Node in the Tree has no children
+    Nodes or K children Nodes. Where K is the nuumber in the K-ary Tree. Where
+    every Node, if this was a K-ary Tree, then every Node would have K-children.
+    So, if we were dealing with a Binary Tree, each Node would be either empty 
+    or have 2 children. 
+    
+    And finally, the last type is called a 'Perfect Tree', where every Node has
+    children Nodes and lal of the Leaf Nodes have the same depth. Depth is 
+    basically the number of levels in a Tree. Sometimes people will call that
+    height, others would just say how many levels does a Tree have. 
+
+*/
