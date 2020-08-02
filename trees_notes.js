@@ -62,6 +62,8 @@ Trees:
     * Red Black
     * AVL
   
-  Some Trees are going to have every Node point to it's parent Node.
+  Some Trees are going to have every Node point to it's parent Node. Now, most
+  Trees typically do not have this, most Trees do not have pointers from their
+  Nodes to their parent Nodes. But you can have them, if you want. 
   
 */
