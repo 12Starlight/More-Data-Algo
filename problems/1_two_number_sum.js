@@ -15,6 +15,7 @@ Two Number Sum:
 
 */
 
+// O(N^2) Time | O(1) Space
 const twoNumberSum = (array, targetSum) => {
   let sumArr = [];
 
@@ -28,3 +29,4 @@ const twoNumberSum = (array, targetSum) => {
 
   return sumArr;
 }
+
