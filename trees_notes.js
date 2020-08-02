@@ -72,7 +72,7 @@ Trees:
   Space & Time Complexity:
 
     storing => O(N) S
-    traversing => O(N) T
+    traversing through entire Tree, O(N) Nodes => O(N) T
     path traversing => O(log(n)) T 
 
 */
