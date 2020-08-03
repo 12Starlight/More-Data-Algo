@@ -33,7 +33,9 @@ const twoNumberSumSquared = (array, targetSum) => {
 }
 console.log(twoNumberSumSquared(array, targetSum));
 
+
 // O(N) Time | O(N) Space
+// Can not return in a forEach Loop
 const twoNumberSumLinear = (array, targetSum) => {
   let values = {};
 
@@ -48,3 +50,11 @@ const twoNumberSumLinear = (array, targetSum) => {
   return [];
 }
 console.log(twoNumberSumLinear(array, targetSum));
+
+
+
+
+
+
+
+
