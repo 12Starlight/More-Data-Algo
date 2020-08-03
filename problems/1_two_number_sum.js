@@ -14,9 +14,11 @@ Two Number Sum:
   the target sum. 
 
 */
+const array = [3, 5, -4, 8, 11, 1, -1, 6];
+const targetSum = 10;
 
 // O(N^2) Time | O(1) Space
-const twoNumberSum = (array, targetSum) => {
+const twoNumberSumSquared = (array, targetSum) => {
   let sumArr = [];
 
   for (let start = 0; start < array.length - 1; start++) {
@@ -29,4 +31,20 @@ const twoNumberSum = (array, targetSum) => {
 
   return sumArr;
 }
+console.log(twoNumberSumSquared(array, targetSum));
 
+// O(N) Time | O(N) Space
+const twoNumberSumLinear = (array, targetSum) => {
+  let values = {};
+
+  for (let num of array) {
+    const potentialMatch = (targetSum - num);
+    if (potentialMatch in values) {
+      return [potentialMatch, num];
+    } else {
+      values[num] = true;
+    }
+  }
+  return [];
+}
+console.log(twoNumberSumLinear(array, targetSum));
