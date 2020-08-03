@@ -52,7 +52,27 @@ const twoNumberSumLinear = (array, targetSum) => {
 console.log(twoNumberSumLinear(array, targetSum));
 
 
+// O(Nlog(N)) Time | O(1) Space
+const twoNumberSumNLogN = (array, targetSum) => {
+  array.sort((a, b) => a - b);
 
+  let left = 0; // left index
+  let right = array.length - 1; // right index
+
+  while (left < right) {
+    const currentSum = (array[left] + array[right]);
+    if (currentSum === targetSum) {
+      return [array[left], array[right]];
+    } else if (currentSum > targetSum) {
+      right--;
+    } else if (currentSum < targetSum) {
+      left++;
+    }
+  }
+
+  return [];
+}
+console.log(twoNumberSumNLogN(array, targetSum));
 
 
 
