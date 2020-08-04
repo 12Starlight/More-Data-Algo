@@ -118,6 +118,8 @@ class BST {
 		return false;
   }
 
+	// Average: O(Log(N)) Time | O(1) Space
+	// Worst: O(N) Time | O(1) Space
   remove(value, parentNode = null) {
 		// declare current node and initialize it to the BST instance
 		let currentNode = this;
