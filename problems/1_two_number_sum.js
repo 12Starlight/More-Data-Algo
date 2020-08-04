@@ -21,7 +21,6 @@ Sample Output:
   [-1, 11] // the numbers could be in reverse order
 
 */
-
 const array = [3, 5, -4, 8, 11, 1, -1, 6];
 const targetSum = 10;
 
