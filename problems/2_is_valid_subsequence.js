@@ -36,3 +36,19 @@ const isValidSubsequenceWhile = (array, sequence) => {
   return seqIdx == sequence.length;
 }
 console.log(isValidSubsequenceWhile(array, sequence));
+
+
+// O(N) Time (N is the length of the array) | O(1) Space
+const isValidSubsequenceFor = (array, sequence) => {
+  let seqIdx = 0;
+
+  for (let arrVal of array) {
+    if (seqIdx === sequence.length) break;
+    if (sequence[seqIdx] === arrVal) {
+      seqIdx++;
+    }
+  }
+
+  return seqIdx === sequence.length;
+}
+console.log(isValidSubsequenceFor(array, sequence));
