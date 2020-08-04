@@ -95,8 +95,26 @@ class BST {
     return this;
   }
 
+  // Average: O(Log(N)) Time | O(1) Space
+  // Worst: O(N) Time | O(1) Space
   contains(value) {
+    // initialize current node to instance of BST
+    let currentNode = this;
 
+    // while the current node is not null
+    while (currentNode) {
+      // if value is less than, explore the left
+      if (value < currentNode.value) {
+        currentNode = currentNode.left;
+        // if value is greater than, explore the right	
+      } else if (value > currentNode.value) {
+        currentNode = currentNode.right;
+      } else {
+        return true;
+      }
+    }
+
+    return false;
   }
 
   remove(value) {
