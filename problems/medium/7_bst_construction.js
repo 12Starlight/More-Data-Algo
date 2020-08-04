@@ -57,67 +57,141 @@ class BST {
     this.right = null;
   }
 
-  // Average: O(Log(N)) Time | O(1) Space
-  // Worst: O(N) Time | O(1) Space
+	// Average: O(Log(N)) Time | O(1) Space
+	// Worst: O(N) Time | O(1) Space
   insert(value) {
-    // initialize variable to keep track of current node
-    // what node are we at as we traverse? 
-    let currentNode = this;
-
-    while (true) {
-      // we know we want to explore the left subtree
-      if (value < currentNode.value) {
-        // if currentNode.left === null
-        if (!currentNode.left) {
-          // effectively inserted value in our original BST on left
-          currentNode.left = new BST(value);
-          break;
-        } else {
-          // we still have a left subtree to explore
-          // so we assign our current node to be equal to the left subtree
-          currentNode = currentNode.left;
-        }
-      } else {
-        // value is greater or equal to current node's value
-        // then check if the right subtree is null
-        if (!currentNode.right) {
-          // effectively inserted value in our original BST on right
-          currentNode.right = new BST(value);
-          break;
-        } else {
-          // we still have a right subtree to explore
-          // so we assign our current node to be equal to the right subtree
-          currentNode = currentNode.right;
-        }
-      }
-    }
-
+		// initialize variable to keep track of current node
+		// what node are we at as we traverse? 
+		let currentNode = this;
+		
+		while (true) {
+			// we know we want to explore the left subtree
+			if (value < currentNode.value) {
+				// if currentNode.left === null
+				if (!currentNode.left) {
+					// effectively inserted value in our original BST on left
+					currentNode.left = new BST(value);
+					break;
+				} else {
+					// we still have a left subtree to explore
+					// so we assign our current node to be equal to the left subtree
+					currentNode = currentNode.left;
+				}
+			} else {
+				// value is greater or equal to current node's value
+				// then check if the right subtree is null
+				if (!currentNode.right) {
+					// effectively inserted value in our original BST on right
+					currentNode.right = new BST(value);
+					break;
+				} else {
+					// we still have a right subtree to explore
+					// so we assign our current node to be equal to the right subtree
+					currentNode = currentNode.right;
+				}
+			}
+		}
+		
     return this;
   }
-
-  // Average: O(Log(N)) Time | O(1) Space
-  // Worst: O(N) Time | O(1) Space
+	
+	// Average: O(Log(N)) Time | O(1) Space
+	// Worst: O(N) Time | O(1) Space
   contains(value) {
-    // initialize current node to instance of BST
-    let currentNode = this;
-
-    // while the current node is not null
-    while (currentNode) {
-      // if value is less than, explore the left
-      if (value < currentNode.value) {
-        currentNode = currentNode.left;
-        // if value is greater than, explore the right	
-      } else if (value > currentNode.value) {
-        currentNode = currentNode.right;
-      } else {
-        return true;
-      }
-    }
-
-    return false;
+		// initialize current node to instance of BST
+  	let currentNode = this; 
+		
+		// while the current node is not null
+		while (currentNode) {
+			// if value is less than, explore the left
+			if (value < currentNode.value) {
+				currentNode = currentNode.left;
+			// if value is greater than, explore the right	
+			} else if (value > currentNode.value) {
+				currentNode = currentNode.right;
+			} else {
+				// we found the node
+				return true;
+			}
+		}
+		
+		return false;
   }
 
-  remove(value) {
+  remove(value, parentNode = null) {
+		// declare current node and initialize it to the BST instance
+		let currentNode = this;
+		
+		// while currentNode !== null
+		// first we need to find the node value to remove
+		// then, you actually remove it
+		while (currentNode) {
+				// if value is less than currentNode.value
+			if (value < currentNode.value) {
+				// you want to keep track of parent node
+				// when we remove parent node, we have to reassign the child node
+				// when we update the currentNode, the parentNode becomes the node
+				// that we were just exploring
+				parentNode = currentNode;
+				// if value is less than currentNode.value
+				// then set current node equal to currentNode.left	
+				currentNode = currentNode.left;
+				// if value is greater than currentNode.value
+			} else if (value > currentNode.value) {
+				// parentNode is equal to currentNode again
+				parentNode = currentNode;
+				// currentNode is equal to currentNode.right 
+				// now we are exploring the right subtree
+				currentNode = currentNode.right;
+			} else {
+				// we found our node 
+				// there are two children
+				// if currentNode.left is not equal to null, left child exists
+				// if curerntNode.right is not equal to null, right child exists
+				if (currentNode.left && currentNode.right) {
+					// then grab smallest leftmost value of the right subtree
+					currentNode.value = currentNode.right.getMinValue();
+					// found smallest value, then remove node
+					// currentNode.value = smallest vlaue of right subtree
+					currentNode.right.remove(currentNode.value, currentNode);	
+					
+					
+				// we are at a node that does not have two children 
+				// either we have 1 child or none
+				// check if our currentNode itself is a left child or a right child
+				// if it is a left child meaning that the parentNode.left
+				// equals our currentNode
+				} else if (parentNode === null) {
+					if (currentNode.left) {
+						currentNode.value = currentNode.left.value;
+						currentNode.right = currentNode.left.right;
+						currentNode.left = currentNode.left.left;
+					} else if (currentNode.right) {
+						currentNode.value = currentNode.right.value;
+						currentNode.left = currentNode.right.left;
+						currentNode.right = currentNode.right.right;
+					} else {
+						// this is a single-node tree; do nothing.
+					}
+				} else if (parentNode.left === currentNode) {
+					parentNode.left = currentNode.left !== null ? currentNode.left : currentNode.right;
+				} else if (parentNode.right === currentNode) {
+					parentNode.right = currentNode.left !== null ? currentNode.left : currentNode.right;
+				}
+				
+				break;
+			}
+		}
+		
     return this;
   }
+
+	getMinValue() {
+		let currentNode = this;
+		while (currentNode.left) {
+			currentNode = currentNode.left;
+		}
+		
+		return currentNode.value;
+	}
 }
