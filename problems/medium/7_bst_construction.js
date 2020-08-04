@@ -48,6 +48,8 @@ Sample Usage:
 
 */
 
+// Average: O(log(N)) Time (N is the number of nodes in BST) | O(D) RecSpace (Where D is the height of the longest branch), IterSpace O(1)
+// Worst: O(N) Time | O(D) RecSpace (Where D is the height of the longest branch), IterSpace O(1)
 class BST {
   constructor(value) {
     this.value = value;
@@ -55,7 +57,41 @@ class BST {
     this.right = null;
   }
 
+  // Average: O(Log(N)) Time | O(1) Space
+  // Worst: O(N) Time | O(1) Space
   insert(value) {
+    // initialize variable to keep track of current node
+    // what node are we at as we traverse? 
+    let currentNode = this;
+
+    while (true) {
+      // we know we want to explore the left subtree
+      if (value < currentNode.value) {
+        // if currentNode.left === null
+        if (!currentNode.left) {
+          // effectively inserted value in our original BST on left
+          currentNode.left = new BST(value);
+          break;
+        } else {
+          // we still have a left subtree to explore
+          // so we assign our current node to be equal to the left subtree
+          currentNode = currentNode.left;
+        }
+      } else {
+        // value is greater or equal to current node's value
+        // then check if the right subtree is null
+        if (!currentNode.right) {
+          // effectively inserted value in our original BST on right
+          currentNode.right = new BST(value);
+          break;
+        } else {
+          // we still have a right subtree to explore
+          // so we assign our current node to be equal to the right subtree
+          currentNode = currentNode.right;
+        }
+      }
+    }
+
     return this;
   }
 
