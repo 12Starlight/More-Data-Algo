@@ -13,7 +13,15 @@ Two Number Sum:
   You can assume that there will be at most one pair of numbers summing up to
   the target sum. 
 
+Sample Input:
+  const array = [3, 5, -4, 8, 11, 1, -1, 6];
+  const targetSum = 10;   
+
+Sample Output:
+  [-1, 11] // the numbers could be in reverse order
+
 */
+
 const array = [3, 5, -4, 8, 11, 1, -1, 6];
 const targetSum = 10;
 
