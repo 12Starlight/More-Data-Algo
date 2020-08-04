@@ -23,6 +23,9 @@ Sample Input:
 
     target = 12
 
+Sample Output:
+  13
+
 */
 
 class BST {
@@ -34,5 +37,5 @@ class BST {
 }
 
 const findClosestValueInBst = (tree, target) => {
-  
+
 }
