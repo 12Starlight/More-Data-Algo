@@ -59,11 +59,29 @@ const findClosestValueInBstRec = (tree, target) => {
 }
 
 
+// Average: O(Log(N)) Time | O(Log(N)) Space
+// Worst: O(N) Time | O(N) Space
+const findClosestValueInBSTHelper = (tree, target, closest) => {
+  let currentNode = tree;
 
-const findClosestValueInBSTHelperIter = () => {
+  while (currentNode) {
+    if (Math.abs(target - closest) > Math.abs(target - currentNode.value)) {
+      closest = currentNode.value;
+    }
 
+    if (target < currentNode.value) {
+      currentNode = currentNode.left;
+    } else if (target > currentNode.value) {
+      currentNode = currentNode.right;
+    } else {
+      break;
+    }
+  }
+
+  return closest;
 }
 
-const findClosestValueInBstIter = () => {
 
+const findClosestValueInBst = (tree, target) => {
+  return findClosestValueInBSTHelper(tree, target, Infinity);
 }
