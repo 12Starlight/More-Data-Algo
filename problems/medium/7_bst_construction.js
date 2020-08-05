@@ -200,8 +200,6 @@ class BSTDemo {
 
 
 // BST Implemented without notes
-// Average: O(log(N)) Time | O(log(N)) Space
-// Worst: O(N) Time | O(N) Space
 class BST {
 	constructor(value) {
 		this.value = value;
@@ -299,6 +297,8 @@ class BST {
 }
 
 // BST Recursive Implemented Without Notes
+// Average: O(log(N)) Time | O(log(N)) Space
+// Worst: O(N) Time | O(N) Space
 class BST {
 	constructor(value) {
 		this.value = value;
