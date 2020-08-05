@@ -36,6 +36,34 @@ class BST {
   }
 }
 
-const findClosestValueInBst = (tree, target) => {
+// Average: O(Log(N)) Time | O(Log(N)) Space
+// Worst: O(N) Time | O(N) Space
+const findClosestValueInBSTHelperRec = (tree, target, closest) => {
+  if (!tree) return closest;
+
+  if (Math.abs(target - closest) > Math.abs(target - tree.value)) {
+    closest = tree.value;
+  }
+
+  if (target < tree.value) {
+    return findClosestValueInBSTHelperRec(tree.left, target, closest);
+  } else if (target > tree.value) {
+    return findClosestValueInBSTHelperRec(tree.right, target, closest);
+  } else {
+    return closest;
+  }
+}
+
+const findClosestValueInBstRec = (tree, target) => {
+  return findClosestValueInBSTHelper(tree, target, Infinity);
+}
+
+
+
+const findClosestValueInBSTHelperIter = () => {
+
+}
+
+const findClosestValueInBstIter = () => {
 
 }
