@@ -188,7 +188,7 @@ class BSTDemo {
     return this;
   }
 
-	getMinValue() {
+	getMinValue() { // remember this only being used, if both children exist
 		let currentNode = this;
 		while (currentNode.left) {
 			currentNode = currentNode.left;
