@@ -13,7 +13,7 @@ Branch Sums:
 
 Sample Input:
 
-      tree =    10
+      tree =    1
               /    \
             2       3
           /   \   /   \
