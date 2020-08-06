@@ -40,6 +40,22 @@ class BinaryTree {
   }
 }
 
-const branchSums = (root) => {
+// O(N) Time | O(N) Space
+const calculateBranchSums = (node, runningSum, sums) => {
+  if (!node) return;
 
+  let newRunningSum = runningSum + node.value;
+  if (!node.left && !node.right) {
+    sums.push(newRunningSum);
+    return;
+  }
+
+  calculateBranchSums(node.left, newRunningSum, sums);
+  calculateBranchSums(node.right, newRunningSum, sums);
+}
+
+const branchSums = (root) => {
+  let sums = [];
+  calculateBranchSums(root, 0, sums);
+  return sums;
 }
