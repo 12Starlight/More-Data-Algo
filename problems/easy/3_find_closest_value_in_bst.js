@@ -81,7 +81,6 @@ const findClosestValueInBSTHelper = (tree, target, closest) => {
   return closest;
 }
 
-
 const findClosestValueInBst = (tree, target) => {
   return findClosestValueInBSTHelper(tree, target, Infinity);
 }
