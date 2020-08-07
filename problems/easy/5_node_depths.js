@@ -58,4 +58,9 @@ const nodeDepthsIter = (root) => {
   return sumOfDepths;
 }
 
+// O(N) Time (N is the total number of nodes in the Binary Tree) | O(H) Space (bc of the recursive calls on the call stack)
+const nodeDepthsRec = (root, depth = 0) => {
+  if (!root) return 0;
+  return depth + nodeDepthsRec(root.left, depth + 1) + nodeDepthsRec(root.right, depth + 1);
+}
 
