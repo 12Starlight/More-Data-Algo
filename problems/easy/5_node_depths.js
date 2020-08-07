@@ -42,7 +42,7 @@ class BinaryTree {
 }
 
 // O(N) Time | O(N) Space
-const nodeDepths = (root) => {
+const nodeDepthsIter = (root) => {
   let sumOfDepths = 0;
   let stack = [{ "node": root, "depth": 0 }];
 
