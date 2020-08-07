@@ -64,3 +64,19 @@ const nodeDepthsRec = (root, depth = 0) => {
   return depth + nodeDepthsRec(root.left, depth + 1) + nodeDepthsRec(root.right, depth + 1);
 }
 
+// Solved On My Own
+// O(N) Time | O(H) Space (Where H is the height of the Binary Tree)
+const nodeDepths = (root) => {
+  let runningSum = 0;
+  let stack = [{ node: root, depth: 0 }];
+
+  while (stack.length > 0) {
+    const { node, depth } = stack.pop();
+    if (!node) continue;
+    runningSum += depth
+    stack.push({ node: node.left, depth: depth + 1 });
+    stack.push({ node: node.right, depth: depth + 1 });
+  }
+
+  return runningSum;
+}
