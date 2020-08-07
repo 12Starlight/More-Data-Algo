@@ -41,7 +41,7 @@ class BinaryTree {
   }
 }
 
-// O(N) Time | O(N) Space
+// O(N) Time | O(H) Space (Where H is the height of the Binary Tree)
 const nodeDepthsIter = (root) => {
   let sumOfDepths = 0;
   let stack = [{ "node": root, "depth": 0 }];
