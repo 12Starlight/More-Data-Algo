@@ -31,6 +31,31 @@ Sample Output:
 
 */
 
-const nodeDepths = (root) => {
-  
+
+// This is the class of the input binary tree.
+class BinaryTree {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
 }
+
+// O(N) Time | O(N) Space
+const nodeDepths = (root) => {
+  let sumOfDepths = 0;
+  let stack = [{ "node": root, "depth": 0 }];
+
+  while (stack.length > 0) {
+    const { node, depth } = stack.pop(); // deconstructed values from stack
+    console.log(stack)
+    if (!node) continue;
+    sumOfDepths += depth;
+    stack.push({ "node": node.left, "depth": depth + 1 });
+    stack.push({ "node": node.right, "depth": depth + 1 });
+  }
+
+  return sumOfDepths;
+}
+
+
