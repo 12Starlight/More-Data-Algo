@@ -50,3 +50,29 @@ class Node {
     return array;
   }
 }
+
+
+// Implemented On My Own
+class Node {
+  constructor(name) {
+    this.name = name;
+    this.children = [];
+  }
+
+  addChild(name) {
+    this.children.push(new Node(name));
+    return this;
+  }
+
+  // O(V+E) (where V is number of Vertices or Nodes, E is the number of edges) Time
+  // O(V) (V is then number of nodes in the array and the calls on the stack) Space
+  depthFirstSearch(array) {
+    array.push(this.name);
+
+    for (let child of this.children) {
+      child.depthFirstSearch(array);
+    }
+
+    return array;
+  }
+}
