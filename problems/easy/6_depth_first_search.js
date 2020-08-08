@@ -39,7 +39,7 @@ class Node {
     return this;
   }
 
-  // O(V+E) Time | O(V) Space
+  // O(V+E) Time (V represents the number of Vertices or Nodes and E represents the number of Edges) | O(V) Space (array has length V, V frames used up on the stack at once)
   depthFirstSearch(array) {
     array.push(this.name);
 
