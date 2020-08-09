@@ -55,3 +55,6 @@ const getNthFib = (n) => {
 
   return n > 1 ? lastTwo[1] : lastTwo[0];
 }
+
+
+
