@@ -46,7 +46,7 @@ const getNthFibMemo = (n, memo = {}) {
   if (n <= 1) return 0;
   if (n === 2) return 1;
   if (n in memo) return memo[n];
-  return memo[n] = getNthFib(n-1, memo) + getNthFib(n-2, memo);
+  return memo[n] = getNthFibMemo(n-1, memo) + getNthFibMemo(n-2, memo);
 }
 
 // O(N) Time | O(1) Space (bc we are not storing anything)
