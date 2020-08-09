@@ -25,6 +25,7 @@ Sample Output #2:
 */
 
 
+// O(2^N) Time | O(N) Space
 const getNthFib = (n) => {
   if (n <= 1) return 0;
   if (n === 2) return 1;
