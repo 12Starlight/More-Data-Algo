@@ -50,7 +50,7 @@ const getNthFibMemo = (n, memo = {}) {
 }
 
 // O(N) Time | O(1) Space (bc we are not storing anything)
-const getNthFib = (n) => {
+const getNthFibIter1 = (n) => {
   const lastTwo = [0, 1];
   let counter = 3;
 
