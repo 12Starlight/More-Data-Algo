@@ -19,5 +19,14 @@ Sample Output:
 
 
 const binarySearch = (array, target) => {
+  if (array.length <= 1) return array;
+  let mid = Math.floor(array.length / 2);
 
+  if (mid < target) {
+    return binarySearch(array.slice(mid));
+  } else if (mid > target) {
+    return binarySearch(array.slice(mid + 1));
+  } else {
+    return mid;
+  }
 }
