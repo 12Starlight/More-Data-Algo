@@ -25,25 +25,16 @@ Sample Output:
 
 
 const productSum = (array) => {
-  let count = 1;
-  let total = 0;
+  let sum = 0;
+  let multiplier = 1;
 
-  let i = 0;
-  while (i < array.length - 1) {
-    let j = 0;
-
-    total += parseInt(array[i]);
-    if (Array.isArray(array[i])) {
-      ++count;
-      let sum = 0;
-      while (j < array[i].length - 1) {
-        total += count * (sum += parseInt(array[i][j]));
-        j++;
-      }
+  for (let elm of array) {
+    if (Array.isArray(elm)) {
+      productSum(elm, multiplier + 1);
+    } else {
+      sum += elm;
     }
-
-    i++;
   }
 
-  return total;
+  return sum * multiplier;
 }
