@@ -31,3 +31,17 @@ const binarySearch = (array, target) => {
     return mid;
   }
 }
+
+// 2nd Attempt
+const binarySearch = (array, target) => {
+  if (array.length <= 1) return array;
+  let mid = Math.floor(array.length / 2);
+
+  if (mid < target) {
+    return binarySearch(array.slice(mid));
+  } else if (mid > target) {
+    return binarySearch(array.slice(mid + 1));
+  } else {
+    return array.indexOf(mid);
+  }
+}
