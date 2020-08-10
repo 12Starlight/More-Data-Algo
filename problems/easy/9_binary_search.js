@@ -45,3 +45,23 @@ const binarySearch = (array, target) => {
     return array.indexOf(mid);
   }
 }
+
+// After explanation
+// Recursive
+const binarySearchHelper = (array, target, left, right) => {
+  if (left > right) return -1;
+  let mid = Math.floor((left + right) / 2);
+
+  let potential = array[mid];
+  if (target === potential) {
+    return mid;
+  } else if (target < potential) {
+    return binarySearchHelper(array, target, left, mid - 1);
+  } else if (target > potential) {
+    return binarySearchHelper(array, target, mid + 1, right);
+  }
+}
+
+const binarySearch = (array, target) => {
+  return binarySearchHelper(array, target, 0, array.length - 1);
+}
