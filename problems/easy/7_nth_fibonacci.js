@@ -42,11 +42,11 @@ const getNthFibMemo = (n, memo = { 1: 0, 2: 1 }) => {
 }
 
 // Another Way To Do getNthFibMemo
-const getNthFibMemo = (n, memo = {}) {
+const getNthFibMemo1 = (n, memo = {}) {
   if (n <= 1) return 0;
   if (n === 2) return 1;
   if (n in memo) return memo[n];
-  return memo[n] = getNthFibMemo(n-1, memo) + getNthFibMemo(n-2, memo);
+  return memo[n] = getNthFibMemo1(n-1, memo) + getNthFibMemo1(n-2, memo);
 }
 
 // O(N) Time | O(1) Space (bc we are not storing anything)
