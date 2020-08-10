@@ -23,7 +23,32 @@ Sample Output:
 
 */
 
+// 1st Attempt
+const productSum = (array) => {
+  let count = 1;
+  let total = 0;
 
+  let i = 0;
+  while (i < array.length - 1) {
+    let j = 0;
+
+    total += parseInt(array[i]);
+    if (Array.isArray(array[i])) {
+      ++count;
+      let sum = 0;
+      while (j < array[i].length - 1) {
+        total += count * (sum += parseInt(array[i][j]));
+        j++;
+      }
+    }
+
+    i++;
+  }
+
+  return total;
+}
+
+// 2nd Attempt
 const productSum = (array) => {
   let sum = 0;
   let multiplier = 1;
@@ -31,6 +56,23 @@ const productSum = (array) => {
   for (let elm of array) {
     if (Array.isArray(elm)) {
       productSum(elm, multiplier + 1);
+    } else {
+      sum += elm;
+    }
+  }
+
+  return sum * multiplier;
+}
+
+// Solved
+// O(N) Time (where N is all the elements of the array & each sub array elments)
+// O(D) Space (where D is the Depth of the most calls on the stack)
+const productSum = (array, multiplier = 1) => {
+  let sum = 0;
+
+  for (let elm of array) {
+    if (Array.isArray(elm)) {
+      sum += productSum(elm, multiplier + 1);
     } else {
       sum += elm;
     }
