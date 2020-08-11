@@ -16,7 +16,9 @@ Sample Output:
 
 
 // 1st Attempt (Solved on my own!)
-// O(N^2) Time (N is the length of input array) | O(1) Space
+// Best: O(N) Time | O(1) Space
+// Average: O(N^2) Time (N is the length of input array) | O(1) Space
+// Worst: O(N^2) Time (N is the length of input array) | O(1) Space
 const bubbleSort = (array) => {
   let logic = false;
 
