@@ -17,5 +17,30 @@ Sample Output:
 
 
 const selectionSort = (array) => {
-  
+
+}
+
+// After explanation
+// O(N^2) Time | O(1) Space
+const swap = (i, j, array) => {
+  [array[i], array[j]] = [array[j], array[i]];
+}
+
+const selectionSort = (array) => {
+  let currentIdx = 0;
+
+  while (currentIdx < array.length - 1) {
+    let smallestIdx = currentIdx;
+
+    for (let i = currentIdx + 1; i < array.length; i++) {
+      if (array[smallestIdx] > array[i]) {
+        smallestIdx = i;
+      }
+    }
+
+    swap(currentIdx, smallestIdx, array);
+    currentIdx++
+  }
+
+  return array;
 }
