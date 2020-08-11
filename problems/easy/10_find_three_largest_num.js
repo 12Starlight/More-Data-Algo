@@ -17,5 +17,16 @@ Sample Output:
 
 
 const findThreeLargestNumbers = (array) => {
-  
+  let threeLargest = [];
+
+  let i = 0;
+  while (i < array.length) {
+    if (threeLargest[threeLargest.length - 1] < array[i] || threeLargest[0] === undefined) {
+      threeLargest.push(array[i]);
+    }
+
+    i++;
+  }
+
+  return threeLargest;
 }
