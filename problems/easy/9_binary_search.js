@@ -91,3 +91,27 @@ const binarySearchHelper = (array, target, left, right) => {
 const binarySearch = (array, target) => {
   return binarySearchHelper(array, target, 0, array.length - 1);
 }
+
+// Solved On My Own
+// O(Log(N)) Time (N is number of elements)
+// O(1) Space (bc it is iterative)
+const binarySearchHelper = (array, target, left, right) => {
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    let potential = array[mid];
+
+    if (target === potential) {
+      return mid;
+    } else if (target < potential) {
+      right = mid - 1;
+    } else if (target > potential) {
+      left = mid + 1;
+    }
+  }
+
+  return -1
+}
+
+const binarySearch = (array, target) => {
+  return binarySearchHelper(array, target, 0, array.length - 1);
+}
