@@ -48,6 +48,8 @@ const binarySearch = (array, target) => {
 
 // After explanation
 // Recursive
+// O(Log(N)) Time (N is the elements in the array)
+// O(Log(N)) Space (adding frames to the call stack)
 const binarySearchHelper = (array, target, left, right) => {
   if (left > right) return -1;
   let mid = Math.floor((left + right) / 2);
@@ -60,6 +62,30 @@ const binarySearchHelper = (array, target, left, right) => {
   } else if (target > potential) {
     return binarySearchHelper(array, target, mid + 1, right);
   }
+}
+
+const binarySearch = (array, target) => {
+  return binarySearchHelper(array, target, 0, array.length - 1);
+}
+
+// Iterative
+// O(Log(N)) Time
+// O(1) Space
+const binarySearchHelper = (array, target, left, right) => {
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+
+    let potential = array[mid];
+    if (target === potential) {
+      return mid;
+    } else if (target < potential) {
+      right = mid - 1;
+    } else if (target > potential) {
+      left = mid + 1;
+    }
+  }
+
+  return -1;
 }
 
 const binarySearch = (array, target) => {
