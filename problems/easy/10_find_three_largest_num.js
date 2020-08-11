@@ -33,7 +33,7 @@ const findThreeLargestNumbers = (array) => {
 }
 
 // After explanation
-// O(N) Time 
+// O(N) Time (bc we traverse entire array)
 // O(1) Space
 const shiftAndUpdate = (array, num, idx) => {
   for (let i = 0; i <= idx; i++) {
@@ -60,6 +60,40 @@ const findThreeLargestNumbers = (array) => {
 
   for (let num of array) {
     updateLargest(threeLargest, num);
+  }
+
+  return threeLargest;
+}
+
+// Solved On My Own
+// O(N) Time (bc we traverse the array)
+// O(1) Space
+const shiftValues = (array, num, idx) => {
+  for (let i = 0; i <= idx; i++) {
+    if (i === idx) {
+      array[i] = num;
+    } else {
+      array[i] = array[i + 1]
+    }
+  }
+}
+
+
+const checkValue = (threeLargest, num) => {
+  if (threeLargest[2] === undefined || num > threeLargest[2]) {
+    shiftValues(threeLargest, num, 2);
+  } else if (threeLargest[1] === undefined || num > threeLargest[1]) {
+    shiftValues(threeLargest, num, 1);
+  } else if (threeLargest[0] === undefined || num > threeLargest[0]) {
+    shiftValues(threeLargest, num, 0);
+  }
+}
+
+const findThreeLargestNumbers = (array) => {
+  let threeLargest = [undefined, undefined, undefined];
+
+  for (let num of array) {
+    checkValue(threeLargest, num);
   }
 
   return threeLargest;
