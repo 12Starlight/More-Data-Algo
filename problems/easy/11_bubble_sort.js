@@ -43,22 +43,22 @@ const bubbleSort = (array) => {
 // Best: O(N) Time | O(1) Space
 // Average: O(N^2) Time (N is the length of input array) | O(1) Space
 // Worst: O(N^2) Time (N is the length of input array) | O(1) Space
-const swap = (i, j, array) => {
-  [array[i], array[j]] = [array[j], array[i]];
-}
-
 const bubbleSort = (array) => {
-  let isSorted = false;
+  let logic = false;
+  // Optimize
+  let counter = 0;
 
-  while (!isSorted) {
-    isSorted = true;
+  while (!logic) {
+    logic = true;
 
-    for (let i = 0; i < array.length - 1; i++) {
+    for (let i = 0; i < array.length - 1 - counter; i++) {
       if (array[i] > array[i + 1]) {
-        swap(i, i + 1, array);
-        isSorted = false;
+        [array[i], array[i + 1]] = [array[i + 1], array[i]];
+        logic = false;
       }
     }
+
+    counter++;
   }
 
   return array;
