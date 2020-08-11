@@ -44,7 +44,7 @@ const bubbleSort = (array) => {
 // Average: O(N^2) Time (N is the length of input array) | O(1) Space
 // Worst: O(N^2) Time (N is the length of input array) | O(1) Space
 const swap = (i, j, array) => {
-  [array[i], array[i + 1]] = [array[i + 1], array[i]];
+  [array[i], array[j]] = [array[j], array[i]];
 }
 
 const bubbleSort = (array) => {
