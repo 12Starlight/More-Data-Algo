@@ -16,6 +16,7 @@ Sample Output:
 
 
 // 1st Attempt (Solved on my own!)
+// O(N^2) Time (N is the length of input array) | O(1) Space
 const bubbleSort = (array) => {
   let logic = false;
 
@@ -25,7 +26,8 @@ const bubbleSort = (array) => {
     for (let i = 0; i < array.length - 1; i++) {
       console.log(array[i])
       if (array[i] > array[i + 1]) {
-        [array[i], array[i + 1]] = [array[i + 1], array[i]];
+        // [brackets need to go] = [around the entire expression]
+        [array[i], array[i + 1]] = [array[i + 1], array[i]]; 
         logic = false;
       }
     }
