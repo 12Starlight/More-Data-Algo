@@ -37,3 +37,22 @@ const isPalindrome = (string) => {
 
   return true;
 }
+
+
+// After explanation
+// O(N) Time | O(N) Space
+const isPalindrome = (string, i = 0) => {
+	let j = string.length - 1 - i;
+	return i >= j ? true : string[i] === string[j] && isPalindrome(string, i + 1);
+}
+
+// Tail Recursion: Depends on compiler
+// O(N) Time | O(1) Space
+const isPalindrome = (string, i = 0) => {
+  let j = string.length - 1 - i;
+
+  if (i >= j) return true;
+  if (string[i] !== string[j]) return false;
+
+  return isPalindrome(string, i + 1);
+}
