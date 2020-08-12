@@ -23,4 +23,17 @@ const caesarCipherEncryptor = (string, key) => {
 }
 
 
+// 1st Attempt, solved on my own!
+const caesarCipherEncryptor = (string, key) => {
+  let array = string.split('');
+  let chars = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+  array.forEach((char, i) => {
+    let idx = chars.indexOf(char);
+    let newIdx = (idx + key) % chars.length;
+    array[i] = chars[newIdx];
+  })
+
+  return array.join('');
+};
 
