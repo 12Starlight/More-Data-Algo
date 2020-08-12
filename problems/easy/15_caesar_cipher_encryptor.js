@@ -39,6 +39,7 @@ const caesarCipherEncryptor = (string, key) => {
 
 
 // After explanation
+// O(N) Time | O(N) Space
 const getNewLetter = (letter, key) => {
   const newLetterCode = letter.charCodeAt() + key;
   return newLetterCode <= 122 ? String.fromCharCode(newLetterCode) : String.fromCharCode(96 + (newLetterCode % 122));
@@ -50,6 +51,24 @@ const caesarCipherEncryptor = (string, key) => {
 
   for (const char of string) {
     newLetters.push(getNewLetter(char, newKey));
+  }
+
+  return newLetters.join('');
+}
+
+// O(N) Time | O(N) Space
+const getNewLetter = (letter, key, alphabet) => {
+  let newLetterCode = alphabet.indexOf(letter) + key;
+  return newLetterCode <= 25 ? alphabet[newLetterCode] : alphabet[newLetterCode % 26];
+}
+
+const caesarCipherEncryptor = (string, key) => {
+  let newLetters = [];
+  let newKey = key % 26;
+  let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+  for (let char of string) {
+    newLetters.push(getNewLetter(char, newKey, alphabet));
   }
 
   return newLetters.join('');
