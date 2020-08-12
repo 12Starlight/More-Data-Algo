@@ -37,3 +37,20 @@ const caesarCipherEncryptor = (string, key) => {
   return array.join('');
 };
 
+
+// After explanation
+const getNewLetter = (letter, key) => {
+  const newLetterCode = letter.charCodeAt() + key;
+  return newLetterCode <= 122 ? String.fromCharCode(newLetterCode) : String.fromCharCode(96 + (newLetterCode % 122));
+}
+
+const caesarCipherEncryptor = (string, key) => {
+  const newLetters = [];
+  const newKey = key % 26;
+
+  for (const char of string) {
+    newLetters.push(getNewLetter(char, newKey));
+  }
+
+  return newLetters.join('');
+}
