@@ -54,5 +54,6 @@ const isPalindrome = (string, i = 0) => {
   if (i >= j) return true;
   if (string[i] !== string[j]) return false;
 
-  return isPalindrome(string, i + 1);
+  // put recursive call on last line of function
+  return isPalindrome(string, i + 1); 
 }
