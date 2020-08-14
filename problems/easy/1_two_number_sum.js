@@ -95,7 +95,17 @@ const twoNumberSum = (array, targetSum) => {
   return [];
 }
 
+// Brute Force: 2 Arrays: O(n^2) T | O(1) Space
+const twoNumberSum = (array, target) => {
+  for (let i = 0; i < array.length - 1; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      const sum = array[i] + array[j];
+      if (sum === target) return [array[i], array[j]];
+    }
+  }
 
+  return [];
+}
 
 
 
