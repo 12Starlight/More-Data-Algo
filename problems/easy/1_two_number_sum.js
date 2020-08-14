@@ -120,5 +120,22 @@ const twoNumberSum = (array, target) => {
 }
 
 
+// Whiteboard Drills
+// Linear: Iter, HashTable: O(n) T | O(n) S
+const twoNumberSum = (array, target) => {
+  let nums = {};
+  for (let num of array) {
+    const potentialMatch = (target - num);
+    if (potentialMatch in nums) {
+      return [potentialMatch, num];
+    } else {
+      nums[num] = true;
+    }
+  }
+
+  return [];
+}
+
+
 
 
