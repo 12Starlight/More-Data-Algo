@@ -83,7 +83,7 @@ console.log(twoNumberSumNLogN(array, targetSum));
 
 
 // Whiteboard Drills
-// Brute Force: 2 Arrays: O(n^2) T | O(1) Space
+// Brute Force: 2 Arrays: O(n^2) Time | O(1) Space
 const twoNumberSum = (array, targetSum) => {
   for (let i = 0; i < array.length - 1; i++) {
     for (let j = i + 1; j < array.length; j++) {
@@ -95,7 +95,7 @@ const twoNumberSum = (array, targetSum) => {
   return [];
 }
 
-// Brute Force: 2 Arrays: O(n^2) T | O(1) Space
+// Brute Force: 2 Arrays: O(n^2) Time | O(1) Space
 const twoNumberSum = (array, target) => {
   for (let i = 0; i < array.length - 1; i++) {
     for (let j = i + 1; j < array.length; j++) {
@@ -121,7 +121,7 @@ const twoNumberSum = (array, target) => {
 
 
 // Whiteboard Drills
-// Linear: Iter, HashTable: O(n) T | O(n) S
+// Linear: Iter, HashTable: O(n) Time | O(n) Space
 const twoNumberSum = (array, target) => {
   let nums = {};
   for (let num of array) {
@@ -136,6 +136,18 @@ const twoNumberSum = (array, target) => {
   return [];
 }
 
+// Linear: Iter, HashTable: O(n) Time | O(n) Space
+const twoNumberSum = (array, target) => {
+  const pairs = {};
+  for (let num of array) {
+    const possible = (target - num);
+    if (pairs[possible]) {
+      return [possible, num];
+    } else {
+      pairs[num] = true;
+    }
+  }
 
-
+  return [];
+}
 
