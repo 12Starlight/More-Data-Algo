@@ -186,3 +186,41 @@ const twoNumberSum = (array, target) => {
 
   return [];
 }
+
+// Optimal: Sort, Pointers: O(nlogn) Time | O(1) Space
+const twoNumberSum = (array, target) => {
+  array.sort((a, b) => a - b);
+  let left = 0;
+  let right = array.length - 1;
+  while (left < right) {
+    const potentialPair = array[left] + array[right];
+    if (potentialPair === target) {
+      return [array[left], array[right]];
+    } else if (potentialPair > target) {
+      right--;
+    } else if (potentialPair < target) {
+      left++;
+    }
+  }
+
+  return [];
+}
+
+// Optimal: Sort, Pointers: O(nlogn) Time | O(1) Space
+const twoNumberSum = (array, target) => {
+  array.sort((a, b) => a - b); // smallest to largest
+  let left = 0;
+  let right = array.length - 1;
+  while (left < right) {
+    let potentialMatch = array[left] + array[right];
+    if (potentialMatch === target) {
+      return [array[left], array[right]];
+    } else if (potentialMatch < target) {
+      left++;
+    } else if (potentialMatch > target) {
+      right--;
+    }
+  }
+
+  return [];
+}
