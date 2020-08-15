@@ -151,3 +151,17 @@ const twoNumberSum = (array, target) => {
   return [];
 }
 
+// Linear: Iter, HashTable: O(n) Time | O(1) Space
+const twoNumberSum = (array, target) => {
+  const solution = {};
+  for (let num of array) {
+    const potentialSol = (target - num);
+    if (potentialSol in solution) {
+      return [potentialSol, num];
+    } else {
+      solution[num] = true;
+    }
+  }
+
+  return [];
+}
