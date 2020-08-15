@@ -165,3 +165,24 @@ const twoNumberSum = (array, target) => {
 
   return [];
 }
+
+
+// Whiteboard Drills
+// Optimal: Sorted, Pointers: O(nlogn) Time | O(1) Space
+const twoNumberSum = (array, target) => {
+  array.sort((a, b) => a - b) // smallest to largest
+  let left = 0;
+  let right = array.length - 1;
+  while (left < right) {
+    let currentSum = array[left] + array[right];
+    if (currentSum === target) {
+      return [array[left], array[right]];
+    } else if (currentSum < target) {
+      left++;
+    } else if (currentSum > target) {
+      right--;
+    }
+  }
+
+  return [];
+}
