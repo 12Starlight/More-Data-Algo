@@ -125,3 +125,15 @@ const isValidSubsequence = (array, sequence) => {
 
   return seqPointer === sequence.length;
 }
+
+// For Loop: Optimal: Iterate 1 Array, 1 Pointer: O(n) T | O(1) S
+const isValidSubsequence = (array, sequence) => {
+  let seqPointer = 0; // Sequence Pointer
+
+  for (let num of array) {
+    if (seqPointer === sequence.length) break;
+    if (num === sequence[seqPointer]) seqPointer++;
+  }
+
+  return seqPointer === sequence.length;
+}
