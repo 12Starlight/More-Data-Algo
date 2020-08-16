@@ -86,3 +86,16 @@ const isValidSubsequence = (array, sequence) => {
 
   return seqIdx == sequence.length;
 }
+
+// While Loop: Linear: Iterate 2 Arrays in tandium, 2 Pointers: O(n) T | O(1) S
+const isValidSubsequence = (array, sequence) => {
+  let arrIdx = 0; // Array Pointer
+  let seqIdx = 0; // Sequence Pointer
+  // .length bc at each pass, either pointer can increase by 1
+  while (arrIdx < array.length && seqIdx < sequence.length) {
+    if (array[arrIdx] === sequence[seqIdx]) seqIdx++;
+    arrIdx++;
+  }
+
+  return seqIdx === sequence.length;
+}
