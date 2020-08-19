@@ -93,6 +93,9 @@ const findClosestValueInBst = (tree, target) => {
 //     Update closest to tree value  
 //  ii: Compare current target value to tree value 
 //  iii: More, recursive right: Less, recursive left: Equal, return closest 
+//
+// Avg: O(log(n)) TS (bc essentially we are eliminating half the tree at each call)
+// Worst: O(n) T (bc one really long branch) | O(n) S (bc frames on call stack)
 const closestValueInBstHelper = (bstTree, target, closest) => {
   if (!bstTree) return closest;
   if (Math.abs(target - closest) > Math.abs(target - bstTree.value)) {
@@ -110,6 +113,42 @@ const closestValueInBstHelper = (bstTree, target, closest) => {
 const findClosestValueInBst = (bstTree, target) => {
   return closestValueInBstHelper(bstTree, target, Infinity);
 } 
+
+// class BST
+class BST {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null; 
+  }
+}
+
+// Recursive: HelperAParameters(bstTree, target, closest): class BST
+// a: Recursive: Base: Tree is null: Return closest
+/// i: Compute absolute value of difference between closest and target node:
+///    Update closest to tree value 
+/// ii: Compare current target value to tree value
+/// iii: More, recursive right: Less, recursive left: Equal, return closest 
+// 
+// Avg: O(log(n)) TS (bc essentially we are eliminating half the tree at each call)
+// Worst: O(n) T (bc one really long branch) | O(n) S (bc frames on call stack)
+const findClosestValueInBst = (bstTree, target) => {
+  return fcviBSTH(bstTree, target, Infinity);
+}
+
+const fcviBSTH = (bst, target, closest) => {
+  if (!bst) return closest;
+  if (Math.abs(target - closest) > Math.abs(target - bst.value)) {
+    closest = bst.value;
+  }
+  if (target < bst.value) {
+    return fcviBSTH(bst.left, target, closest);
+  } else if (target > bst.value) {
+    return fcviBSTH(bst.right, target, closest);
+  } else {
+    return closest;
+  }
+}
 
 // class BST
 class BST {
