@@ -59,8 +59,8 @@ const findClosestValueInBstRec = (tree, target) => {
 }
 
 
-// Average: O(Log(N)) Time | O(Log(N)) Space
-// Worst: O(N) Time | O(N) Space
+// Average: O(Log(N)) Time | O(1) Space
+// Worst: O(N) Time | O(1) Space
 const findClosestValueInBSTHelper = (tree, target, closest) => {
   let currentNode = tree;
 
@@ -71,7 +71,7 @@ const findClosestValueInBSTHelper = (tree, target, closest) => {
 
     if (target < currentNode.value) {
       currentNode = currentNode.left;
-    } else if (target > currentNode.value) {
+    } else if (target > currentNode.value) {   
       currentNode = currentNode.right;
     } else {
       break;
@@ -83,4 +83,39 @@ const findClosestValueInBSTHelper = (tree, target, closest) => {
 
 const findClosestValueInBst = (tree, target) => {
   return findClosestValueInBSTHelper(tree, target, Infinity);
+}
+
+
+// Whiteboard Drills
+// Recursve: HelperAParamerters(bstTree, target, closest): class BST
+// a: Recursive: Base: Tree is null: Return closest
+//  i: Compute absolute value of difference between closest and target node:
+//     Update closest to tree value  
+//  ii: Compare current target value to tree value 
+//  iii: More, recursive right: Less, recursive left: Equal, return closest 
+const closestValueInBstHelper = (bstTree, target, closest) => {
+  if (!bstTree) return closest;
+  if (Math.abs(target - closest) > Math.abs(target - bstTree.value)) {
+    closest = bstTree.value;
+  }
+  if (target > bstTree.value) {
+    return closestValueInBstHelper(bstTree.right, target, closest);
+  } else if (target < bstTree.value) {
+    return closestValueInBstHelper(bstTree.left, target, closest);
+  } else {
+    return closest;
+  }
+}
+
+const findClosestValueInBst = (bstTree, target) => {
+  return closestValueInBstHelper(bstTree, target, Infinity);
+} 
+
+// class BST
+class BST {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null; 
+  }
 }
