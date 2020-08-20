@@ -194,3 +194,46 @@ class BST {
     this.right = null;
   }
 }
+
+
+// Whiteboard Drills 
+// 2a: Iterative: Optimal: HelperAParameters(bstTree, target, closest): class BST
+// a: Iterative: Variable: Current node we are exploring: bstTree
+/// i: While Loop: Current node not null
+/// ii: Compute absolute value of difference between closest and target node: Update closest to current node value
+/// iii: Compare current target value to current node value
+/// iiii: More, current node assigned to current node right: Less, current node assigned current node left: Equal, break
+// Outside While Loop: Return closest
+// Avg: O(log(n)) T | O(1) S (bc we are only storing two variables)
+// Worst: O(log(n)) T | O(1) S ''                                ''
+const findClosestValueInBst = (bst, target) => {
+  return fcviBstHelper(bst, target, Infinity);
+}
+
+const fcviBstHelper = (bst, target, closest) => {
+  let currentNode = bst;
+
+  while (currentNode) {
+    if (Math.abs(target - closest) > Math.abs(target - currentNode.value)) {
+      closest = currentNode.value;
+    }
+    if (target < currentNode.value) {
+      currentNode = currentNode.left;
+    } else if (target > currentNode.value) {
+      currentNode = currentNode.right;
+    } else {
+      break;
+    }
+  }
+
+  return closest;
+}    
+
+// class BST
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null; 
+  }
+}
