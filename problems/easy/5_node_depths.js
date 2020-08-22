@@ -116,3 +116,37 @@ class BinaryTree {
     this.right = null;
   }
 }
+
+// 1: While Loop: Linear: 1Parameters(root): class BinaryTree
+/// i: Variable: sumOfNodeDepths: Zero
+/// ii: Stack: Store nodes and traverse tree: Store: root node: ArrayOf: Objects with properties: {node, depth}
+/// iii: While Loop: Stack items exist: Greater than zero
+/// iiii: Collect node: Pop node off stack: Variable: nodeInfo: Deconstruct nodeInfo
+/// v: Check if node exists: Node is null: Continue
+/// vi: Add to sumOfDepths: Plus equal depth
+/// vii: Append to stack: Node left, depth plus one: Node right, depth plus one
+// Outside While Loop: Return sumOfDepths
+// Avg: O(n) T (n is nodes in tree) | O(h) S (h is height of the tree)
+const nodeDepths = (root) => {
+  let sumOfDepths = 0;
+  const stack = [{ node: root, depth: 0 }];
+
+  while (stack.length > 0) {
+    const { node, depth } = stack.pop();
+    if (!node) continue;
+    sumOfDepths += depth;
+    stack.push({ node: node.left, depth: depth + 1 });
+    stack.push({ node: node.right, depth: depth + 1 });
+  }
+
+  return sumOfDepths;
+}
+
+// class BinaryTree
+class BinaryTree {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
