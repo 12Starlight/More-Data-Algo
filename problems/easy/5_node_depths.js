@@ -222,3 +222,21 @@ class BinaryTree {
     this.right = null;
   }
 }
+
+// 2: Recursive: Optimal: 2sParameters(root, depth default zero): class BinaryTree
+/// i: Base: Root is null: Return zero
+/// ii: Return depth plus: Recursion, node left, depth plus one: Plus: Recursion, node right, depth plus one
+// Avg: O(n) T (n is nodes in tree) | O(h) S (h is height of tree)
+const nodeDepths = (root, depth = 0) => {
+  if (!root) return 0;
+  return depth + nodeDepths(root.left, depth + 1) + nodeDepths(root.right, depth + 1);
+}
+
+// class BinaryTree
+class BinaryTree {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
