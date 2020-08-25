@@ -150,3 +150,40 @@ class Node {
     return array;
   }
 }
+
+// class: Node
+/// constructor: Name
+//// i: Instance name: Name
+//// ii: Instance children: Array
+/// #a: addChild: Name
+//// i: Append new node to instance children: nodeParameters(name)
+//// ii: Return instance
+/// #b: depthFirstSearch(array)
+//// i: Append instance name to array
+//// ii: For every child in instance children
+//// iii: On child: Recursion, array
+/// Outside Iteration: Return array
+// Ave: O(v + e) T (v is verticies or nodes in graph, e is edges in graph) |
+//      O(v) S (bc we return array with length v, also for frames on call stack for graphs with really long branches)
+class Node {
+  constructor(name) {
+    this.name = name;
+    this.chidlren = [];
+  }
+
+  addChild(name) {
+    this.children.push(new Node(name));
+    return this;
+  }
+
+  depthFirstSearch(array) {
+    array.push(this.name);
+
+    for (let child of this.children) {
+      child.depthFirstSearch(array);
+    }
+
+    return array;
+  }
+}
+
