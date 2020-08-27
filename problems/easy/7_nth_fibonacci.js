@@ -102,3 +102,14 @@ const getNthFib = (n) => {
   if (n === 1) return 0;
   return getNthFib(n - 1) + getNthFib(n - 2);
 }
+
+// 1: Brute Force: Recursion: N
+/// i: Base: N is two: Return one
+/// ii: Base: N is one: Return zero
+/// iii: Return: Recursion, n minus one: Plus: Recursion, n minus two
+// Avg: O(2^n) T (bc we call two frames n times) | O(n) S (bc n is frames on call stack)
+const getNthFib = (n) => {
+  if (n === 2) return 1;
+  if (n === 1) return 0;
+  return getNthFib(n - 1) + getNthFib(n - 2);
+}
