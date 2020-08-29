@@ -113,3 +113,15 @@ const getNthFib = (n) => {
   if (n === 1) return 0;
   return getNthFib(n - 1) + getNthFib(n - 2);
 }
+
+
+// Whiteboard Drills
+// 2: Memoize: Recursion: 2sParameters(n, memoize default HashTable {1: 0, 2: 1})
+/// i: Base: Key n in memoize: Return: Memoize with key n
+/// ii: Set memoize: Memoize with key n: Assigned: Recursion, n minus one, memoize: Plus: Recursion, n minus two, memoize
+/// iii: Return: Memoize with key n
+const getNthFibMemo = (n, memo = {1: 0, 2: 1}) => {
+  if (n in memo) return memo[n]; // base case
+  memo[n] = getNthFibMemo(n - 1, memo) + getNthFibMemo(n - 2, memo);
+  return memo[n];
+}
