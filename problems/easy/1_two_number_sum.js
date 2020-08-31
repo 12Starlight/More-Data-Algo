@@ -224,3 +224,43 @@ const twoNumberSum = (array, target) => {
 
   return [];
 }
+
+
+/*
+Whiteboard Drills: Two Number Sum: 3: 1, 2, 3
+
+Explanation:
+Write a function that takes in a non-empty array of distinct integers, and an 
+integer representing a targetSum. If any two number in the input array sum up to
+the targetSum, the function should return them in an array, in any order. If no
+two numbers sum up to the targetSum, the function should return an empty array.
+
+Note that the targetSum has to be obtained by summing two different integers in
+the array. You can not add a single integer to itself in order to obtain the
+targetSum.
+
+You can assume that there will be at most, one pair of numbers summing up to the
+target sum.
+
+*/
+
+// Solution:
+// 1: Brute Force: Quadratic: Iterative: 1sParameters(array, targetSum)
+/// i: For Loop: Variable: i: Variable: firstNum: Assigned: array with key i
+/// ii: Inner For Loop: Variable: j: Assigned: i plus one: Variable: secondNum: Assigned: array with key j
+/// iii: Conditional: firstNum plus secondNum is targetSum: Return: ArrayOf: [firstNum, secondNum]
+// Outside Iterations: Return empty array
+// O(n^2) T | O(1) S
+const twoNumberSum = (array, targetSum) => {
+  for (let i = 0; i < array.length - 1; i++) {
+    const firstNum = array[i];
+
+    for (let j = i + 1; j < array.length; j++) {
+      const secondNum = array[j];
+
+      if (firstNum + secondNum === targetSum) return [firstNum, secondNum];
+    }
+  }
+
+  return [];
+} 
