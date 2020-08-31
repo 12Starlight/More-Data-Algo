@@ -251,7 +251,7 @@ target sum.
 /// iii: Conditional: firstNum plus secondNum is targetSum: Return: ArrayOf: [firstNum, secondNum]
 // Outside Iterations: Return empty array
 // O(n^2) T | O(1) S
-const twoNumberSum = (array, targetSum) => {
+const twoNumberSumQuadratic = (array, targetSum) => {
   for (let i = 0; i < array.length - 1; i++) {
     const firstNum = array[i];
 
@@ -264,4 +264,14 @@ const twoNumberSum = (array, targetSum) => {
 
   return [];
 } 
-console.log(twoNumberSum([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [11, -1]
+console.log(twoNumberSumQuadratic([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [11, -1]
+
+
+// 2: Linear: Iterative: 2sParameters(array, targetSum)
+/// i: Variable: nums: Assigned: Empty HashTable
+/// ii: For Loop of Array: Variable: num
+/// iii: Variable: potentialMatch: Assigned: targetSum minus num
+/// iv: Conditional: potentialMatch in nums: Return: ArrayOf: [potentialMatch, num]:
+///     Else: nums with key num: Assigned: true: Puts value in HashTable
+// Outside Iteration: Return empty array
+// Avg: O(n) T | O(n) S
