@@ -305,7 +305,7 @@ console.log(twoNumberSumLinear([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [11, -1]
 // Outside While Loop: Return empty array
 // Avg: O(nlog(n)) T | O(1) S
 const twoNumberSumLinearLogarithmic = (array, targetSum) => {
-  array.sort((a, b) => a - b);
+  array.sort((a, b) => a - b); // least to greatest
   let left = 0; // Pointer one
   let right = array.length - 1; // Pointer two
 
@@ -323,3 +323,4 @@ const twoNumberSumLinearLogarithmic = (array, targetSum) => {
 
   return [];
 }
+console.log(twoNumberSumLinearLogarithmic([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [-1, 11]
