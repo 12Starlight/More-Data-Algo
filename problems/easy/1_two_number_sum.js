@@ -291,3 +291,35 @@ const twoNumberSumLinear = (array, targetSum) => {
   return [];
 }
 console.log(twoNumberSumLinear([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [11, -1]
+
+
+// 3: Linear Logarithmic: Iterative: Optimal: 3sParameters(array, targetSum)
+/// i: Sort in place: Array: Algorithm: a minus b
+/// ii: Variable: left: Assigned: Zero: Pointer one
+/// iii: Variable: right: Assigned: array length minus one: Pointer two
+/// iv: While Loop: left less than right
+/// v: Variable: currentSum: Assigned: array with key left: Plus: array with key right
+/// vi: Conditional: currentSum is targetSum: Return: ArrayOf: [array with key left, array with key right]: 
+///     Else if: currentSum less than targetSum: left concatenate one: Pointer one moves right:
+///     Else if: currentSum greater than targetSum: right disconnect one: Pointer two moves left:
+// Outside While Loop: Return empty array
+// Avg: O(nlog(n)) T | O(1) S
+const twoNumberSumLinearLogarithmic = (array, targetSum) => {
+  array.sort((a, b) => a - b);
+  let left = 0; // Pointer one
+  let right = array.length - 1; // Pointer two
+
+  while (left < right) {
+    const currentSum = array[left] + array[right];
+
+    if (currentSum === targetSum) {
+      return [array[left], array[right]];
+    } else if (currentSum < targetSum) {
+      left++; // Pointer one moves right
+    } else if (currentSum > targetSum) {
+      right--; // Pointer two moves left
+    }
+  }
+
+  return [];
+}
