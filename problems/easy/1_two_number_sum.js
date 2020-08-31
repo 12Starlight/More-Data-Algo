@@ -24,206 +24,206 @@ Sample Output:
 const array = [3, 5, -4, 8, 11, 1, -1, 6];
 const targetSum = 10;
 
-// O(N^2) Time | O(1) Space
-const twoNumberSumSquared = (array, targetSum) => {
-  let sumArr = [];
+// // O(N^2) Time | O(1) Space
+// const twoNumberSumSquared = (array, targetSum) => {
+//   let sumArr = [];
 
-  for (let start = 0; start < array.length - 1; start++) {
-    for (let end = array.length - 1; end > start; end--) {
-      if ((array[start] + array[end]) === targetSum) {
-        sumArr.push(array[start], array[end])
-      }
-    }
-  }
+//   for (let start = 0; start < array.length - 1; start++) {
+//     for (let end = array.length - 1; end > start; end--) {
+//       if ((array[start] + array[end]) === targetSum) {
+//         sumArr.push(array[start], array[end])
+//       }
+//     }
+//   }
 
-  return sumArr;
-}
-console.log(twoNumberSumSquared(array, targetSum));
-
-
-// O(N) Time | O(N) Space
-// Can not return in a forEach Loop
-const twoNumberSumLinear = (array, targetSum) => {
-  let values = {};
-
-  for (let num of array) {
-    const potentialMatch = (targetSum - num);
-    if (potentialMatch in values) {
-      return [potentialMatch, num];
-    } else {
-      values[num] = true;
-    }
-  }
-  return [];
-}
-console.log(twoNumberSumLinear(array, targetSum));
+//   return sumArr;
+// }
+// console.log(twoNumberSumSquared(array, targetSum));
 
 
-// O(Nlog(N)) Time | O(1) Space
-const twoNumberSumNLogN = (array, targetSum) => {
-  array.sort((a, b) => a - b);
+// // O(N) Time | O(N) Space
+// // Can not return in a forEach Loop
+// const twoNumberSumLinear = (array, targetSum) => {
+//   let values = {};
 
-  let left = 0; // left index
-  let right = array.length - 1; // right index
-
-  while (left < right) {
-    const currentSum = (array[left] + array[right]);
-    if (currentSum === targetSum) {
-      return [array[left], array[right]];
-    } else if (currentSum > targetSum) {
-      right--;
-    } else if (currentSum < targetSum) {
-      left++;
-    }
-  }
-
-  return [];
-}
-console.log(twoNumberSumNLogN(array, targetSum));
+//   for (let num of array) {
+//     const potentialMatch = (targetSum - num);
+//     if (potentialMatch in values) {
+//       return [potentialMatch, num];
+//     } else {
+//       values[num] = true;
+//     }
+//   }
+//   return [];
+// }
+// console.log(twoNumberSumLinear(array, targetSum));
 
 
-// Whiteboard Drills
-// Brute Force: 2 Arrays: O(n^2) Time | O(1) Space
-const twoNumberSum = (array, targetSum) => {
-  for (let i = 0; i < array.length - 1; i++) {
-    for (let j = i + 1; j < array.length; j++) {
-      let sum = array[i] + array[j];
-      if (sum === target) return [array[i], array[j]];
-    }
-  }
+// // O(Nlog(N)) Time | O(1) Space
+// const twoNumberSumNLogN = (array, targetSum) => {
+//   array.sort((a, b) => a - b);
 
-  return [];
-}
+//   let left = 0; // left index
+//   let right = array.length - 1; // right index
 
-// Brute Force: 2 Arrays: O(n^2) Time | O(1) Space
-const twoNumberSum = (array, target) => {
-  for (let i = 0; i < array.length - 1; i++) {
-    for (let j = i + 1; j < array.length; j++) {
-      const sum = array[i] + array[j];
-      if (sum === target) return [array[i], array[j]];
-    }
-  }
+//   while (left < right) {
+//     const currentSum = (array[left] + array[right]);
+//     if (currentSum === targetSum) {
+//       return [array[left], array[right]];
+//     } else if (currentSum > targetSum) {
+//       right--;
+//     } else if (currentSum < targetSum) {
+//       left++;
+//     }
+//   }
 
-  return [];
-}
-
-// Brute Force: 2 Arrays: O(n^2) Time | 0(1) Space
-const twoNumberSum = (array, target) => {
-  for (let i = 0; i < array.length - 1; i++) {
-    for (let j = i + 1; j < array.length; j++) {
-      const sum = array[i] + array[j];
-      if (sum === target) return [array[i], array[j]];
-    }
-  }
-
-  return [];
-}
+//   return [];
+// }
+// console.log(twoNumberSumNLogN(array, targetSum));
 
 
-// Whiteboard Drills
-// Linear: Iter, HashTable: O(n) Time | O(n) Space
-const twoNumberSum = (array, target) => {
-  let nums = {};
-  for (let num of array) {
-    const potentialMatch = (target - num);
-    if (potentialMatch in nums) {
-      return [potentialMatch, num];
-    } else {
-      nums[num] = true;
-    }
-  }
+// // Whiteboard Drills
+// // Brute Force: 2 Arrays: O(n^2) Time | O(1) Space
+// const twoNumberSum = (array, targetSum) => {
+//   for (let i = 0; i < array.length - 1; i++) {
+//     for (let j = i + 1; j < array.length; j++) {
+//       let sum = array[i] + array[j];
+//       if (sum === target) return [array[i], array[j]];
+//     }
+//   }
 
-  return [];
-}
+//   return [];
+// }
 
-// Linear: Iter, HashTable: O(n) Time | O(n) Space
-const twoNumberSum = (array, target) => {
-  const pairs = {};
-  for (let num of array) {
-    const possible = (target - num);
-    if (pairs[possible]) {
-      return [possible, num];
-    } else {
-      pairs[num] = true;
-    }
-  }
+// // Brute Force: 2 Arrays: O(n^2) Time | O(1) Space
+// const twoNumberSum = (array, target) => {
+//   for (let i = 0; i < array.length - 1; i++) {
+//     for (let j = i + 1; j < array.length; j++) {
+//       const sum = array[i] + array[j];
+//       if (sum === target) return [array[i], array[j]];
+//     }
+//   }
 
-  return [];
-}
+//   return [];
+// }
 
-// Linear: Iter, HashTable: O(n) Time | O(1) Space
-const twoNumberSum = (array, target) => {
-  const solution = {};
-  for (let num of array) {
-    const potentialSol = (target - num);
-    if (potentialSol in solution) {
-      return [potentialSol, num];
-    } else {
-      solution[num] = true;
-    }
-  }
+// // Brute Force: 2 Arrays: O(n^2) Time | 0(1) Space
+// const twoNumberSum = (array, target) => {
+//   for (let i = 0; i < array.length - 1; i++) {
+//     for (let j = i + 1; j < array.length; j++) {
+//       const sum = array[i] + array[j];
+//       if (sum === target) return [array[i], array[j]];
+//     }
+//   }
 
-  return [];
-}
+//   return [];
+// }
 
 
-// Whiteboard Drills
-// Optimal: Sorted, Pointers: O(nlogn) Time | O(1) Space
-const twoNumberSum = (array, target) => {
-  array.sort((a, b) => a - b) // smallest to largest
-  let left = 0;
-  let right = array.length - 1;
-  while (left < right) {
-    let currentSum = array[left] + array[right];
-    if (currentSum === target) {
-      return [array[left], array[right]];
-    } else if (currentSum < target) {
-      left++;
-    } else if (currentSum > target) {
-      right--;
-    }
-  }
+// // Whiteboard Drills
+// // Linear: Iter, HashTable: O(n) Time | O(n) Space
+// const twoNumberSum = (array, target) => {
+//   let nums = {};
+//   for (let num of array) {
+//     const potentialMatch = (target - num);
+//     if (potentialMatch in nums) {
+//       return [potentialMatch, num];
+//     } else {
+//       nums[num] = true;
+//     }
+//   }
 
-  return [];
-}
+//   return [];
+// }
 
-// Optimal: Sort, Pointers: O(nlogn) Time | O(1) Space
-const twoNumberSum = (array, target) => {
-  array.sort((a, b) => a - b);
-  let left = 0;
-  let right = array.length - 1;
-  while (left < right) {
-    const potentialPair = array[left] + array[right];
-    if (potentialPair === target) {
-      return [array[left], array[right]];
-    } else if (potentialPair > target) {
-      right--;
-    } else if (potentialPair < target) {
-      left++;
-    }
-  }
+// // Linear: Iter, HashTable: O(n) Time | O(n) Space
+// const twoNumberSum = (array, target) => {
+//   const pairs = {};
+//   for (let num of array) {
+//     const possible = (target - num);
+//     if (pairs[possible]) {
+//       return [possible, num];
+//     } else {
+//       pairs[num] = true;
+//     }
+//   }
 
-  return [];
-}
+//   return [];
+// }
 
-// Optimal: Sort, Pointers: O(nlogn) Time | O(1) Space
-const twoNumberSum = (array, target) => {
-  array.sort((a, b) => a - b); // smallest to largest
-  let left = 0;
-  let right = array.length - 1;
-  while (left < right) {
-    let potentialMatch = array[left] + array[right];
-    if (potentialMatch === target) {
-      return [array[left], array[right]];
-    } else if (potentialMatch < target) {
-      left++;
-    } else if (potentialMatch > target) {
-      right--;
-    }
-  }
+// // Linear: Iter, HashTable: O(n) Time | O(1) Space
+// const twoNumberSum = (array, target) => {
+//   const solution = {};
+//   for (let num of array) {
+//     const potentialSol = (target - num);
+//     if (potentialSol in solution) {
+//       return [potentialSol, num];
+//     } else {
+//       solution[num] = true;
+//     }
+//   }
 
-  return [];
-}
+//   return [];
+// }
+
+
+// // Whiteboard Drills
+// // Optimal: Sorted, Pointers: O(nlogn) Time | O(1) Space
+// const twoNumberSum = (array, target) => {
+//   array.sort((a, b) => a - b) // smallest to largest
+//   let left = 0;
+//   let right = array.length - 1;
+//   while (left < right) {
+//     let currentSum = array[left] + array[right];
+//     if (currentSum === target) {
+//       return [array[left], array[right]];
+//     } else if (currentSum < target) {
+//       left++;
+//     } else if (currentSum > target) {
+//       right--;
+//     }
+//   }
+
+//   return [];
+// }
+
+// // Optimal: Sort, Pointers: O(nlogn) Time | O(1) Space
+// const twoNumberSum = (array, target) => {
+//   array.sort((a, b) => a - b);
+//   let left = 0;
+//   let right = array.length - 1;
+//   while (left < right) {
+//     const potentialPair = array[left] + array[right];
+//     if (potentialPair === target) {
+//       return [array[left], array[right]];
+//     } else if (potentialPair > target) {
+//       right--;
+//     } else if (potentialPair < target) {
+//       left++;
+//     }
+//   }
+
+//   return [];
+// }
+
+// // Optimal: Sort, Pointers: O(nlogn) Time | O(1) Space
+// const twoNumberSum = (array, target) => {
+//   array.sort((a, b) => a - b); // smallest to largest
+//   let left = 0;
+//   let right = array.length - 1;
+//   while (left < right) {
+//     let potentialMatch = array[left] + array[right];
+//     if (potentialMatch === target) {
+//       return [array[left], array[right]];
+//     } else if (potentialMatch < target) {
+//       left++;
+//     } else if (potentialMatch > target) {
+//       right--;
+//     }
+//   }
+
+//   return [];
+// }
 
 
 /*
@@ -264,3 +264,4 @@ const twoNumberSum = (array, targetSum) => {
 
   return [];
 } 
+console.log(twoNumberSum([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [11, -1]
