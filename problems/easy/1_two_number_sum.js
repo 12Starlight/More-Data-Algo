@@ -233,11 +233,11 @@ Explanation:
 Write a function that takes in a non-empty array of distinct integers, and an 
 integer representing a targetSum. If any two number in the input array sum up to
 the targetSum, the function should return them in an array, in any order. If no
-two numbers sum up to the targetSum, the function should return an empty array.
+two numbers sum up to the target sum, the function should return an empty array.
 
-Note that the targetSum has to be obtained by summing two different integers in
+Note that the target sum has to be obtained by summing two different integers in
 the array. You can not add a single integer to itself in order to obtain the
-targetSum.
+target sum.
 
 You can assume that there will be at most, one pair of numbers summing up to the
 target sum.
@@ -294,7 +294,7 @@ console.log(twoNumberSumLinear([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [11, -1]
 
 
 // 3: Linear Logarithmic: Iterative: Optimal: 3sParameters(array, targetSum)
-/// i: Sort in place: Array: Algorithm: a minus b
+/// i: Sort in place: Array: Algorithm: a minus b: Least to greatest
 /// ii: Variable: left: Assigned: Zero: Pointer one
 /// iii: Variable: right: Assigned: array length minus one: Pointer two
 /// iv: While Loop: left less than right
