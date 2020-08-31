@@ -275,3 +275,18 @@ console.log(twoNumberSumQuadratic([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [11, -1]
 ///     Else: nums with key num: Assigned: true: Puts value in HashTable
 // Outside Iteration: Return empty array
 // Avg: O(n) T | O(n) S
+const twoNumberSumLinear = (array, targetSum) => {
+  const nums = {};
+
+  for (let num of array) {
+    const potentialMatch = targetSum - num;
+
+    if (potentialMatch in nums) {
+      return [potentialMatch, num];
+    } else {
+      nums[num] = true; // Puts value in HashTable
+    }
+  }
+
+  return [];
+}
