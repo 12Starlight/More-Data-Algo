@@ -189,8 +189,9 @@ const isValidSubsequenceOptimal1 = (array, sequence) => {
 
   for (let value of array) {
     if (sequenceIndex === sequence.length) break; // Found subsequence
-    if (sequence[sequenceIndex] === value) sequeenceIndex++; // Pointer one moves right // Found a value
+    if (sequence[sequenceIndex] === value) sequenceIndex++; // Pointer one moves right // Found a value
   }
 
   return sequenceIndex === sequence.length;
 }
+console.log(isValidSubsequenceOptimal1([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10])) // true
