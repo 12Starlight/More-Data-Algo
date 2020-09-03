@@ -468,3 +468,27 @@ const twoNumberSumQuadratic3 = (array, targetSum) => {
   return [];
 }
 console.log(twoNumberSumQuadratic3([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [11, -1])
+
+// 2: Linear: Iterative: 2sParameters(array, targetSum)
+/// i: Variable: nums: Assigned: Empty HashTable
+/// ii: For Loop of Array: Variable: num
+/// iii: Variable: potentialMatch: Assigned: targetSum minus num
+/// iv: Conditional: potentialMatch in nums: Return: ArrayOf: [potentialMatch, num]:
+///     Else: nums with key num: Assigned: True: Puts value in HashTable
+// Outside Iteration: Return empty array
+// Avg: O(n) T | O(n) S
+const twoNumberSumLinear3 = (array, targetSum) => {
+  const nums = {};
+
+  for (let num of array) {
+    const potentialMatch = targetSum - num;
+
+    if (potentialMatch in nums) {
+      return [potentialMatch, num];
+    } else {
+      nums[num] = true;
+    }
+  }
+
+  return [];
+}
