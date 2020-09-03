@@ -428,6 +428,7 @@ const twoNumberSumLinearLogarithmic2 = (array, targetSum) => {
 console.log(twoNumberSumLinearLogarithmic2([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [-1, 11])
 
 
+console.log('')
 /*
 Whiteboard Drills: 3: 1, 2, 3
 
@@ -466,3 +467,4 @@ const twoNumberSumQuadratic3 = (array, targetSum) => {
 
   return [];
 }
+console.log(twoNumberSumQuadratic3([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [11, -1])
