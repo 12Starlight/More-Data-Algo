@@ -137,3 +137,40 @@ const isValidSubsequence = (array, sequence) => {
 
   return seqPointer === sequence.length;
 }
+
+
+/*
+WhiteBoard Drills: Validate Subsequence: 2: 1, 2
+
+Explanation:
+Given a non-empty array of integers, write a function that determines whether 
+the second array is a sequence of the first one. 
+
+A subsequence of an array is a set of numbers that are not necessarily adjacent 
+in the array. For instance the numbers [1,3,4], form the subsequence of the 
+array [1, 2, 3, 4], and so do the numbers [2, 4]. Note that a number in an array 
+or the array itself are both valid subsequence of the array. 
+
+*/
+
+// Solution:
+// 1: Linear: Iterative: 1sParameters(array, sequence)
+/// i: Variable: arrayIndex: Assigned: Zero: Pointer one
+/// ii: Variable: sequenceIndex: Assigned: Zero: Pointer two
+/// iii: While Loop: arrayIndex less than array length and sequenceIndex less than sequence length
+/// iv: Conditional: array with key arrayIndex is sequence with key sequenceIndex: sequenceIndex concatenate one:
+///     Pointer two moves right: Found a value
+/// v: Add to arrayIndex: Concatenate one: Pointer one moves right: Keep moving through array
+// Outside While Loop: Return sequenceIndex is sequence length
+// Avg: O(n) T | O(1) S
+const isValidSubsequenceLinear1 = (array, sequence) => {
+  let arrayIndex = 0; // Pointer one
+  let sequenceIndex = 0; // Pointer two
+
+  while (arrayIndex < array.length && sequenceIndex < sequence.length) {
+    if (array[arrayIndex] === sequence[sequenceIndex]) sequenceIndex++; // Pointer two moves right // Found a value
+    arrayIndex++;
+  } 
+
+  return sequenceIndex === sequence.length; 
+}
