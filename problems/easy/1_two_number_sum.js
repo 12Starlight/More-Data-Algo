@@ -344,6 +344,7 @@ You can assume that there will be at most, one pair of numbers summing up to the
 target sum.
 
 */
+console.log('')
 
 // Solution:
 // 1: Brute Force: Quadratic: Iterative: 1sParameters(array, targetSum)
@@ -367,3 +368,4 @@ const twoNumberSumQuadratic2 = (array, targetSum) => {
 
   return [];
 }
+console.log(twoNumberSumQuadratic2([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [11, -1]
