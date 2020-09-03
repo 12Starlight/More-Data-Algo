@@ -20,123 +20,123 @@ Sample Output:
 const array = [5, 1, 22, 25, 6, -1, 8, 10];
 const sequence = [1, 6, -1, 10];
 
-// O(N) Time (N is the length of the array) | O(1) Space
-const isValidSubsequenceWhile = (array, sequence) => {
-  let arrIdx = 0;
-  let seqIdx = 0;
+// // O(N) Time (N is the length of the array) | O(1) Space
+// const isValidSubsequenceWhile = (array, sequence) => {
+//   let arrIdx = 0;
+//   let seqIdx = 0;
 
-  while (arrIdx < array.length && seqIdx < sequence.length) {
-    if (array[arrIdx] === sequence[seqIdx]) {
-      seqIdx++;
-    }
+//   while (arrIdx < array.length && seqIdx < sequence.length) {
+//     if (array[arrIdx] === sequence[seqIdx]) {
+//       seqIdx++;
+//     }
 
-    arrIdx++;
-  }
+//     arrIdx++;
+//   }
 
-  return seqIdx == sequence.length;
-}
-console.log(isValidSubsequenceWhile(array, sequence));
-
-
-// O(N) Time (N is the length of the array) | O(1) Space
-const isValidSubsequenceFor = (array, sequence) => {
-  let seqIdx = 0;
-
-  for (let arrVal of array) {
-    if (seqIdx === sequence.length) break;
-    if (sequence[seqIdx] === arrVal) {
-      seqIdx++;
-    }
-  }
-
-  return seqIdx === sequence.length;
-}
-console.log(isValidSubsequenceFor(array, sequence));
+//   return seqIdx == sequence.length;
+// }
+// console.log(isValidSubsequenceWhile(array, sequence));
 
 
-// Whiteboard Drills
-// While Loop: Linear: Iterate 2 Array in tandium, 2 Pointers: O(n) T | O(1) S
-const isValidSubsequence = (array, sequence) => {
-  let arrIdx = 0;
-  let seqIdx = 0;
+// // O(N) Time (N is the length of the array) | O(1) Space
+// const isValidSubsequenceFor = (array, sequence) => {
+//   let seqIdx = 0;
 
-  while (arrIdx < array.length && seqIdx < sequence.length) {
-    if (array[arrIdx] === sequence[seqIdx]) {
-      seqIdx++;
-    }
+//   for (let arrVal of array) {
+//     if (seqIdx === sequence.length) break;
+//     if (sequence[seqIdx] === arrVal) {
+//       seqIdx++;
+//     }
+//   }
 
-    arrIdx++;
-  }
-
-  return seqIdx == sequence.length;
-}
-
-// While Loop: Linear: Iterate 2 Arrays in tandium, 2 Pointers: O(n) T | O(1) S
-const isValidSubsequence = (array, sequence) => {
-  let arrIdx = 0;
-  let seqIdx = 0;
-
-  while (arrIdx < array.length && seqIdx < sequence.length) {
-    if (array[arrIdx] === sequence[seqIdx]) {
-      seqIdx++;
-    }
-
-    arrIdx++;
-  }
-
-  return seqIdx == sequence.length;
-}
-
-// While Loop: Linear: Iterate 2 Arrays in tandium, 2 Pointers: O(n) T | O(1) S
-const isValidSubsequence = (array, sequence) => {
-  let arrIdx = 0; // Array Pointer
-  let seqIdx = 0; // Sequence Pointer
-  // .length bc at each pass, either pointer can increase by 1
-  while (arrIdx < array.length && seqIdx < sequence.length) {
-    if (array[arrIdx] === sequence[seqIdx]) seqIdx++;
-    arrIdx++;
-  }
-
-  return seqIdx === sequence.length;
-}
+//   return seqIdx === sequence.length;
+// }
+// console.log(isValidSubsequenceFor(array, sequence));
 
 
-// Whiteboard Drills 
-// For Loop: Optimal: Iterate 1 Array, 1 Pointer: O(n) T | O(1) S
-const isValidSubsequence = (array, sequence) => {
-  let seqIdx = 0; // Sequence Pointer
+// // Whiteboard Drills
+// // While Loop: Linear: Iterate 2 Array in tandium, 2 Pointers: O(n) T | O(1) S
+// const isValidSubsequence = (array, sequence) => {
+//   let arrIdx = 0;
+//   let seqIdx = 0;
 
-  for (let num of array) {
-    if (seqIdx === sequence.length) break;
-    if (num === sequence[seqIdx]) seqIdx++;
-  }
+//   while (arrIdx < array.length && seqIdx < sequence.length) {
+//     if (array[arrIdx] === sequence[seqIdx]) {
+//       seqIdx++;
+//     }
 
-  return seqIdx === sequence.length;
-}
+//     arrIdx++;
+//   }
 
-// For Loop: Optimal: Iterate 1 Array, 1 Pointer: O(n) T | O(1) S
-const isValidSubsequence = (array, sequence) => {
-  let seqPointer = 0; // Sequence Pointer
+//   return seqIdx == sequence.length;
+// }
 
-  for (let num of array) {
-    if (seqPointer === sequence.length) break;
-    if (num === sequence[seqPointer]) seqPointer++;
-  }
+// // While Loop: Linear: Iterate 2 Arrays in tandium, 2 Pointers: O(n) T | O(1) S
+// const isValidSubsequence = (array, sequence) => {
+//   let arrIdx = 0;
+//   let seqIdx = 0;
 
-  return seqPointer === sequence.length;
-}
+//   while (arrIdx < array.length && seqIdx < sequence.length) {
+//     if (array[arrIdx] === sequence[seqIdx]) {
+//       seqIdx++;
+//     }
 
-// For Loop: Optimal: Iterate 1 Array, 1 Pointer: O(n) T | O(1) S
-const isValidSubsequence = (array, sequence) => {
-  let seqPointer = 0; // Sequence Pointer
+//     arrIdx++;
+//   }
 
-  for (let num of array) {
-    if (seqPointer === sequence.length) break;
-    if (num === sequence[seqPointer]) seqPointer++;
-  }
+//   return seqIdx == sequence.length;
+// }
 
-  return seqPointer === sequence.length;
-}
+// // While Loop: Linear: Iterate 2 Arrays in tandium, 2 Pointers: O(n) T | O(1) S
+// const isValidSubsequence = (array, sequence) => {
+//   let arrIdx = 0; // Array Pointer
+//   let seqIdx = 0; // Sequence Pointer
+//   // .length bc at each pass, either pointer can increase by 1
+//   while (arrIdx < array.length && seqIdx < sequence.length) {
+//     if (array[arrIdx] === sequence[seqIdx]) seqIdx++;
+//     arrIdx++;
+//   }
+
+//   return seqIdx === sequence.length;
+// }
+
+
+// // Whiteboard Drills 
+// // For Loop: Optimal: Iterate 1 Array, 1 Pointer: O(n) T | O(1) S
+// const isValidSubsequence = (array, sequence) => {
+//   let seqIdx = 0; // Sequence Pointer
+
+//   for (let num of array) {
+//     if (seqIdx === sequence.length) break;
+//     if (num === sequence[seqIdx]) seqIdx++;
+//   }
+
+//   return seqIdx === sequence.length;
+// }
+
+// // For Loop: Optimal: Iterate 1 Array, 1 Pointer: O(n) T | O(1) S
+// const isValidSubsequence = (array, sequence) => {
+//   let seqPointer = 0; // Sequence Pointer
+
+//   for (let num of array) {
+//     if (seqPointer === sequence.length) break;
+//     if (num === sequence[seqPointer]) seqPointer++;
+//   }
+
+//   return seqPointer === sequence.length;
+// }
+
+// // For Loop: Optimal: Iterate 1 Array, 1 Pointer: O(n) T | O(1) S
+// const isValidSubsequence = (array, sequence) => {
+//   let seqPointer = 0; // Sequence Pointer
+
+//   for (let num of array) {
+//     if (seqPointer === sequence.length) break;
+//     if (num === sequence[seqPointer]) seqPointer++;
+//   }
+
+//   return seqPointer === sequence.length;
+// }
 
 
 /*
@@ -174,3 +174,4 @@ const isValidSubsequenceLinear1 = (array, sequence) => {
 
   return sequenceIndex === sequence.length; 
 }
+console.log(isValidSubsequenceLinear1([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10])) // true
