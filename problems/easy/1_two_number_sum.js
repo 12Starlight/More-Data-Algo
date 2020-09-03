@@ -492,7 +492,7 @@ const twoNumberSumLinear3 = (array, targetSum) => {
 
   return [];
 }
-console.log(twoNumberSumLinear3([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [11, -1]))
+console.log(twoNumberSumLinear3([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [11, -1])
 
 // 3: Linear Logarithmic: Iterative: Optimal: 3sParameters(array, targetSum)
 /// i: Sort in place: Array: Algorithm: a minus b: Least to greatest
@@ -524,3 +524,4 @@ const twoNumberSumLinearLogarithmic3 = (array, targetSum) => {
 
   return [];
 }
+console.log(twoNumberSumLinearLogarithmic3([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [-1, 11])
