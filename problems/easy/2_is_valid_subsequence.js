@@ -235,3 +235,22 @@ const isValidSubsequenceLinear2 = (array, sequence) => {
   return seqIdx === sequence.length; 
 }
 console.log(isValidSubsequenceLinear2([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10])) // true
+
+// 2: Linear: Iterative: Optimal: 2sParameters(array, sequence)
+/// i: Variable: sequenceIndex: Assigned: Zero: Pointer one
+/// ii: For Loop of Array: Variable: value
+/// iii: Conditional: sequenceIndex is sequence length: Break: Found subsequence
+/// iv: Conditional: sequence with key sequenceIndex is value: sequenceIndex concatenate one: 
+///     Pointer one moves right: Found a value
+// Outside Iteration: Return sequenceIndex is sequence length
+// Avg: O(n) T | O(1) S
+const isValidSubsequenceOptimal2 = (array, sequence) => {
+  let sequenceIndex = 0; // Pointer one
+
+  for (let value of array) {
+    if (sequenceIndex === sequence.length) break; // Found subsequence
+    if (sequence[sequenceIndex] === value) sequenceIndex++; // Pointer one moves right // Found a value
+  }
+
+  return sequenceIndex === sequence.length;
+}
