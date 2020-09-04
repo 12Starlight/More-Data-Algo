@@ -293,5 +293,5 @@ const isValidSubsequenceLinear3 = (array, sequence) => {
     arrayIndex++; // Pointer one moves right // Keep moving through array
   }
 
-  return sequenceIndex === sequence.length;
+  return sequenceIndex === sequence.length; 
 }
