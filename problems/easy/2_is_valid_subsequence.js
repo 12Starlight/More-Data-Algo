@@ -198,6 +198,7 @@ const isValidSubsequenceOptimal1 = (array, sequence) => {
 console.log(isValidSubsequenceOptimal1([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10])) // true
 
 
+console.log('')
 /*
 Whiteboard Drills: 2: 1, 2
 
@@ -233,3 +234,4 @@ const isValidSubsequenceLinear2 = (array, sequence) => {
 
   return seqIdx === sequence.length; 
 }
+console.log(isValidSubsequenceLinear2([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10])) // true
