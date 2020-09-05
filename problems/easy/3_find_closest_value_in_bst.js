@@ -393,5 +393,4 @@ const findClosestValueInBstHelperRecursion = (bstTree, target, closest) => {
 const findClosestValueInBstLogarithmicRecursion1 = (bstTree, target) => {
   return findClosestValueInBstHelperRecursion(bstTree, target, bstTree.value);
 }
-
 console.log(findClosestValueInBstLogarithmicRecursion1(tree, target)) // 13
