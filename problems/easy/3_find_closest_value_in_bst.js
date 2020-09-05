@@ -321,20 +321,19 @@ Sample Output:
 // }
 
 
-const tree = {
-  "nodes": [
-    { "id": "10", "left": "5", "right": "15", "value": 10 },
-    { "id": "15", "left": "13", "right": "22", "value": 15 },
-    { "id": "22", "left": null, "right": null, "value": 22 },
-    { "id": "13", "left": null, "right": "14", "value": 13 },
-    { "id": "14", "left": null, "right": null, "value": 14 },
-    { "id": "5", "left": "2", "right": "5-2", "value": 5 },
-    { "id": "5-2", "left": null, "right": null, "value": 5 },
-    { "id": "2", "left": "1", "right": null, "value": 2 },
-    { "id": "1", "left": null, "right": null, "value": 1 }
-  ],
-    "root": "10"
-};
+let tree = {
+  value: 10,
+  left: {
+    value: 5,
+    left: { value: 2, left: [], right: null },
+    right: { value: 5, left: null, right: null}
+  },
+  right: {
+    value: 15,
+    left: { value: 13, left: null, right: [] },
+    right: { value: 22, left: null, right: null }
+  }
+}
 
 const target = 12;
 
@@ -375,10 +374,6 @@ class BST {
   }
 }
 
-const findClosestValueInBstLogarithmicRecursion1 = (bstTree, target) => {
-  return findClosestValueInBstHelperRecursion(bstTree, target, bstTree.value);
-}
-
 const findClosestValueInBstHelperRecursion = (bstTree, target, closest) => {
   if (!bstTree) return closest;
 
@@ -395,3 +390,8 @@ const findClosestValueInBstHelperRecursion = (bstTree, target, closest) => {
   }
 }
 
+const findClosestValueInBstLogarithmicRecursion1 = (bstTree, target) => {
+  return findClosestValueInBstHelperRecursion(bstTree, target, bstTree.value);
+}
+
+console.log(findClosestValueInBstLogarithmicRecursion1(tree, target)) // 13
