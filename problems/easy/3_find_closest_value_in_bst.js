@@ -366,7 +366,7 @@ and it's children nodes are either BST nodes themselves or None / null.
 // Avg: O(log(n)) TS (bs we essentially eliminate half the tree at each call)
 // Worst: O(n) T (bc one really long branch) | O(n) S (bc frames on call stack)
 
-class BST {
+class BST0 {
   constructor(value) {
     this.value = value;
     this.left = null;
@@ -407,7 +407,7 @@ console.log(findClosestValueInBstLogarithmicRecursion1(tree, target)) // 13
 // Avg: O(log(n)) T | O(1) S (bc we are only storing two variables)
 // Worst: O(n) T (bc one really long branch) | O(1) S (bc we are only storing two variables)
 
-class BST {
+class BST1 {
   constructor(value) {
     this.value = value;
     this.left = null;
@@ -415,8 +415,8 @@ class BST {
   }
 }
 
-const findClosestValueInBstLogarithmicOptimal = (bstTree, target) => {
-  return findClosestValueInBstIterative1(bstTree, target, bstTree.value);
+const findClosestValueInBstLogarithmicOptimal1 = (bstTree, target) => {
+  return findClosestValueInBstHelperIterative1(bstTree, target, bstTree.value);
 }
 
 const findClosestValueInBstHelperIterative1 = (bstTree, target, closest) => {
@@ -438,3 +438,4 @@ const findClosestValueInBstHelperIterative1 = (bstTree, target, closest) => {
 
   return closest; 
 }
+console.log(findClosestValueInBstLogarithmicOptimal1(tree, target)) // 13
