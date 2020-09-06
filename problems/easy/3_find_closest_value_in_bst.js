@@ -498,3 +498,47 @@ const findClosestValueInBstHelperRecursive2 = (bstTree, target, closest) => {
   }
 }
 console.log(findClosestValueInBstLogarithmic2(tree, target)); // 13
+
+// 2: Logarithmic: Iterative: Optimal: 2sParameters(bstTree, target): HelperAParameters(bstTree, target, closest): class BST
+/// i: Return a
+//// a: findClosestValueInBstHelper: Logarithmic: Iterative: Variable: currentNode: Assigned: bstTree
+///// ai: While Loop: currentNode not null
+///// aii: Conditional: Absolute value of target minus closest greater than absolute value of target minus currentNode value: closest is currentNode value
+///// aiii: Conditional: target less than currentNode value: currentNode: Assigned: currentNode left:
+/////       Else if: target greater than currentNode value: currentNode: Assigned: currentNode right:
+/////       Else: Break: Found value
+// Outside While Loop: Return closest
+// Avg: O(log(n)) T | O(1) S (bc we only store two variables)
+// Worst: O(n) T (bc one really long branch) | O(1) S (bc we only store two variables)
+
+class BST4 {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+const findClosestValueInBstLogarithmicOptimal2 = (bstTree, target) => {
+  return findClosestValueInBstHelperIterative2(bstTree, tareget, bstTree.value);
+}
+
+const findClosestValueInBstHelperIterative2 = (bstTree, target, closest) => {
+  let currentNode = bstTree; // Base like
+
+  while (currentNode) { // currentNode not null
+    if (Math.abs(target - closest) > Math.abs(target - currentNode.value)) {
+      closest = currentNode.value;
+    }
+
+    if (target < currentNode.value) {
+      currentNode = currentNode.left;
+    } else if (target > currentNode.value) {
+      currentNode = currentNode.right;
+    } else {
+      break;
+    }
+  }
+
+  return closest;
+}
