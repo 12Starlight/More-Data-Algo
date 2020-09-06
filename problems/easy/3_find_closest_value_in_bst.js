@@ -501,7 +501,7 @@ console.log(findClosestValueInBstLogarithmic2(tree, target)); // 13
 
 // 2: Logarithmic: Iterative: Optimal: 2sParameters(bstTree, target): HelperAParameters(bstTree, target, closest): class BST
 /// i: Return a
-//// a: findClosestValueInBstHelper: Logarithmic: Iterative: Variable: currentNode: Assigned: bstTree
+//// a: findClosestValueInBstHelper: Logarithmic: Iterative: Variable: currentNode: Assigned: bstTree: Base like
 ///// ai: While Loop: currentNode not null
 ///// aii: Conditional: Absolute value of target minus closest greater than absolute value of target minus currentNode value: closest is currentNode value
 ///// aiii: Conditional: target less than currentNode value: currentNode: Assigned: currentNode left:
@@ -543,3 +543,60 @@ const findClosestValueInBstHelperIterative2 = (bstTree, target, closest) => {
   return closest;
 }
 console.log(findClosestValueInBstLogarithmicOptimal2(tree, target)); // 13
+
+
+console.log('')
+/*
+Whiteboard Drills: Find Closest Value In Bst: 2: 1a, 2a
+
+Explanation:
+Write a function that takes in a Binary Search Tree (BST), and a target integer
+value and returns the closest value to that target value contained in the BST.
+
+You can assume that there will only be one closest value.
+
+Each BST node has an integer value, a left child node, and a right child node. A
+node is said to be a valid BST node, if and only if it satisfies the BST 
+property. It's value is strictly greater than the values of every node to it's 
+left; It's value is less than or equal to the value of every node to it's right;
+and it's children node are both valid BST nodes themselves or None / null
+
+*/
+
+// Solution:
+// 1: Logarithmic: Recursive: 1sParameters(bstTree, target): HelperAParameters(bstTree, target, closest): class BST
+/// i: Return a
+//// a: findClosestValueInBstHelper: Logarithmic: Recursive: Base: Tree is null: Return closest
+///// ai: Conditional: Absolute value of target minus closest greater than absolute value of target minus tree value: closest is tree value
+///// aii: Conditional: target less than tree value: Return: Recursion, aParameters(tree left, target, closest):
+/////      Else if: target greater than tree value: Return: Recursion, aParameters(tree right, target, closest):
+/////      Else: Return closest
+// Avg: O(log(n)) TS (be essentially we are eliminating half the tree at eachc call)
+// Worst: O(n) T (bc one really long branch) | O(n) S (bc frames on call stack)
+class BST5 {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+const findClosestValueInBstLogarithmic3 = (bstTree, target) => {
+  return findCloestValueInBstHelperRecursion3(bstTree, target, bstTree.value);
+}
+
+const findClosestValueInBstHelperRecursion3 = (bstTree, target, closest) => {
+  if (!bstTree) return closest; // Base case
+
+  if (Math.abs(target - closest) > Math.abs(target - bstTree.value)) {
+    closest = bstTree.value; // Reassigning at each call
+  }
+
+  if (target < bstTree.value) {
+    return findClosestValueInBstHelperRecursion3(bstTree.left, target, closest); // Exploring left tree
+  } else if (target > bstTree.value) {
+    return findClosestValueInBstHelperRecursion3(bstTree.right, target, closest); // Exploring right tree
+  } else {
+    return closest; // Found value
+  }
+}
