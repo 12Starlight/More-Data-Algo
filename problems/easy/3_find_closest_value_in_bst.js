@@ -347,9 +347,9 @@ value, and returns the closest value to that target value contained in the BST.
 
 You can assume that there will only be one closest value.
 
-Each BST node has an interger value, a left child node, and a right child node.
+Each BST node has an integer value, a left child node, and a right child node.
 A node is said to be a valid BST node, if and only if it satisfies the BST 
-properties. It's value is strictly greater than the values of every node to it's
+property. It's value is strictly greater than the values of every node to it's
 left; It's value is less than or equal to the value of every node to its right,
 and it's children nodes are either BST nodes themselves or None / null.
 
@@ -363,7 +363,7 @@ and it's children nodes are either BST nodes themselves or None / null.
 ///// aii: Conditional: target less than tree value: Return: Recursion, aParameters(tree left, target, closest):
 /////      Else if: target greater than tree value: Return: Recursion, aParameters(tree right, target, closest): 
 /////      Else: Return closest: Found value
-// Avg: O(log(n)) TS (bs we essentially eliminate half the tree at each call)
+// Avg: O(log(n)) TS (bs essentially we are eliminating half the tree at each call)
 // Worst: O(n) T (bc one really long branch) | O(n) S (bc frames on call stack)
 
 class BST0 {
@@ -397,7 +397,7 @@ console.log(findClosestValueInBstLogarithmicRecursion1(tree, target)) // 13
 
 // 2: Logarithmic: Iterative: Optimal: 2sParemeters(bstTree, target): HelperAParameters(bstTree, target, closest): class BST
 /// i: Return a
-//// a: findClosestValueInBstTreeHelper: Logarithmic: Iterative: Variable: currentNode: Assigned: bstTree: Base like
+//// a: findClosestValueInBstHelper: Logarithmic: Iterative: Variable: currentNode: Assigned: bstTree: Base like
 ///// ai: While Loop: currentNode not null
 ///// aii: Conditional: Absolute value of target minus closest greater than absolute value of target minus currentNode value: closest is currentNode value
 ///// aiii: Conditional: target less than currentNode value: currentNode: Assigned: currentNode left:
@@ -439,3 +439,61 @@ const findClosestValueInBstHelperIterative1 = (bstTree, target, closest) => {
   return closest; 
 }
 console.log(findClosestValueInBstLogarithmicOptimal1(tree, target)) // 13
+
+
+console.log('');
+/*
+Whiteboard Drills: Find Closest Value In BST: 2: 1a, 2a
+
+Explanation:
+Write a function that takes in a Binary Search Tree (BST), and a target integer
+value and returns the closest value to that target value contained in the BST.
+
+You can assume that there will only be one closest value.
+
+Each BST node has an integer value, a left child node, and a right child node. A
+node is said to be a valid BST node, if and only if it satisfies the BST 
+property. It's value is strictly greater than the values of every node to it's 
+left; it's value is less than or equal to the values of every node to it's right
+and it's children nodes are either valid BST nodes themselves or None / null.
+
+*/
+
+// Solution:
+// 1: Logarithmic: Recursive: 1sParameters(bstTree, target): HelperAParameters(bstTree, target, closest): class BST
+/// i: Return a
+//// a: findClosestValueInBstHelper: Logarithmic: Recursive: Base: Tree is null: Return closest
+///// ai: Conditional: Absolute value of target minus closest greater than absolute value of target minus tree value: closest is tree value
+///// aii: Conditional: target less than tree value: Return: Recursion, aParameters(tree left, target, closest):
+/////      Else if: target greater than tree value: Return: Recursion, aParameters(tree right, target, closest):
+/////      Else: Return closest: Found value
+// Avg: O(log(n)) TS (be essentially we are elminating half the tree at each call)
+// Worst: O(n) T (bc one really long branch) | O(n) S (bc frames on call stack)
+
+class BST3 {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+const findClosestValueInBstLogarithmic2 = (bstTree, target) => {
+  return findClosestValueInBstHelperRecursive2(bstTree, target, bstTree.value);
+}
+
+const findClosestValueInBstHelperRecursive2 = (bstTree, target, closest) => {
+  if (!bstTree) return closest;
+
+  if (Math.abs(target - closest) > Math.abs(target - bstTree.value)) {
+    closest = bstTree.value;
+  }
+
+  if (target < bstTree.value) {
+    return findClosestValueInBstHelperRecursive2(bstTree.left, target, closest);
+  } else if (target > bstTree.value) {
+    return findClosestValueInBstHelperRecursive2(bstTree.right, target, closest);
+  } else {
+    return closest;
+  }
+}
