@@ -497,3 +497,4 @@ const findClosestValueInBstHelperRecursive2 = (bstTree, target, closest) => {
     return closest;
   }
 }
+console.log(findClosestValueInBstLogarithmic2(tree, target)); // 13
