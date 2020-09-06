@@ -582,7 +582,7 @@ class BST5 {
 }
 
 const findClosestValueInBstLogarithmic3 = (bstTree, target) => {
-  return findCloestValueInBstHelperRecursion3(bstTree, target, bstTree.value);
+  return findClosestValueInBstHelperRecursion3(bstTree, target, bstTree.value);
 }
 
 const findClosestValueInBstHelperRecursion3 = (bstTree, target, closest) => {
@@ -600,3 +600,4 @@ const findClosestValueInBstHelperRecursion3 = (bstTree, target, closest) => {
     return closest; // Found value
   }
 }
+console.log(findClosestValueInBstLogarithmic3(tree, target)); // 13
