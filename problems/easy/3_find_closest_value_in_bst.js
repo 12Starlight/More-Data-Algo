@@ -536,7 +536,7 @@ const findClosestValueInBstHelperIterative2 = (bstTree, target, closest) => {
     } else if (target > currentNode.value) {
       currentNode = currentNode.right;
     } else {
-      break;
+      break; // Found value
     }
   }
 
