@@ -520,7 +520,7 @@ class BST4 {
 }
 
 const findClosestValueInBstLogarithmicOptimal2 = (bstTree, target) => {
-  return findClosestValueInBstHelperIterative2(bstTree, tareget, bstTree.value);
+  return findClosestValueInBstHelperIterative2(bstTree, target, bstTree.value);
 }
 
 const findClosestValueInBstHelperIterative2 = (bstTree, target, closest) => {
@@ -542,3 +542,4 @@ const findClosestValueInBstHelperIterative2 = (bstTree, target, closest) => {
 
   return closest;
 }
+console.log(findClosestValueInBstLogarithmicOptimal2(tree, target)); // 13
