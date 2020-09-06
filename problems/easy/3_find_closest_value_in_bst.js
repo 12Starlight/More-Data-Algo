@@ -644,3 +644,4 @@ const findClosestValueInBstHelperIterative3 = (bstTree, target, closest) => {
 
   return closest;
 }
+console.log(findClosestValueInBstLogarithmicOptimal3(tree, target)); // 13
