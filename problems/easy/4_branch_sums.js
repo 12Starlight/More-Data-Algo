@@ -243,7 +243,7 @@ class BinaryTree {
 
 const branchSums = (root) => {
   const sums = [];
-  calculateBranchSums(root, 0, sums);
+  calculateBranchSumsHelper(root, 0, sums);
   return sums;
 }
 
@@ -259,3 +259,4 @@ const calculateBranchSumsHelper = (node, runningSum, sums) => {
   calculateBranchSumsHelper(node.left, newRunningSum, sums); // Explore left tree
   calculateBranchSumsHelper(node.right, newRunningSum, sums); // Explore right tree
 }
+console.log(branchSums(root)); // [15, 16, 18, 10, 11]
