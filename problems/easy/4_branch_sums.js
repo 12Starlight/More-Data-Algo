@@ -377,3 +377,4 @@ const calculateBranchSumsRecursive = (node, runningSum, sums) => {
   calculateBranchSumsRecursive(node.left, newRunningSum, sums); // Explore left tree
   calculateBranchSumsRecursive(node.right, newRunningSum, sums); // Explore right tree
 }
+console.log(branchSums3(root)); // [15, 16, 18, 10, 11]
