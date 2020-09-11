@@ -233,12 +233,12 @@ node. Children nodes are either both BinaryTree nodes themselves or None / null.
 /////     Envoke: Recursion, aParameters(node right, newRunningSum, sums): Explore right tree
 /// iii: Return sums
 // Avg: O(n) T | O(n) S (bc n/2, half the tree nodes are leaf nodes which represent the sums list length)
-class BinaryTree {
+class BinaryTree0 {
   constructor(value) {
     this.value = value;
     this.left = null;
     this.right = null;
-  }
+  }  
 }
 
 const branchSums = (root) => {
@@ -260,3 +260,61 @@ const calculateBranchSumsHelper = (node, runningSum, sums) => {
   calculateBranchSumsHelper(node.right, newRunningSum, sums); // Explore right tree
 }
 console.log(branchSums(root)); // [15, 16, 18, 10, 11]
+
+
+/*
+whiteboard Drills: Branch Sums: 1: 1a
+
+Explanation:
+Write a function that takes in a Binary Search Tree and returns a list of it's
+branch sums ordered from leftmost branch sum to rightmost branch sum.
+
+A branch sum is the sum of all values from a Binary Tree branch. A Binary Tree
+branch is a path of nodes in a tree that starts at the root node and ends at any
+leaf node.
+
+Each Binary Tree has an integer value, a left child node, and a right child 
+node. Children nodes can either be Binary Tree nodes themselves or None / null.
+
+*/ 
+
+// Solution:
+// 1: Linear: Recursive: Optimal: 1sParameters(root): HelperAParameters(node, runningSum, sums): class BinaryTree
+/// i: Variable: sums: Assigned: Empty Array
+/// ii: Envoke: Recursion, aParameters(root, zero, sums)
+//// a: calculateBranchSums: Linear: Recursive: HelperAParameters(node, runningSum, sums)
+///// ai: Base: root is null: Return
+///// aii: Variable: newRunningSum: Assigned: runningSum plus node value:
+/////      All the node values on branch above current node value is newRunningSum
+///// aiii: Conditional: Determine leaf nodes: node left has zero children and node right has zero children
+///// aiv: If at leaf node: runningSum is branch sum: Append newRunningSum to sums list: Return: Exit bc at leaf node
+///// av: Not at leaf node: Envoke: Recursion, aParameters(tree left, newRunningSum, sums): Explore left tree:
+/////     Envoke: Recursion, aParameters(tree right, newRunningSum, sums): Explore right tree
+/// iii: Return sums
+// Avg: O(n) T | O(n) S (bc n/2, half the tree nodes are leaf nodes and represent the sums list length)
+class BinaryTree1 {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+const branchSums = (root) => {
+  const sums = []; 
+  calculateBranchSumsHelper(root, 0, sums);
+  return sums;
+}
+
+const calculateBranchSums = (node, runningSum, sums) => {
+  if (!node) return; // handles one child
+  const newRunningSum = runningSum + node.value;
+
+  if (!node.left && !node.right) {
+    sums.push(newRunningSum);
+    return; // Exit bc at leaf node
+  }
+
+  calculateBranchSums(node.left, newRunningSum, sums); // Explore left tree
+  calculateBranchSums(node.right, newRunningSum, sums); // Explore right tree
+}
