@@ -241,7 +241,7 @@ class BinaryTree0 {
   }  
 }
 
-const branchSums = (root) => {
+const branchSums1 = (root) => {
   const sums = [];
   calculateBranchSumsHelper(root, 0, sums);
   return sums;
@@ -259,7 +259,7 @@ const calculateBranchSumsHelper = (node, runningSum, sums) => {
   calculateBranchSumsHelper(node.left, newRunningSum, sums); // Explore left tree
   calculateBranchSumsHelper(node.right, newRunningSum, sums); // Explore right tree
 }
-console.log(branchSums(root)); // [15, 16, 18, 10, 11]
+console.log(branchSums1(root)); // [15, 16, 18, 10, 11]
 
 
 /*
@@ -300,13 +300,13 @@ class BinaryTree1 {
   }
 }
 
-const branchSums = (root) => {
+const branchSums2 = (root) => {
   const sums = []; 
   calculateBranchSumsHelper(root, 0, sums);
   return sums;
 }
 
-const calculateBranchSums = (node, runningSum, sums) => {
+const calculateBranchSumsRecursion = (node, runningSum, sums) => {
   if (!node) return; // handles one child
   const newRunningSum = runningSum + node.value;
 
@@ -315,6 +315,7 @@ const calculateBranchSums = (node, runningSum, sums) => {
     return; // Exit bc at leaf node
   }
 
-  calculateBranchSums(node.left, newRunningSum, sums); // Explore left tree
-  calculateBranchSums(node.right, newRunningSum, sums); // Explore right tree
+  calculateBranchSumsRecursion(node.left, newRunningSum, sums); // Explore left tree
+  calculateBranchSumsRecursion(node.right, newRunningSum, sums); // Explore right tree
 }
+console.log(branchSums2(root)); // [15, 16, 18, 10, 11]
