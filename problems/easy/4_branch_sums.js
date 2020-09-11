@@ -328,8 +328,9 @@ Explanation:
 Write a function that takes in a Binary Search Tree and returns a list of it's
 branch sums ordered from leftmost branch sum to rightmost branch sum.
 
-A branch sum is all the values of a Binary Tree branch. A Binary Tree branch is
-a path of nodes in a tree that start at the root node and end at any leaf node.
+A branch sum is all the values in a Binary Tree branch. A Binary Tree branch is
+a path of nodes in a tree that starts at the root node and ends at any leaf 
+node.
 
 Each Binary Tree node has an integer value, a left child node, and a right child
 node. Children nodes can either be Binary Tree nodes themselves or None / null.
