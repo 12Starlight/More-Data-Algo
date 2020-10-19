@@ -95,3 +95,5 @@ const buildSequence = (lengths, string) => {
   }
   return sequence;
 }
+
+console.log(longestCommonSubsequenceOptimal(str1, str2)); // ['x', 'y', 'z', 'w']
