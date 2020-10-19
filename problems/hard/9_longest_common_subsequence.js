@@ -54,3 +54,4 @@ const longestCommonSubsequence = (str1, str2) => {
   return lcs[str2.length][str1.length];
 }
 
+console.log(longestCommonSubsequence(str1, str2)) // ['x', 'y', 'z', 'w']
