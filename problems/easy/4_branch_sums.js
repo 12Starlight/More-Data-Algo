@@ -193,8 +193,8 @@ const root = {
   value: 1,
   left: {
     value: 2,
-    left: { value: 4, left: [], right: [] },
-    right: { value: 5, left: [], right: null }
+    left: { value: 4, left: {}, right: {} },
+    right: { value: 5, left: {}, right: null }
   },
   right: {
     value: 3,
@@ -254,7 +254,7 @@ const calculateBranchSumsHelper = (node, runningSum, sums) => {
   if (!node.left && !node.right) {
     sums.push(newRunningSum);
     return; // Exit bc at leaf node
-  }
+  } 
 
   calculateBranchSumsHelper(node.left, newRunningSum, sums); // Explore left tree
   calculateBranchSumsHelper(node.right, newRunningSum, sums); // Explore right tree
@@ -266,7 +266,7 @@ console.log(branchSums1(root)); // [15, 16, 18, 10, 11]
 whiteboard Drills: Branch Sums: 1: 1a
 
 Explanation:
-Write a function that takes in a Binary Search Tree and returns a list of it's
+Write a function that takes in a Binary Search Tree and returns a list of it's 
 branch sums ordered from leftmost branch sum to rightmost branch sum.
 
 A branch sum is the sum of all values from a Binary Tree branch. A Binary Tree
