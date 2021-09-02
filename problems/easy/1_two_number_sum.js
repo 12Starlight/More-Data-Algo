@@ -525,3 +525,11 @@ const twoNumberSumLinearLogarithmic3 = (array, targetSum) => {
   return [];
 }
 console.log(twoNumberSumLinearLogarithmic3([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [-1, 11])
+
+
+/*
+STARTING OVER AND TRYING IT COMPLETELY ANNA PASCHALL'S WAY
+
+I CAN DO THIS :BIG HUG :)
+
+*/
