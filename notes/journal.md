@@ -8,6 +8,7 @@
 ### **09/02/2021 :**
 <p>Restructured workspace files and added a directory</p>
 <p>Worked with command line to improve structure of project</p>
+<p>Added notes</p>
 <p>Watched `Data Structures Crash Course`</p>
 
 * Introduction
