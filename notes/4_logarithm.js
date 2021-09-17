@@ -171,3 +171,36 @@ Logarithm:
   half, and you end at the bottom most left node (or so). 
 
 */              
+
+/* 
+Logarithm
+  A mathematical concept that is widely used in Computer Science and that is
+  defined by the following equation:
+
+    log_b(x) = y if and only if b^y = x
+
+  
+  In the context of coding interviews, the logarithm is used to describe the
+  complexity analysis of algorithms, and its usage always implies a logarithm of
+  base 2. In other words, the logarithm used in the context of coding interviews
+  is defined by the following equation:
+
+    log(n) = y if and only if 2^y = n
+
+  
+  In plain English, if an algorithm has a logarithmic time complexity 
+  (O(log(n))), where n is the size of the input), then whenever the algorithm's
+  input doubles in size (i.e., whenever n doubles), the number of operations
+  needed to complete the algorithm only increases by one unit. Conversely, an
+  algorithm with a linear time complexity would see its number of operations
+  double if its input size doubled.
+
+  As an example, a linear-time-conplexity algorithm with an input of size 1,000
+  might take rougly 1,000 operations to complete, whereas a 
+  logarithmic-time-complexity algorithm with the same input would take rougly 10 
+  operations to complete, since 2^10 ~= 1,000. 
+
+
+
+
+*/
