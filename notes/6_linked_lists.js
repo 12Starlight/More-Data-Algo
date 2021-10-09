@@ -382,4 +382,11 @@ Linked Lists:
       * Searching for a value: O(n)
 
 
+  Circular Linked List
+    A linked list that has no clear *head* or *tail*, because it's "tail" points 
+    to it's "head," effectively forming a closed circle.
+
+    A circular linked list can be either a *singly circular linked list* or a 
+    *doubly circular linked list*.
+
 */
