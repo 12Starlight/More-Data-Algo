@@ -351,7 +351,35 @@ Linked Lists:
       * Inserting/Removing the middle node: O(n) to access + O(1)
       * Searching for a value: O(n)
 
+  
+  Doubly Linked List
+    Similar to a *singly linked list*, except that each node in a doubly linked
+    list also has a pointer to the previous node in the linked list. The 
+    previous node is typically stored in a "prev" property.
     
+    Just as the "next" property of a doubly linked list's *tail* points to the
+    "null" value, so too does the "prev" property of a doubly linked list's
+    *head*.
+
+    Below is a visual representation of a doubly linked list whose nodes
+    hold integer values:
+
+      null <- 0 <-> 1 <-> 2 <-> 3 <-> 4 <-> 5 -> null
+
+    
+    While a doubly linked list typically exposes both it's head and tail to it's
+    user, as opposed to just it's head in the case of a singly linked list, it
+    otherwise behaves very similarly to a singly linked list.
+
+    The following are a doubly linked list's standard operations and their
+    corresponding time complexitites:
+      * Accessing the head: O(1)
+      * Accessing the tail: O(1)
+      * Accessing the middle node: O(n)
+      * Inserting/Removing the head: O(1)
+      * Inserting/Removing the tail: O(1)
+      * Inserting/Removing a middle node: O(n) to access + O(1)
+      * Searching for a value: O(n)
 
 
 */
