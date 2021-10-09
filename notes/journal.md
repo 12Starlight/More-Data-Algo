@@ -15,3 +15,11 @@
 * What Are Data Structures
 * Complexity Analysis
 * Memory
+
+&nbsp;
+### **10/09/2021 :**
+<p>Figured out how to study while working which was really exciting 🔥</p> 
+<p>Covered Linked Lists and made notes</p>
+<p>Watched 'Data Structures Crash Course'</p>
+
+* Linked Lists
