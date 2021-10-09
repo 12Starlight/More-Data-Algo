@@ -315,3 +315,43 @@ Space & Time Complexity:
     do whatever you want, depending on your use case. 
 
 */
+
+/* 
+Linked Lists:
+
+  Singly Linked List
+    A data structure that consists of nodes, each with some value and a pointer
+    to the next node in the linked list. A linked list node's value and next 
+    node are typically stored in "value" and "next" properties.
+
+    The first node in a linked list is referred to as the *head* of the linked
+    list, while the last node in a linked list, whose "next" property points to
+    the "null" value, is known as the *tail* of the linked list.
+
+    Below is a visual representation of a singly linked list whose nodes hold
+    integer values:
+
+      0 -> 1 -> 2 -> 3 -> 4 -> 5 -> null
+
+    
+    A singly linked list typically exposes its head to it's user for easy 
+    access. While finding a node in a singly linked list involves traversing 
+    through all of the nodes leading up to the node in question (as opposed to 
+    instant access with an array), adding or removing nodes simply involves 
+    overwritting "next" pointers (assuming that you have access to the node 
+    right before the node that you're adding or removing).
+
+    The following are a singly linked list's standard operations and their
+    corresponding time complexiities:
+      * Accessing the head: O(1)
+      * Accessing the tail: O(n)
+      * Accessing a middle node: O(n)
+      * Inserting/Removing the head: O(1)
+      * Inserting/Removing the tail: O(n) to access + O(1)
+      * Inserting/Removing the middle node: O(n) to access + O(1)
+      * Searching for a value: O(n)
+
+    
+
+
+*/
