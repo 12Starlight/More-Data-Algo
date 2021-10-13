@@ -141,9 +141,11 @@ Binary Tree
   and commonly used data structure.
 
 
+K-ary Tree
+  A *tree* whose nodes have up to *k* child-nodes. A *binary tree* is a k-ary
+  tree where *k == 2*.
 
 
 
 
-  
 */
