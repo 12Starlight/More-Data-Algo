@@ -189,4 +189,42 @@ Complete Binary Tree
                   /             \   
                  8                9
 
+
+  Balanced Binary Tree
+    A *binary tree* whose nodes all have left and right *subtrees* whose 
+    *heights* differ by no more than 1.
+
+    A balanced binary tree is such that the logarithmic time complexity of it's
+    operations is maintained.
+
+    For example, inserting a node at the bottom of the following IMBALANCED
+    binary tree's left subtree would clearly not be a logarithmic-time
+    operation, since it would involve traversing through most of the tree's 
+    nodes:
+
+
+                         1
+                  /             \
+                2                 3
+              /   
+            4     
+           /   
+          8  
+         / 
+        9
+       /
+     10 
+     
+    
+    The following is an example of a balanced binary tree:
+
+
+                         1
+                  /             \
+                2                 3
+              /   \             /   \
+            4       5         6       7
+          /   \                      /  
+         10    9                    8
+         
 */
