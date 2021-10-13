@@ -251,4 +251,12 @@ Directed Graph
   without necessarily implying the presence of a flight in the opposite 
   direction.
 
+
+Undirected Graph
+  A *graph* whose *edges* are undirected, meaning that they can be traversed in
+  both directions.
+
+  For example, a graph of friends would likely be undirected, since a friendship
+  is, by nature, bidirectional.
+
 */
