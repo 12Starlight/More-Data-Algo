@@ -158,4 +158,35 @@ Perfect Binary Tree
           /   \   /   \     /   \   /   \
          8     9 10   11   12   13 14    15 
 
+
+Complete Binary Tree
+  A *binary tree* that's ALMOST *perfect*; it's interior nodes all have two
+  child-nodes, but it's *leaf nodes* do not necessarily all have the same 
+  *depth*. Furthermore, the nodes in the last *level* of a complete binary tree
+  are as far left as possible.
+  
+  Example:
+
+
+                         1
+                  /             \
+                2                 3
+              /   \             /   \
+            4       5         6       7
+          /   \   
+         8     9 
+         
+  
+  Conversly, the following binary tree is NOT complete, because the nodes in
+  it's last level are not as far left as possible:
+
+
+                         1
+                  /             \
+                2                 3
+              /   \             /   \
+            4       5         6       7
+                  /             \   
+                 8                9
+
 */
