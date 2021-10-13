@@ -133,4 +133,17 @@ Tree
   *binary trees*, *heeps*, and *tries*.
 
 
+Binary Tree
+  A *tree* whose nodes have up to *two* child-nodes.
+
+  The structure of a binary tree is such that many of it's operations have a 
+  logarithmic time complexity, making the binary tree an incredibly attractive
+  and commonly used data structure.
+
+
+
+
+
+
+  
 */
