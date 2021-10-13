@@ -224,5 +224,13 @@ Graph
   between the locations.
 
 
+Graph Cycle
+  Simply put, a cycle occurs in a *graph* when three or more *vertices* in the
+  graph are connected so as to form a closed loop.
+  
+  Note that the definition of a graph cycle is sometimes broadened to include
+  cycles of length two or one; in the context of coding interviews, when dealing
+  with questions that involve graph cycles, it's important to clarify what
+  exactly constitutes a cycle.
 
 */
