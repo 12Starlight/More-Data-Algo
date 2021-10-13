@@ -259,4 +259,19 @@ Undirected Graph
   For example, a graph of friends would likely be undirected, since a friendship
   is, by nature, bidirectional.
 
+
+Connected Graph
+  A *graph* is connected if for every pair of *vertices* in the graph, there's
+  a path of one or more *edges* connecting the given vertices.
+
+  In the case of the *directed graph*, the graph is:
+    * strongly connected if there are bidirectional connections between the 
+  vertices of every pair of vertices (i.e., for every vertex-pair "u,v" you can
+  reach "v" from "u" and "u" from "v")
+    * weakly connected if there are connections (but not necessarily 
+  bidirectional ones) between the vertices of every pair of vertices
+
+
+  A graph that isn't connected is said to be *disconnected*.
+
 */
