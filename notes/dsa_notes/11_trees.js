@@ -146,6 +146,16 @@ K-ary Tree
   tree where *k == 2*.
 
 
+Perfect Binary Tree
+  A *binary tree* whose interior nodes all have two child-nodes and whose *leaf
+  nodes* all have the same *depth*. Example:
 
+                         1
+                  /             \
+                2                 3
+              /   \             /   \
+            4       5         6       7
+          /   \   /   \     /   \   /   \
+         8     9 10   11   12   13 14    15 
 
 */
