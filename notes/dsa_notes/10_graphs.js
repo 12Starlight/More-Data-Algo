@@ -233,4 +233,12 @@ Graph Cycle
   with questions that involve graph cycles, it's important to clarify what
   exactly constitutes a cycle.
 
+
+Acyclic Graph
+  A *graph* that has no *cycles*.
+  
+
+Cyclic Graph
+  A *graph* that has a least one *cycle*.
+
 */
