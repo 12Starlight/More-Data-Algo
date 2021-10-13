@@ -226,5 +226,21 @@ Complete Binary Tree
             4       5         6       7
           /   \                      /  
          10    9                    8
-         
-*/
+
+
+Full Binary Tree
+  A *binary tree* whose nodes all have either two child-nodes or zero 
+  child-nodes.
+
+  Example:
+
+
+                         1
+                  /             \
+                2                 3
+                                /   \
+                              6       7
+                            /   \
+                           8     9 
+                            
+ */
