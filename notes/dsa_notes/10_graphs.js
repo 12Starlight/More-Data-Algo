@@ -211,3 +211,18 @@ Graphs:
   hand, so here we are not really going to cover them. 
 
 */
+
+/*
+Graph 
+  A collection of nodes or values called *vertices* that might be related;
+  relations between vertices are called *edges*.
+
+  Many things in life can be represented by graphs; for example, a social
+  network can be represented by a graph whose vertices are users and whose edges
+  are friendships between users. Similarly, a city map can be represented by a
+  graph whose vertices are locations in the city and whose edges are roads
+  between the locations.
+
+
+
+*/
