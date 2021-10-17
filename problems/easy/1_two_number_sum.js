@@ -533,3 +533,35 @@ STARTING OVER AND TRYING IT COMPLETELY ANNA PASCHALL'S WAY
 I CAN DO THIS :BIG HUG :)
 
 */
+
+/*
+10/17/2021
+Time Complexity: O(n^2)
+
+
+Concept: 
+
+Iterate within another iteration to chech wheter each value added to another
+value adds up to the target sum.
+
+
+Sudo:
+
+Iterate through the array making sure that the iteration does not move to the
+very last index.
+  Iterate through the array again starting at the index after the first iteration
+  starts and ending before the last index of the array.
+    Checking each value from the first iteration added to the second value of the
+    second iteration and whether together they add to the target sum.
+              
+Edge Case:
+                    
+If none of the numbers do not add up to the target sum, then return an empty
+array
+
+
+
+
+
+
+*/
