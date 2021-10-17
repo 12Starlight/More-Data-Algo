@@ -559,9 +559,27 @@ Edge Case:
 If none of the numbers do not add up to the target sum, then return an empty
 array
 
-
-
-
-
-
 */
+
+// Two Number Sum
+// Inputs : array, targetSum
+// Edge : return []
+
+const arrTwoNum = [3, 5, -3, 8, 7];
+const targetSumTwoNum = 10;
+
+const twoNumberSumQuad = (array, targetSum) => {
+  for (let i = 0; i < array.length - 1; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] == targetSum) {
+        console.log("\n\nTwo Number Sum : O(n^2) time complexity: O(1) space complexity\n")
+        return [array[i], array[j]]
+      } 
+    }
+  }
+
+  return [];
+}
+
+// Test
+console.log(twoNumberSumQuad(arrTwoNum, targetSumTwoNum));
