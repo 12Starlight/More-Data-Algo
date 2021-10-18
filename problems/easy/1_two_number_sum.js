@@ -583,3 +583,39 @@ const twoNumberSumQuad = (array, targetSum) => {
 
 // Test
 console.log(twoNumberSumQuad(arrTwoNum, targetSumTwoNum));
+
+
+/*
+11/18/2021
+Time Complexity: O(n) time : O(n) space
+
+
+Concept:
+
+Iterate through array and store each iterated value in a hashtable. Then cheack
+whether the difference between the target sum and the iteration value exists in
+that hashtable.
+
+
+Sudo:
+
+Create hashtable and give it a meaningful name.
+
+Iterate through array making sure to iterate all the way to the end of the 
+array.
+  Create a conditional to check whether the difference between the target sum
+  and the iterated value exists as a key in the previously created hashtable.
+    If the key does exist, then return an array with the iterated array value
+    and the difference inside it.
+
+    If the key does not exist, then add the iterated array value as a key that
+    is set to true in the hashtable.
+
+
+Edge Case:
+
+If the none of the numbers in the hashtable equal the difference between the
+target sum and the iterated array value, then return an empty array.
+
+
+*/
