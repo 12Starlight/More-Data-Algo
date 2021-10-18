@@ -704,7 +704,7 @@ If none of the sums are equal to the target sum, return an empty array.
 */
 
 // Two Number Sum
-// Time Complexity : O(n(log(n))) time : O(n(log(n))) space
+// Inputs : array, targetSum
 // Edge : Return empty []
 
 const twoNumberSumnLogn = (array, targetSum) => {
@@ -727,4 +727,28 @@ const twoNumberSumnLogn = (array, targetSum) => {
   return [];
 }
 
+// Two Number Sum
+// Inputs : array, targetSum
+// Edge : return []
+
+const twoNumberSumnLognAE = (array, targetSum) => {
+  array.sort((a, b) => a - b);
+  let left = 0;
+  let right = array.length - 1;
+
+  while (left < right) {
+    const current = array[left] + array[right];
+    if (current === targetSum) {
+      return [array[left], array[right]];
+    } else if (current < targetSum) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+
+  return [];
+}
+
 console.log(twoNumberSumnLogn(arrTwoNum, targetSumTwoNum));
+console.log(twoNumberSumnLognAE(arrTwoNum, targetSumTwoNum));
