@@ -617,5 +617,25 @@ Edge Case:
 If the none of the numbers in the hashtable equal the difference between the
 target sum and the iterated array value, then return an empty array.
 
-
 */
+
+// Two Number Sum
+// Inputs : array, targetSum
+// Edge : return []
+
+const twoNumberSumLin = (array, targetSum) => {
+  const iteratedNums = {};
+
+  for (let i = 0; i < array.length; i++) {
+    if (iteratedNums.hasOwnProperty(targetSum - array[i])) {
+      console.log("\n\nTwo Number Sum : O(n) time complexity: O(n) space complexity\n")
+      return [array[i], targetSum - array[i]];
+    } else {
+      iteratedNums[array[i]] = true;
+    }
+  }
+
+  return [];
+}
+
+console.log(twoNumberSumLin(arrTwoNum, targetSumTwoNum));
