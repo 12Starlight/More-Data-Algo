@@ -638,4 +638,25 @@ const twoNumberSumLin = (array, targetSum) => {
   return [];
 }
 
+// Two Number Sum
+// Inputs : array, targetSum
+// Edge : return []
+
+const twoNumberSumLinAE = (array, targetSum) => {
+  const iteratedNums = {};
+
+  for (const num of array) {
+    const potentialMatch = targetSum - num;
+    if (potentialMatch in iteratedNums) {
+      return [num, potentialMatch];
+    } else {
+      iteratedNums[num] = true;
+    }
+  }
+
+    return [];
+}
+
 console.log(twoNumberSumLin(arrTwoNum, targetSumTwoNum));
+console.log(twoNumberSumLinAE(arrTwoNum, targetSumTwoNum));
+
