@@ -660,3 +660,71 @@ const twoNumberSumLinAE = (array, targetSum) => {
 console.log(twoNumberSumLin(arrTwoNum, targetSumTwoNum));
 console.log(twoNumberSumLinAE(arrTwoNum, targetSumTwoNum));
 
+
+/*
+11/18/2021
+Time Complexity: O(n(log(n))) time : O(1) space
+
+
+Concept:
+
+Sort the array. Then add the largest value in the array with the smallest value
+in the array. After whichcreate a conditional to compare the sum of these values 
+to the target sum. If the sum is greater, move the right pointer to the left. 
+Taking advantage of the sorted array and knowing that the next number to the
+left of the right pointer is going to be smaller. This is true opposite for the
+left pointer. Once the numbers are in deed equal to the target sum, then return
+the in an array the sorted values of the left and right pointers.
+
+
+Sudo:
+
+Sort the array.
+Create a left pointer that starts at the beginning of the sorted array.
+Create a right pointer that starts at the end of the sorted array.
+
+Iterate through the sorted array.
+  Add the sorted array values together using the left and right pointers to get
+  the sum. 
+    Create a conditional to compare the sum to the target sum.
+      If the sum is greater than the target sum, move the right pointer to the
+      left.
+
+      if the sum is less than the target sum, move the left pointer to the 
+      right.
+
+      If the sume is equal to the target sum, return the sorted array value of
+      the left and right pointers.
+
+
+Edge Case:
+
+If none of the sums are equal to the target sum, return an empty array.
+
+*/
+
+// Two Number Sum
+// Time Complexity : O(n(log(n))) time : O(n(log(n))) space
+// Edge : Return empty []
+
+const twoNumberSumnLogn = (array, targetSum) => {
+  const sorted = array.sort((a, b) => a - b);
+  let left = 0;
+  let right = array.length - 1;
+
+  for (const num of sorted) {
+    let sum = sorted[left] + sorted[right];
+    if (sum < targetSum) {
+      left++;
+    } else if (sum > targetSum) {
+      right--;
+    } else {
+      console.log("\n\nTwo Number Sum : O(n(log(n))) time complexity: O(1) space complexity\n")
+      return [sorted[left], sorted[right]];
+    }
+  }
+
+  return [];
+}
+
+console.log(twoNumberSumnLogn(arrTwoNum, targetSumTwoNum));
