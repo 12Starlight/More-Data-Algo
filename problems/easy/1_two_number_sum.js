@@ -586,7 +586,7 @@ console.log(twoNumberSumQuad(arrTwoNum, targetSumTwoNum));
 
 
 /*
-11/18/2021
+10/18/2021
 Time Complexity: O(n) time : O(n) space
 
 
@@ -662,7 +662,7 @@ console.log(twoNumberSumLinAE(arrTwoNum, targetSumTwoNum));
 
 
 /*
-11/18/2021
+10/18/2021
 Time Complexity: O(n(log(n))) time : O(1) space
 
 
