@@ -415,3 +415,21 @@ a sequence.
 
 */
 
+// Is Valid Subsequence ForLoop
+// Inputs : array, sequence
+// Edge : [] or single number can be a valid subsequence
+
+const isValidSubsequenceForLoop = (array, sequence) => {
+  let sequencePointer = 0;
+
+  for (const num of array) {
+    if (num === sequence[sequencePointer]) sequencePointer++;
+    if (sequencePointer === sequence.length) return true;
+  }
+
+  console.log("\n\nIs Valid SubsequenceForLoop : O(n) time complexity: O(1) space complexity\n")
+  return false;
+}
+
+// Test
+console.log(isValidSubsequenceForLoop(arrIsValid, sequeneIsValid));
