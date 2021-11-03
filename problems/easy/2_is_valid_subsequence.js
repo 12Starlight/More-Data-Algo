@@ -382,3 +382,36 @@ const isValidSubsequenceEA = (array, sequence) => {
 // Test
 console.log(isValidSubsequenceEA(arrIsValid, sequeneIsValid));
 
+
+/*
+11/02/2021
+Time Complexity: O(n) time : O(1) space
+
+
+Concept:
+
+Iterate and check values as above except using only one pointer for the sequence
+array and instead using a for loop for the main array. Then using the same logic
+as above.
+
+
+Sudo:
+Create sequence pointer.
+Iterate through the main array using a for loop.
+  Check if main array value is equal to sequence array value.
+    If true, using addition add one value to the sequence array value.
+
+    If the sequence pointer value is the same as the sequence length, then
+    return true.
+
+Return false after iterating through the entire main array and not getting to
+the end of the sequence array.
+
+
+Edge Case:
+
+Again no real edge case except that the array iteself or a single number can be
+a sequence.
+
+*/
+
