@@ -357,5 +357,28 @@ Edge Case:
 In this example there really is no edge case except that the array or a single
 number could be considered a valid subsequence.
 
-
 */
+
+// Is Valid Subsequence AE
+// Inputs : array, sequence
+// Edge : [] or single number can be considered a valid subsequence
+
+const arrIsValid = [5, 1, 22, 25, 6, -1, 8, 10];
+const sequeneIsValid = [1, 6, -1, 10];
+
+const isValidSubsequenceEA = (array, sequence) => {
+  let arrayPointer = 0;
+  let sequencePointer = 0;
+
+  while (arrayPointer < array.length && sequencePointer < sequence.length) {
+    if (array[arrayPointer] === sequence[sequencePointer]) arrayPointer++;
+    sequencePointer++;
+  }
+
+  console.log("\n\nIs Valid SubsequenceEA : O(n) time complexity: O(1) space complexity\n")
+  return sequence.length === array.length;
+}
+
+// Test
+console.log(isValidSubsequenceEA(arrIsValid, sequeneIsValid));
+
