@@ -316,3 +316,46 @@ const isValidSubsequenceOptimal3 = (array, sequence) => {
   return sequenceIndex === sequence.length; 
 }
 console.log(isValidSubsequenceOptimal3([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10])) // true
+
+
+/*
+STARTING OVER AND TRYING IT COMPLETELY ANNA PASCHALL'S WAY
+
+I CAN DO THIS :BIG HUG :)
+
+*/
+
+/*
+11/02/2021
+Time Complexity: 
+
+
+Concept: 
+
+Create two pointers which will be used for the main array and the sequence. Then
+use a while loop that compares the pointer values to the length of the main 
+array and sequence array. The iterations will continue as long as the pointer
+value is less than the main array and the sequence array. At each iteration
+check each value in the main array agianst the value in the sequence array.
+
+
+Sudo:
+
+Create pointer for main array.
+Create pointer for sequence array.
+Iterate while pointer value for main array is less than main array length and 
+while pointer value for sequence array is less than sequence array length. 
+  Check whether main array value is sequence array value.
+    If true then using addition add one value to pointer array value
+    and using addition add one value to sequence array value.
+
+Return sequence length being equal to array length.
+
+
+Edge Case:
+
+In this example there really is no edge case except that the array or a single
+number could be considered a valid subsequence.
+
+
+*/
