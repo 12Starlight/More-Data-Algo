@@ -431,5 +431,22 @@ const isValidSubsequenceForLoop = (array, sequence) => {
   return false;
 }
 
+// Is Valid Subsequence ForLoopAE
+// Inputs : array, sequence
+// Edge : [] or single number can be a valid subsequence
+
+const isValidSubsequenceForLoopAE = (array, sequence) => {
+  let sequencePointer = 0;
+
+  for (const num of array) {
+    if (sequencePointer === sequence.length) break;
+    if (num === sequence[sequencePointer]) sequencePointer++;
+  }
+
+  console.log("\n\nIs Valid SubsequenceForLoopAE : O(n) time complexity: O(1) space complexity\n")
+  return sequencePointer === sequence.length;
+}
+
 // Test
 console.log(isValidSubsequenceForLoop(arrIsValid, sequeneIsValid));
+console.log(isValidSubsequenceForLoopAE(arrIsValid, sequeneIsValid));
