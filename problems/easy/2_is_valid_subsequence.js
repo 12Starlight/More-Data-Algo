@@ -376,7 +376,7 @@ const isValidSubsequenceEA = (array, sequence) => {
   }
 
   console.log("\n\nIs Valid SubsequenceEA : O(n) time complexity: O(1) space complexity\n")
-  return sequence.length === array.length;
+  return sequencePointer === sequence.length;
 }
 
 // Test
