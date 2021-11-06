@@ -35,6 +35,24 @@ Edge Case:
 
 If no numbers are in the array, the empty array itself is returned.
 
-
 */
 
+// Sorted Squared Array
+// Inputs : array
+// Edge : return []
+
+const sortedSqArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const sortedSquaredArrayLog = (array) => {
+  const sorted = [];
+
+  for (const num of array) {
+    const squared = Math.pow(num, 2);
+    sorted.push(squared);
+  }
+
+  console.log("\n\nSorted Squared ArrayLog : O(nlog(n)) time complexity: O(n) space complexity\n")
+  return sorted;
+}
+
+console.log(sortedSquaredArrayLog(sortedSqArr));
