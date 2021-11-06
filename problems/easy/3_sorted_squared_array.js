@@ -148,3 +148,51 @@ const sortedSquaredArray = (array) => {
 
 // Test
 console.log(sortedSquaredArray(arrSortedSquaredArray));
+
+
+/*
+Date: 11/06/2021
+Solution: Algo Experts Version
+Time Complexity: O(n) time : O(n) space
+
+
+Concept:
+
+Iterate backwards through the input array using a for loop. Then at each
+iteration compare the first value and the last value to check which is the larger
+of the two values. Take the the larger of the two and square it. Then insert the
+squared value into a new array. Repeat this process until all the values have
+been squared and inserted into the new array. Then return the sorted array full
+of squared values.
+
+
+Sudo:
+Create an array using a constructor, specifying the length and filling it with
+0's.
+Create a start pointer and set it to 0.
+Create an end pointer and set it to the length of the input array - 1.
+
+Create a for loop and set the index to the array length - 1, set the condition
+to i is greater or equal to 0, then decrement the index by one.
+  Create firstValue and set it to the first array element.
+  Create lastValue and set it to the last array element.
+
+  Create conditional that checks if the firstValue is bigger than the lastValue.
+    If true, set the sorted value at the iterated index equal to firstValue
+    squared
+    Increment the start pointer by one.
+  Create else conditional that says that firstValue is smaller or equal to the
+  lastValue.
+    If true, set the sorted value at the iterated index equal to the lastValue
+    squared.
+    Decrement the end pointer by one.
+
+Return the sorted array.
+
+
+Edge:
+
+The input array can be 0's or negative values. Also, the input array must be
+previously sorted.
+
+*/
