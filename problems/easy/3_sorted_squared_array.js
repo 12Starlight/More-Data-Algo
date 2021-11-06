@@ -111,5 +111,38 @@ Edge Case:
 
 The input array could contain 0 or negative values
 
-
 */
+
+// Sorted Squared Array
+// Inputs : array
+// Edge : May include 0's or negative values
+
+const arrSortedSquaredArray = [-1, -2, -3, -4, 0, 1, 2, 3, 4];
+
+const sortedSquaredArray = (array) => {
+  let sorted = new Array(array.length).fill(0);
+  let start = 0;
+  let end = array.length - 1;
+  let sortedPointer = sorted.length - 1;
+
+  while (sortedPointer !== -1) {
+    if (Math.abs(array[start]) > Math.abs(array[end])) {
+      sorted[sortedPointer] = Math.pow(array[start], 2);
+      start++;
+    } else if (Math.abs(array[start]) < Math.abs(array[end])) {
+      sorted[sortedPointer] = Math.pow(array[end], 2);
+      end--;
+    } else {
+      sorted[sortedPointer] = Math.pow(array[start], 2);
+      start++;
+    }
+
+    sortedPointer--;
+  }
+
+  console.log("\n\nSorted Squared Array : O(n) time complexity: O(n) space complexity\n")
+  return sorted;
+}
+
+// Test
+console.log(sortedSquaredArray(arrSortedSquaredArray));
