@@ -109,7 +109,8 @@ Return the sorted array.
 
 Edge Case:
 
-The input array could contain 0 or negative values
+The input array could contain 0 or negative values and the input array must be
+sorted previously.
 
 */
 
@@ -117,7 +118,8 @@ The input array could contain 0 or negative values
 // Inputs : array
 // Edge : May include 0's or negative values
 
-const arrSortedSquaredArray = [-1, -2, -3, -4, 0, 1, 2, 3, 4];
+// const arrSortedSquaredArray = [-1, -2, -3, -4, 0, 1, 2, 3, 4];
+const arrSortedSquaredArray = [-4, -3, -2, 1, 0, 1, 2, 3, 4];
 
 const sortedSquaredArray = (array) => {
   let sorted = new Array(array.length).fill(0);
