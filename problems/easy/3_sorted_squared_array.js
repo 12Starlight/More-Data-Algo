@@ -167,6 +167,7 @@ of squared values.
 
 
 Sudo:
+
 Create an array using a constructor, specifying the length and filling it with
 0's.
 Create a start pointer and set it to 0.
@@ -190,9 +191,34 @@ to i is greater or equal to 0, then decrement the index by one.
 Return the sorted array.
 
 
-Edge:
+Edge Case:
 
 The input array can be 0's or negative values. Also, the input array must be
 previously sorted.
 
 */
+
+const sortedSquaredArrayAE = (array) => {
+  let sorted = new Array(array.length).fill(0);
+  let start = 0;
+  let end = array.length - 1;
+
+  for (let i = array.length - 1; i >= 0; i--) {
+    let firstValue = array[start];
+    let lastValue = array[end];
+
+    if (Math.abs(firstValue) > Math.abs(lastValue)) {
+      sorted[i] = Math.pow(firstValue, 2);
+      start++;
+    } else {
+      sorted[i] = Math.pow(lastValue, 2);
+      end--;
+    }
+  }
+
+  console.log("\n\nSorted Squared Array Algo Experts : O(n) time complexity: O(n) space complexity\n")
+  return sorted;
+}
+
+// Test
+console.log(sortedSquaredArrayAE(arrSortedSquaredArray));
