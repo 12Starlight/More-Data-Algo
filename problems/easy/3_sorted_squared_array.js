@@ -56,3 +56,60 @@ const sortedSquaredArrayLog = (array) => {
 }
 
 console.log(sortedSquaredArrayLog(sortedSqArr));
+
+
+/*
+11/06/2021
+Solution: My version
+Time Complexity: O(n) time : O(n) space
+
+
+Concept:
+
+Iterate through the input array and compare values at the beginning of the
+array and at the end of the array using pointers. Then take the bigger value of
+the two and square it. Then insert it into a separate array. Repeat this process 
+inserting the next squared value before the previous one in the sorted array.
+Once all the values have been inserted, return the sorted squared array.
+
+
+Sudo:
+Create an array using a constructor, specifying the length and filling it with
+0's.
+Create start pointer and set it to 0.
+Create end pointer and set it to the array length - 1 to account for the
+indexing difference.
+Create a pointer for the sorted array created above and set it to the sorted 
+length - 1 to account for the indexing difference.
+
+Create while loop with the condition that the sortedPointer is not equal to -1
+  Create a condition that checks the absolute value of the first value in the
+  input array to see if, it is bigger than the absolute value of the last value
+  in the input array.
+    If true, square the first value and set the sorted array at the sorted 
+    pointer index equal to the squared value.
+    Increment the start pointer by one.
+  Create an if else condition that checks the absolute value of the first value
+  in the input array to see if, it is smaller than the absolute value of the
+  last value in the input array.
+    If true, square the last value and set the sorted array at the sorted 
+    pointer index equal to the squared value.
+    Decrement the end value by one.
+  Create an else condition that says whether the absolute value of the first
+  value in the input array is equal to the absolute value of the last value in
+  the input array.
+    If true, square the first value and set the sorted array at the sorted
+    pionter index equal to the squared value.
+    Increment the start value by one.
+
+  Decrement the sorted pointer by one.
+
+Return the sorted array.
+
+
+Edge Case:
+
+The input array could contain 0 or negative values
+
+
+*/
