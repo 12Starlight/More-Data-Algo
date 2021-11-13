@@ -43,6 +43,7 @@ results = [0, 0, 1]
 
 /* 
 11/13/2021
+Solution: My version
 Time Complexity: O(n) time : O(k) space
 
 
@@ -77,9 +78,29 @@ Return the name of the team with the highest score.
 
 Sudo:
 
+Create HashTable and initialize it with a property key bestScore. Then assign it
+a value of 0.
+Create a bestScore variable and assign it an empty string "".
+
+Create a for loop and iterate through the results array.
+  Create a variable winner.
+  Create a conditional that checks value at each iteration to see if it is 0.
+    If it is true, assign 1 to winner to represent the winner being the awayTeam
+    which is at index 1.
+    
+    Else, assign 0 to winner to represent the winner being the the homeTeam
+    which is at index 0.
+
+  Create a conditional that checks the bestScore value property in the scores 
+  HashTable to see if it is less than the current winning team value.
+    If it is true, assign the current team name to bestScore.
+
+Return the bestScore
+
 
 Edge Case:
 
-
+The competitions array can contain only one pair of teams. A team can be a
+single character.
 
 */
