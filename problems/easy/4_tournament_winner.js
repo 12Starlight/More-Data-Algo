@@ -49,11 +49,30 @@ Time Complexity: O(n) time : O(k) space
 Concept:
 Use a HashTable data structure to store all of the competition winners along
 with their scores. Then to optimize this algorithm create another string data
-structure to store the team with highest score.
+structure to store the team with highest score. Add this as a property key and
+assign it a value of 0.
+
+Create a condition that translates the results array to the correct 
+correspoinding index value in the competitions array. Then use this to get the
+correct winner inside the competitions array element which contains another
+array.
 
 Iterate through the results array keeping track of the index at each iteration.
 Then take the value of that index and use it inside the competitions array which
-is made up of elements that each contain an array with two teams.
+is made up of elements that each contain an array with two teams. This value in
+the results array will be used to extract the winning team.
+
+At each iteration, check whether the winning team in the competitions array
+element which contains an array with a pair of teams, check if this winning team
+exists in the HashTable as a property key. If it does not exist as a key, then
+add it to the HashTable and assign it to a value of 3. If it does exist then 
+using addition, add 3 to the existing value.
+
+Also, at each iteration check whether the bestScore is less than the current
+winning team value. If the bestScore is less, than update it's value to be the
+current property key name representing the winning team.
+
+Return the name of the team with the highest score.
 
 
 Sudo:
