@@ -119,7 +119,7 @@ const tourResultsArr = [0, 0, 1];
 
 const tournamentWinner = (competitions, results) => {
   let bestScore = "";
-  let scores = {bestScore: 0};
+  let scores = {[bestScore]: 0};
 
   for (let i = 0; i < results.length; i++) {
     let winner;
@@ -136,13 +136,11 @@ const tournamentWinner = (competitions, results) => {
     }
 
     if (scores[bestScore] < scores[competitions[i][winner]]) {
-      "fuck";
       bestScore = competitions[i][winner];
     }
   }
 
   console.log("\n\nTournament Winner : O(n) time complexity: O(k) space complexity\n");
-  console.log(bestScore, scores);
   return bestScore;
 }
 
