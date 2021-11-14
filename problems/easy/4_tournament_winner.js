@@ -146,3 +146,45 @@ const tournamentWinner = (competitions, results) => {
 
 // Test
 console.log(tournamentWinner(tourCompArr, tourResultsArr));
+
+/*
+Date: 11/14/2021
+Solution: Algo Experts Version
+Time Complexity: O(n) time : O(k) space
+
+
+Concept:
+Use a CONSTANT to make the code more readable and take advantage of the 
+JavaScript libary's forEach Array method. 
+
+Loop through the competitions array using each iteration index value to keep
+track of the elements in the results array. Then decompose the competitions 
+element which also contains an array to get the first and second elements 'home',
+and 'away'.
+
+Create a conditional that indentifies the winning team and assigns the proper
+index value accordingly. Note, this could be also made into a separate function.
+
+Use the function updateScores(par1, par2, par3) created that takes in three parameters, 'team', 'points', and
+'scores' to check, if the winning team has been assigned the the scores data
+structure HashTable or not. If it has not, assign it the number 3 to handle the
+edge case of single competitions. If it has, then using addition add 3 to the 
+existing value.
+
+Create a conditional to check to see, if the best team is less than the 
+current winning team. If it is less, assign the winning team name to the best
+team.
+
+Return the best team name.
+
+Define the function created above
+
+
+Sudo:
+
+
+Edge Case:
+
+
+
+*/
