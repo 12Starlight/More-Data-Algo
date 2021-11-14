@@ -182,6 +182,45 @@ Define the function created above
 
 Sudo:
 
+Create CONSTANT and assign it the value of 1
+
+Define a function with two parameters, 'competitions', 'results'.
+  Create a variable bestTeam and assign it an empty string ''.
+  Create a scores data structure and initialize it with the property of bestTeam
+  and assign it the value of 0.
+
+  Iterate through competitions using forEach((competition, idx)) in order to
+  also get access to the index value.
+    Use the iteration index value to keep track of the results element. Then
+    assign it to the result variable
+    Decompose the competition element to get access to the first and second
+    element 'home' and 'away'.
+
+    Create the variable winning team.
+    Create a conditional that checks if result equals the CONSTANT.
+      If it is true, assign winning team to home.
+
+      else, assign winning team to away.
+      
+    Run the function updateScores(winningTeam, 3, scores).
+
+    Create a conditional that checks if the bestTeam property value in the 
+    scores HashTable data structure is less than the current winning team.
+      If it is true, then assign the current winning team name to the bestTeam.
+
+  Return best Team
+
+
+Define updateScores that takes in three parameters, 'team', 'points', and
+'scores'
+  Create a conditional that checks, if the scores data structure HashTable does
+  not have the property key name 'team'.
+    If this is true, add that property key name to the scores HashTable and
+    assign it the value of 3 to account for the edge case that their might only
+    be 1 competition.
+
+    else, use addition to add 3 to the existing property value.
+
 
 Edge Case:
 
