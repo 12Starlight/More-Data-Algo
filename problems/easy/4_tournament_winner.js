@@ -229,7 +229,7 @@ their names.
 
 */
 
-HOME_TEAM_WON = 1;
+const HOME_TEAM_WON = 1;
 
 const tournamentWinnerAE = (competitions, results) => {
   let bestTeam = '';
