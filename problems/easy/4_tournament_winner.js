@@ -224,6 +224,7 @@ Define updateScores that takes in three parameters, 'team', 'points', and
 
 Edge Case:
 
-
+There can be only a single competition and teams can have only one character for
+their names.
 
 */
