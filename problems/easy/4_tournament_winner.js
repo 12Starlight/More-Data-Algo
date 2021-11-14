@@ -240,7 +240,7 @@ const tournamentWinnerAE = (competitions, results) => {
     const [home, away] = competition;
 
     let winning;
-    if (winning === HOME_TEAM_WON) {
+    if (result === HOME_TEAM_WON) {
       winning = home;
     } else {
       winning = away;
@@ -248,8 +248,8 @@ const tournamentWinnerAE = (competitions, results) => {
 
     updateScores(winning, 3, scores);
 
-    if (scores[bestTeam] < competition[winning]) {
-      bestTeam = competition[winning];
+    if (scores[bestTeam] < scores[winning]) {
+      bestTeam = winning;
     }
   });
 
