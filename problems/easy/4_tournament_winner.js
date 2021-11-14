@@ -228,3 +228,43 @@ There can be only a single competition and teams can have only one character for
 their names.
 
 */
+
+HOME_TEAM_WON = 1;
+
+const tournamentWinnerAE = (competitions, results) => {
+  let bestTeam = '';
+  const scores = {[bestTeam]: 0};
+
+  competitions.forEach((competition, idx) => {
+    const result = results[idx];
+    const [home, away] = competition;
+
+    let winning;
+    if (winning === HOME_TEAM_WON) {
+      winning = home;
+    } else {
+      winning = away;
+    }
+
+    updateScores(winning, 3, scores);
+
+    if (scores[bestTeam] < competition[winning]) {
+      bestTeam = competition[winning];
+    }
+  });
+
+  console.log("\n\nTournament Winner Algo Experts : O(n) time complexity: O(k) space complexity\n")
+  return bestTeam;
+}
+
+// Helper function
+const updateScores = (team, points, scores) => {
+  if (!scores.hasOwnProperty(team)) {
+    scores[team] = 3;
+  } else {
+    scores[team] += points;
+  }
+}
+
+// Test 
+console.log(tournamentWinnerAE(tourCompArr, tourResultsArr));
