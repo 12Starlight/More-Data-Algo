@@ -53,15 +53,15 @@ with their scores. Then to optimize this algorithm create another string data
 structure to store the team with highest score. Add this as a property key and
 assign it a value of 0.
 
-Create a condition that translates the results array to the correct 
-correspoinding index value in the competitions array. Then use this to get the
-correct winner inside the competitions array element which contains another
-array.
-
 Iterate through the results array keeping track of the index at each iteration.
 Then take the value of that index and use it inside the competitions array which
 is made up of elements that each contain an array with two teams. This value in
 the results array will be used to extract the winning team.
+
+Create a condition that translates the results array to the correct
+correspoinding index value in the competitions array. Then use this to get the
+correct winner inside the competitions array element which contains another
+array.
 
 At each iteration, check whether the winning team in the competitions array
 element which contains an array with a pair of teams, check if this winning team
@@ -104,3 +104,45 @@ The competitions array can contain only one pair of teams. A team can be a
 single character.
 
 */
+
+// Tournament Winner
+// Inputs : competitions, results
+// Edge : May only have one pair of teams, each team can be a single character
+
+const tourCompArr = [
+  ["HTML", "C#"],
+  ["C#", "Python"],
+  ["Python", "HTML"]
+];
+
+const tourResultsArr = [0, 0, 1];
+
+const tournamentWinner = (competitions, results) => {
+  let bestScore = "";
+  let scores = {bestTeams: 0};
+
+  for (let i = 0; i < results.length; i++) {
+    let winner;
+    if (results[i] === 0) {
+      winner = 1;
+    } else {
+      winner = 0;
+    }
+
+    if (!scores.hasOwnProperty(competitions[i][winner])) {
+      scores[competitions[i][winner]] = 3;
+    } else {
+      scores[competitions[i][winner]] += 3;
+    }
+
+    if (bestScore < scores[competitions[i][winner]]) {
+      bestScore = competitions[[i][winner]];
+    }
+  }
+
+  console.log("\n\nTournament Winner : O(n) time complexity: O(k) space complexity\n")
+  return bestScore;
+}
+
+// Test
+console.log(tournamentWinner(tourCompArr, tourResultsArr));
