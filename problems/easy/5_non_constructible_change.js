@@ -62,3 +62,31 @@ If the entire array has been iterated and there is not a minimum amount of
 that can NOT be created then return the cummulation of change plus 1.
 
 */
+
+// Non Constructible Change: My Solution
+// Inputs: Coins array
+// Edge: Return 1 or Return change + 1 at the end of the array
+
+const coinsArr = [5, 7, 1, 1, 2, 3, 22];
+
+const nonConstructibleChange = (coins) => {
+  const sorted = coins.sort((a, b) => a - b);
+  let change = 0;
+
+  sorted.forEach((coin) => {
+    let smallestChange = change + 1;
+
+    if (coin > smallestChange) {
+      return smallestChange;
+    }
+
+    change += coin;
+  });
+
+  console.log("\n\nNon Constructible Change : O(nlog(n)) Time complexity : O(1) Space complexity\n")
+  return change + 1;
+}
+
+// Test: 20
+console.log(nonConstructibleChange(coinsArr));
+
