@@ -22,3 +22,20 @@ Sample Output:
 
 */
 
+/*
+11/25/2021
+Time Complexity: O(nlog(n)) Time : O(1) Space
+
+
+Concept:
+
+Taking on the idea of fractions and one being a whole, the cummulation of change
+represents the fractions. Thus each additional coin must be equal to or not 
+greater than the completion of the whole. The mathmatical equation represents
+this.
+
+  V (new coin) > C (change) + 1 returns C + 1
+
+
+
+*/
