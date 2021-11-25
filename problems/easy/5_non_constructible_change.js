@@ -37,5 +37,21 @@ this.
   V (new coin) > C (change) + 1 returns C + 1
 
 
+Sudo:
+
+Sort the array using (a - b) as in input.
+Create a variable change and assign it a value of 0.
+
+Iterate thorugh the sorted array using ForEach with coin as the element.
+  Create a variable to represent the smallest value that we can not create which
+  is change + 1.
+  Create a conditional that checks if the current coin is greater than the 
+  variable smallestValue.
+    If true, return that smallest value.
+
+  After the conditional increment the change variable by the amount of the
+  current coin.
+
+Return change plus one.
 
 */
