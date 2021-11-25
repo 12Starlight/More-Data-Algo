@@ -54,4 +54,11 @@ Iterate thorugh the sorted array using ForEach with coin as the element.
 
 Return change plus one.
 
+
+Edge Case:
+
+If the first element in the sorted array is NOT a one, then return 1.
+If the entire array has been iterated and there is not a minimum amount of
+that can NOT be created then return the cummulation of change plus 1.
+
 */
