@@ -456,5 +456,10 @@ Insert:
 
 	Return self(this) to be used in callback functions or as an input.
 
+
+Edge:
+
+Insert does not have edge cases.
+
 */
 
