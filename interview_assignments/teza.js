@@ -157,7 +157,8 @@ const totalProfit = (csv) => {
   const data = {};
 
   for (const stock of csv) {
-    if (!data.hasOwnProperty([stock.symbol])) {
+    // if (!data.hasOwnProperty([stock.symbol])) {
+    if (data[stock.symbol] === undefined) {
       if (stock.buy_sell === "B") {
         data[stock.symbol] = parseInt(stock.price) * parseInt(stock.qty) * (1);
         // console.log(stock.price, stock.qty);
