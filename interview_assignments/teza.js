@@ -89,6 +89,50 @@ Create function that transforms csv file into a JavaScript data object.
   First split the csv into an array containing all the rows as a string.
   Then sepearate the headers and push it into a JavaScript object.
 
+Create variable and assign output file.
+
+Create main function that takes in csv input JSON data object.
+  Create object data structure to store data.
+
+  Iterate through JSON object.
+    Create condition that checks, if data object does NOT have the property key 
+    of the iterated JSON object.
+      If true, create condition to check, if the property key for buy_sell is
+      'B' representing buy.
+        If true, assign the data object to have the property key of that 
+        iterated JSON object property 'symbol', then assign it to have the 
+        property value of the parseInt JSON object price multiplied by the
+        parseInt JSON object qty multiplied by 1 for positive values.
+
+        Else, assign the data object to have the property key of that iterated
+        JSON object property 'symbol', then assign it to have the property value
+        of the parseInt JSON object price multiplied by the parseInt JSON object
+        qty multiplied by -1 for negative values.
+      
+    Else, the data object DOES have the property key of the iterated JSON 
+    object.
+      Create a condition to check, if the property key for buy_sell is 'B'
+      representing buy.
+        If true, add the new value to the property value of the parseInt JSON 
+        object price multiplied by the parseInt JSON object qty multiplied by 1
+        for positive values to the previous value of the data property key's
+        value.
+
+        Else, add the new value to the property value of the parseInt JSON 
+        object price multiplied by the parseInt JSON object qty multiplied by -1
+        for negative values to the previous value of the data property key's 
+        value.
+
+Return the output of the formmated function.
+
+
+Create a helper function keysSorted.
+  Pull the keys from the object and sort them.
+
+Create a helper function formmated.
+  Using the helper function keysSorted, use the keys to pull the keys from the
+  data object and formatt the output into a string.
+
 */
 
 const csvtojson = require('csvtojson');
