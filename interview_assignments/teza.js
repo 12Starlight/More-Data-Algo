@@ -93,7 +93,8 @@ Create function that transforms csv file into a JavaScript data object.
 
 const csvtojson = require('csvtojson');
 const fs = require('fs');
-const csvfilepath = 'teza_fills.csv';
+// const csvfilepath = 'teza_fills.csv';
+const csvfilepath = 'teza_test.csv';
 
 csvtojson()
   .fromFile(csvfilepath)
