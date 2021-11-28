@@ -113,12 +113,40 @@ const totalProfit = (csv) => {
 
   for (const stock of csv) {
     if (!data.hasOwnProperty([stock.symbol])) {
-      data[stock.symbol] = 0;
-      console.log(data);
+      if (stock.buy_sell === "B") {
+        data[stock.symbol] = parseInt(stock.price) * parseInt(stock.qty) * (1);
+        console.log(stock.price, stock.qty);
+      } else {
+        data[stock.symbol] = parseInt(stock.price) * parseInt(stock.qty) * (-1);
+      }
+    } else {
+      if (stock.buy_sell === "B") {
+        data[stock.symbol] += parseInt(stock.price) * parseInt(stock.qty) * (1);
+      } else {
+        data[stock.symbol] += parseInt(stock.price) * parseInt(stock.qty) * (-1);
+      }
     }
   }
 
   return data;
+}
+
+const keysSorted = (obj) => {
+  const keys = Object.keys(obj);
+  const sorted = keys.sort((a, b) => {
+    if (a > b) {
+      return 1;
+    }
+    if (b > a) {
+      return -1;
+    }
+    return 0;
+  });
+  return sorted;
+}
+
+const formatted = (obj) => {
+  
 }
 
 // Test
