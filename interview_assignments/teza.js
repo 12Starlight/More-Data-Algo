@@ -93,15 +93,30 @@ Create function that transforms csv file into a JavaScript data object.
 
 const csvtojson = require('csvtojson');
 const fs = require('fs');
-
 const csvfilepath = 'teza_fills.csv';
 
 csvtojson()
   .fromFile(csvfilepath)
   .then((json) => {
-    console.log(json)
+    // console.log(json)
 
     fs.writeFileSync('output.json', JSON.stringify(json), 'utf-8', (err) => {
       if (err) console.log(err);
     })
   });
+
+
+const file = require('./output.json');
+
+const totalProfit = (csv) => {
+  const data = {"stock": "apple"};
+
+  for (const symbol of csv) {
+    
+  }
+
+  return data.toString();
+}
+
+// Test
+console.log(totalProfit(file));
