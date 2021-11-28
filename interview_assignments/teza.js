@@ -73,18 +73,29 @@ Teza Assignment
 
 Concept:
 
-First create a function that transforms the csv file into a JavaScript data 
-object. This will allow me to easily access the data using property keys. Then
-create a function that stores the data required in another data object. This
-required information will be the symbol of the company traded and it's P&L profit
-calculated at the end of the trading session. This function then returns a
-string representing the data requested.
+Create server that reads the csv file. Then create a function that transforms the 
+csv file into a JavaScript data object. This will allow me to easily access the 
+data using property keys. Then create a function that stores the data required 
+in another data object. This required information will be the symbol of the 
+company traded and it's P&L profit calculated at the end of the trading session. 
+This function then returns a string representing the data requested.
 
 
+Pseudo:
 
+Install npm i csvtojson
 
-
-
-
+Create function that transforms csv file into a JavaScript data object.
+  First split the csv into an array containing all the rows as a string.
+  Then sepearate the headers and push it into a JavaScript object.
 
 */
+
+const csvtojson = require('csvtojson');
+const csvfilepath = 'teza_fills.csv';
+
+csvtojson()
+  .fromFile(csvfilepath)
+  .then((json) => {
+    console.log(json)
+  });
