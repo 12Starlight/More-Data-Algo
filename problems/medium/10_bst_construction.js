@@ -409,5 +409,52 @@ property; its 'value' is less than or equal to the values of every node to its
 right; and its children nodes are either valid 'BST' nodes themselves or 'None'/
 'null'.
 
+*/
+
+/*
+11/28/2021
+Time Complexity: Iterative
+	Average: O(nLog(n)) Time : O(1) Space
+	Worst: O(n) Time : O(1) Space
+
+
+Concept:
+
+Main methods in a BST using iteration to solve
+
+
+Pseudo:
+
+BST:
+	Build class BST.
+		Create constructor with value as input.
+			self(this) dot value equals value.
+			self(this) dot left equals null.
+			self(this) dot right equals null.
+
+
+Insert:
+	Create variable to represent currentNode we are at.
+
+	Use while loop that runs until not true (forever).
+		Create condition that checks, if value is less than currentNode value.
+			Create condition that checks, if currentNode left is null.
+				If true, currentNode left gets assigned a new BST class with the input 
+				value.
+				Break out of the loop bc we have assigned the BST class to a null node.
+
+				else, the node value is NOT null. So, assign the currentNode to now be
+				the currentNode left.
+		else, the value is greater than the currentNode value.
+			Create a condition that checks, if currentNode right is null.
+				If true, currentNode right gets assigned a new BST class with the input
+				value.
+				Break out of the loop bc we have assigned the BST class to a null node. 
+
+				else, the node value is NOT null. So, assign the currentNode to now be
+				the currentNode right.
+
+	Return self(this) to be used in callback functions or as an input.
 
 */
+
