@@ -109,13 +109,16 @@ csvtojson()
 const file = require('./output.json');
 
 const totalProfit = (csv) => {
-  const data = {"stock": "apple"};
+  const data = {};
 
-  for (const symbol of csv) {
-    
+  for (const stock of csv) {
+    if (!data.hasOwnProperty([stock.symbol])) {
+      data[stock.symbol] = 0;
+      console.log(data);
+    }
   }
 
-  return data.toString();
+  return data;
 }
 
 // Test
