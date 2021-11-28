@@ -137,7 +137,7 @@ Create a helper function formmated.
 
 const csvtojson = require('csvtojson');
 const fs = require('fs');
-const csvfilepath = 'teza_fills.csv';
+const csvfilepath = './data/teza_fills.csv';
 // const csvfilepath = 'teza_test.csv';
 
 csvtojson()
@@ -145,13 +145,13 @@ csvtojson()
   .then((json) => {
     // console.log(json)
 
-    fs.writeFileSync('output.json', JSON.stringify(json), 'utf-8', (err) => {
+    fs.writeFileSync('./tmp/csv_as_json.json', JSON.stringify(json), 'utf-8', (err) => {
       if (err) console.log(err);
     })
   });
 
 
-const file = require('./output.json');
+const jsonFromCsv = require('./tmp/csv_as_json.json');
 
 const totalProfit = (csv) => {
   const data = {};
@@ -202,7 +202,7 @@ const formatted = (obj) => {
 }
 
 // Test
-console.log(totalProfit(file));
+console.log(totalProfit(jsonFromCsv));
 
 // In Terminal
 // node teza.js > solution.csv 
