@@ -457,9 +457,28 @@ Insert:
 	Return self(this) to be used in callback functions or as an input.
 
 
+Contains:
+	Create variable currentNode to represent the current node we are at.
+	
+	Create while loop with condition that checks, if currentNode is NOT null.
+		Create condition that checks, if value is less than currentNode value.
+			If true, assign currentNode left to currentNode.
+
+		Create condition that checks, else if value is greatter than currentNode 
+		value.
+			If true, assign currentNode right to currentNode.
+
+		Else, the value equals the currentNode value.
+			Return true bc we found the value.
+
+	Return false, bc we went through all the nodes and did not find the value
+
+
 Edge:
 
 Insert does not have edge cases.
+
+Contains does not have edge cases
 
 */
 
