@@ -65,3 +65,26 @@ traded:
 
 
 */
+
+/*
+11/28/2021
+Teza Assignment
+
+
+Concept:
+
+First create a function that transforms the csv file into a JavaScript data 
+object. This will allow me to easily access the data using property keys. Then
+create a function that stores the data required in another data object. This
+required information will be the symbol of the company traded and it's P&L profit
+calculated at the end of the trading session. This function then returns a
+string representing the data requested.
+
+
+
+
+
+
+
+
+*/
