@@ -115,7 +115,7 @@ const totalProfit = (csv) => {
     if (!data.hasOwnProperty([stock.symbol])) {
       if (stock.buy_sell === "B") {
         data[stock.symbol] = parseInt(stock.price) * parseInt(stock.qty) * (1);
-        console.log(stock.price, stock.qty);
+        // console.log(stock.price, stock.qty);
       } else {
         data[stock.symbol] = parseInt(stock.price) * parseInt(stock.qty) * (-1);
       }
@@ -128,7 +128,7 @@ const totalProfit = (csv) => {
     }
   }
 
-  return data;
+  return formatted(data);
 }
 
 const keysSorted = (obj) => {
@@ -146,8 +146,17 @@ const keysSorted = (obj) => {
 }
 
 const formatted = (obj) => {
+  const keys = keysSorted(obj);
   
+  for (const key of keys) {
+    console.log(key + ", " + obj[key]);
+  }
+
+  return "";
 }
 
 // Test
 console.log(totalProfit(file));
+
+// In Terminal
+// node teza.js > solution.csv
