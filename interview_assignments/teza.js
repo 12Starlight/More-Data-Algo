@@ -160,4 +160,4 @@ const formatted = (obj) => {
 console.log(totalProfit(file));
 
 // In Terminal
-// node teza.js > solution.csv
+// node teza.js > solution.csv 
