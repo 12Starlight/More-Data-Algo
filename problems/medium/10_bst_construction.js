@@ -522,7 +522,28 @@ class BSTNew {
 
 		return this;
 	}
+
+	// Average: O(Log(n)) Time : O(1) Space
+	// Worst: O(n) Time : O(1) Space
+	// Mastery: 1, 2, 3, 4, 5, 6, 7, 8, 9
+	// Code Mastery: 1, 2, 3, 4, 5, 6, 7, 8, 9
+	constains(value) {
+		let currentNode = this;
+
+		while (currentNode !== null) {
+			if (value < currentNode.value) {
+				currentNode = currentNode.left;
+			} else if (value > currentNode.value) {
+				currentNode = currentNode.right;
+			} else {
+				return true;
+			}
+		}
+
+		return false;
+	}
 }
+
 
 let bstTree1 = new BSTNew(11);
 
@@ -530,5 +551,10 @@ for (const value of bstValues) {
 	bstTree1.insert(value);
 }
 
-// Test
+// Test: Insert
+console.log("BST Construction: Insert\n")
 console.log(bstTree1);
+
+// Test: Contains
+console.log("\nBST Construction: Contains\n")
+console.log(bstTree1.constains(22));
